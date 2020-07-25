@@ -7,7 +7,7 @@
     "test": "jest",
     "prebuild": "npm run lint",
     "build": "NODE_ENV=production webpack",
-    "lint": "eslint --fix . && prettier --write ./**/*.js"
+    "lint": "eslint --fix . && prettier --write ."
   },
   "repository": {
     "type": "git",
@@ -47,6 +47,7 @@
     }
   },
   "dependencies": {
+    "date-fns": "^2.15.0",
     "lodash": "^4.17.19"
   }
 }
