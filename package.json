@@ -4,10 +4,10 @@
   "description": "Node script to calculate debt repayment using the snowball method",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "prebuild": "npm run lint",
-    "build": "webpack",
-    "lint": "eslint --fix src/  && prettier --write src/"
+    "build": "NODE_ENV=production webpack",
+    "lint": "eslint --fix . && prettier --write ./**/*.js"
   },
   "repository": {
     "type": "git",
@@ -22,13 +22,20 @@
   "homepage": "https://github.com/nielse63/node-debt-snowball#readme",
   "devDependencies": {
     "@babel/core": "^7.10.5",
+    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
+    "babel-eslint": "^10.1.0",
+    "babel-jest": "^26.1.0",
     "babel-loader": "^8.1.0",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.18.0",
     "husky": "^4.2.5",
+    "jest": "^26.1.0",
     "lint-staged": "^10.2.11",
     "prettier": "^2.0.5",
     "webpack": "^4.44.0",
@@ -38,5 +45,8 @@
     "hooks": {
       "pre-commit": "lint-staged"
     }
+  },
+  "dependencies": {
+    "lodash": "^4.17.19"
   }
 }

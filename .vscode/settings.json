@@ -4,7 +4,7 @@
 
   "files.autoSave": "onFocusChange",
   "files.trimTrailingWhitespace": true,
-  "files.eol": "\n",
+  "files.eol": "auto",
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
 
