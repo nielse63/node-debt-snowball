@@ -60,15 +60,34 @@ describe('DebtSnowball', () => {
 
   describe('methods', () => {
     let snowball;
-    beforeEach(() => {
+    beforeAll(() => {
       snowball = new DebtSnowball(options);
     });
 
-    describe.skip('run', () => {
-      it('should run', () => {
-        const results = snowball.run();
-        console.log(results);
-        expect(true).toBe(true);
+    describe('run', () => {
+      let results;
+      beforeAll(() => {
+        results = snowball.run();
+      });
+
+      it('should return expected shape and data types', () => {
+        expect(typeof results.payoffDate).toEqual('string');
+        expect(Array.isArray(results.payments)).toBe(true);
+      });
+
+      it('should have payments array with expected shape', () => {
+        const payment = results.payments[0];
+        expect(typeof payment.date).toEqual('string');
+        expect(typeof payment.totalBalance).toEqual('number');
+        expect(Array.isArray(payment.accounts)).toBe(true);
+      });
+
+      it('results.payments[n].accounts should match shape', () => {
+        const { accounts: resultsAccounts } = results.payments[0];
+        const account = resultsAccounts[0];
+        expect(typeof account.name).toEqual('string');
+        expect(typeof account.payment).toEqual('number');
+        expect(typeof account.balance).toEqual('number');
       });
     });
   });

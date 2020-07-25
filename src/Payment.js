@@ -17,12 +17,4 @@ export default class Payment {
     const date = addMonths(new Date(), this.index + 1);
     return date;
   }
-
-  toJSON() {
-    return {
-      amount: this.amount,
-      index: this.index,
-      date: this.date,
-    };
-  }
 }

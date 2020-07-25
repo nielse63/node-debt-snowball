@@ -1,9 +1,29 @@
+import addMonths from 'date-fns/addMonths';
+import format from 'date-fns/format';
 import Account from './Account';
 
 export default class DebtSnowball {
+  static getTotalBalance(accounts) {
+    return Number(
+      accounts
+        .map(({ balance }) => balance)
+        .reduce((a, b) => a + b, 0)
+        .toFixed(2)
+    );
+  }
+
   accounts = [];
 
   additionalPayment = 0;
+
+  #totalBalance = 0;
+
+  #payoffDate = 0;
+
+  #results = {
+    payoffDate: '',
+    payments: [],
+  };
 
   constructor({ accounts = [], additionalPayment = 0 }) {
     this.additionalPayment = additionalPayment;
@@ -31,36 +51,61 @@ export default class DebtSnowball {
     });
   }
 
-  generator() {
+  setAddiitionalAmount() {
     const firstAccount = this.accounts.find((account) => {
       return account.principal > 0;
     });
-    if (!firstAccount) return 0;
     firstAccount.set('additionalPayment', this.additionalPayment);
-
-    const results = this.accounts
-      .filter(({ principal }) => principal > 0)
-      .map((account) => {
-        account.makeMonthlyPayment();
-        const { principal, minPayment } = account;
-        if (principal <= 0) {
-          this.additionalPayment += minPayment;
-        }
-        return principal;
-      });
-    return results.reduce((a, b) => a + b, 0);
   }
 
-  // TODO: extract the payments and total remaining balance for each month
-  // TODO: return object should look like: {payoffDate: '', payments: [{date: '', payments: {account1: 123, account2: 456}, totalBalance: 123}, ...]}
+  makePaymentForAccount = (account) => {
+    const { minPayment, name } = account;
+    const payment = account.makeMonthlyPayment();
+    if (account.principal <= 0) {
+      this.additionalPayment += minPayment;
+    }
+    return {
+      name,
+      payment: payment.amount,
+      balance: account.principal,
+    };
+  };
+
+  getPaymentDate() {
+    return format(
+      addMonths(new Date(), this.#results.payments.length + 1),
+      'MM/yyyy'
+    );
+  }
+
+  makePayments() {
+    this.setAddiitionalAmount();
+
+    const accounts = this.accounts
+      .filter(({ principal }) => principal > 0)
+      .map(this.makePaymentForAccount);
+    this.#totalBalance = DebtSnowball.getTotalBalance(accounts);
+    const date = this.getPaymentDate();
+    this.#payoffDate = date;
+    return {
+      date,
+      totalBalance: this.#totalBalance,
+      accounts,
+    };
+  }
+
   run() {
     let shouldContinue = true;
     while (shouldContinue) {
-      const remainingBalances = this.generator();
-      if (remainingBalances <= 0) {
+      const results = this.makePayments();
+      this.#results.payments.push(results);
+      if (this.#totalBalance <= 0) {
         shouldContinue = false;
       }
     }
-    return this.accounts;
+    return {
+      ...this.#results,
+      payoffDate: this.#payoffDate,
+    };
   }
 }

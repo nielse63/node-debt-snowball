@@ -102,17 +102,6 @@ export default class Account {
 
   /**
    * @description
-   * Converts the array of Payment objects to plain objects
-   *
-   * @returns {Array}
-   * @memberof Account
-   */
-  getPaymentsJSON() {
-    return this.payments.map((payment) => payment.toJSON());
-  }
-
-  /**
-   * @description
    * Evaluates the month and year when the account will be paid off
    *
    * @returns {Date}
@@ -122,21 +111,4 @@ export default class Account {
     const lastPayment = last(this.payments);
     return get(lastPayment, 'date');
   }
-
-  // dispatch(event, ...args) {
-  //   if(this._boundEvents.has(event)) {
-  //     const callback = this._boundEvents.get(event);
-  //     callback(...args);
-  //   }
-  // }
-
-  // on(event, callback){
-  //   this._boundEvents.set(event, callback);
-  // }
-
-  // off(event){
-  //   if(this._boundEvents.has(event)) {
-  //     this._boundEvents.delete(event)
-  //   }
-  // }
 }
