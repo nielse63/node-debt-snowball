@@ -1,31 +1,32 @@
 import DebtSnowball from '../DebtSnowball';
+import accounts from '../__mocks__/accounts.mock';
 
-const accounts = [
-  {
-    name: 'account 1',
-    principal: 1000,
-    interest: 10.0,
-    minPayment: 50,
-  },
-  {
-    name: 'account 2',
-    principal: 500,
-    interest: 25.5,
-    minPayment: 100,
-  },
-  {
-    name: 'account 3',
-    principal: 5000,
-    interest: 15,
-    minPayment: 100,
-  },
-  {
-    name: 'account 4',
-    principal: 1000,
-    interest: 15,
-    minPayment: 100,
-  },
-];
+// const accounts = [
+//   {
+//     name: 'account 1',
+//     principal: 1000,
+//     interest: 10.0,
+//     minPayment: 50,
+//   },
+//   {
+//     name: 'account 2',
+//     principal: 500,
+//     interest: 25.5,
+//     minPayment: 100,
+//   },
+//   {
+//     name: 'account 3',
+//     principal: 5000,
+//     interest: 15,
+//     minPayment: 100,
+//   },
+//   {
+//     name: 'account 4',
+//     principal: 1000,
+//     interest: 15,
+//     minPayment: 100,
+//   },
+// ];
 
 const options = {
   accounts,
@@ -64,10 +65,10 @@ describe('DebtSnowball', () => {
       snowball = new DebtSnowball(options);
     });
 
-    describe('run', () => {
+    describe('simulate', () => {
       let results;
       beforeAll(() => {
-        results = snowball.run();
+        results = snowball.simulate();
       });
 
       it('should return expected shape and data types', () => {

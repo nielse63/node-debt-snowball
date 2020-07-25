@@ -14,7 +14,6 @@ export default class Payment {
   }
 
   calculateDate() {
-    const date = addMonths(new Date(), this.index + 1);
-    return date;
+    return addMonths(new Date(), this.index + 1);
   }
 }

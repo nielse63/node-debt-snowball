@@ -12,6 +12,19 @@ export default class DebtSnowball {
     );
   }
 
+  static sortAccounts(accounts) {
+    return accounts.sort((a, b) => {
+      if (a.interest > b.interest) return -1;
+      if (a.interest < b.interest) return 1;
+      return a.principal < b.principal;
+    });
+  }
+
+  static createAccounts(accountsArray) {
+    const accounts = accountsArray.map((options) => new Account(options));
+    return DebtSnowball.sortAccounts(accounts);
+  }
+
   accounts = [];
 
   additionalPayment = 0;
@@ -20,35 +33,14 @@ export default class DebtSnowball {
 
   #payoffDate = 0;
 
-  #results = {
+  results = {
     payoffDate: '',
     payments: [],
   };
 
   constructor({ accounts = [], additionalPayment = 0 }) {
     this.additionalPayment = additionalPayment;
-    this.accounts = this.createAccounts(accounts);
-  }
-
-  /**
-   * @description
-   * Given an array of objects, instatiate new Account objects for each element
-   *
-   * @param {Array} accounts
-   * @returns {Array}
-   * @memberof DebtSnowball
-   */
-  createAccounts(accounts) {
-    this.accounts = accounts.map((options) => new Account(options));
-    return this.sortAccounts();
-  }
-
-  sortAccounts() {
-    return this.accounts.sort((a, b) => {
-      if (a.interest > b.interest) return -1;
-      if (a.interest < b.interest) return 1;
-      return a.principal < b.principal;
-    });
+    this.accounts = DebtSnowball.createAccounts(accounts);
   }
 
   setAddiitionalAmount() {
@@ -73,7 +65,7 @@ export default class DebtSnowball {
 
   getPaymentDate() {
     return format(
-      addMonths(new Date(), this.#results.payments.length + 1),
+      addMonths(new Date(), this.results.payments.length + 1),
       'MM/yyyy'
     );
   }
@@ -94,17 +86,17 @@ export default class DebtSnowball {
     };
   }
 
-  run() {
+  simulate() {
     let shouldContinue = true;
     while (shouldContinue) {
       const results = this.makePayments();
-      this.#results.payments.push(results);
+      this.results.payments.push(results);
       if (this.#totalBalance <= 0) {
         shouldContinue = false;
       }
     }
     return {
-      ...this.#results,
+      ...this.results,
       payoffDate: this.#payoffDate,
     };
   }
