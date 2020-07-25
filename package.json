@@ -1,0 +1,42 @@
+{
+  "name": "node-debt-snowball",
+  "version": "1.0.0",
+  "description": "Node script to calculate debt repayment using the snowball method",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prebuild": "npm run lint",
+    "build": "webpack",
+    "lint": "eslint --fix src/  && prettier --write src/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nielse63/node-debt-snowball.git"
+  },
+  "keywords": [],
+  "author": "Erik Nielsen <erik@312development.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nielse63/node-debt-snowball/issues"
+  },
+  "homepage": "https://github.com/nielse63/node-debt-snowball#readme",
+  "devDependencies": {
+    "@babel/core": "^7.10.5",
+    "@babel/preset-env": "^7.10.4",
+    "babel-loader": "^8.1.0",
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "webpack": "^4.44.0",
+    "webpack-cli": "^3.3.12"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
