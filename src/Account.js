@@ -19,11 +19,6 @@ export default class Account {
 
   additionalPayment = 0;
 
-  // not set in constructor (internal)
-  initialBalance = 0;
-
-  remainingBalance = 0;
-
   payments = [];
 
   payoffDate = new Date();
@@ -44,11 +39,12 @@ export default class Account {
     this.minPayment = minPayment;
     this.additionalPayment = additionalPayment;
 
-    this.initialBalance = this.principal;
-    this.remainingBalance = this.principal;
-
     // validate props
     this.validateProperties();
+  }
+
+  set(key, value) {
+    this[key] = value;
   }
 
   validateProperties() {
@@ -69,23 +65,10 @@ export default class Account {
    * @memberof Account
    */
   calculateMonthlyInterest() {
-    const { remainingBalance, interest } = this;
+    const { principal, interest } = this;
     const monthlyInterestRate = interest / 12 / 100;
-    const monthlyAccruedInterest = remainingBalance * monthlyInterestRate;
+    const monthlyAccruedInterest = principal * monthlyInterestRate;
     return Account.formatFloat(monthlyAccruedInterest);
-  }
-
-  /**
-   * @description
-   * Calculates a single month's interest, in dollars, and adds
-   * that value to the remaining balance of the account
-   *
-   * @returns {number} The updated balance of the account
-   * @memberof Account
-   */
-  addMonthlyInterest() {
-    this.remainingBalance += this.calculateMonthlyInterest();
-    return this.remainingBalance;
   }
 
   /**
@@ -97,22 +80,23 @@ export default class Account {
    * @memberof Account
    */
   makeMonthlyPayment() {
-    this.addMonthlyInterest();
-    const { remainingBalance, minPayment, additionalPayment, payments } = this;
+    const { principal, minPayment, additionalPayment, payments } = this;
+    let newBalance = principal;
+    newBalance += this.calculateMonthlyInterest();
     let paymentAmount = minPayment + additionalPayment;
-    // const balanceWithInterest =
-    if (remainingBalance - paymentAmount <= 0) {
-      paymentAmount = remainingBalance;
+    const isComplete = newBalance - paymentAmount <= 0;
+    if (isComplete) {
+      paymentAmount = newBalance;
     }
-    this.remainingBalance = Account.formatFloat(
-      remainingBalance - paymentAmount
-    );
+    this.principal = Account.formatFloat(newBalance - paymentAmount);
     const payment = new Payment({
       amount: paymentAmount,
       index: payments.length,
-      remainingBalance: this.remainingBalance,
     });
     this.payments.push(payment);
+    if (isComplete) {
+      this.payoffDate = this.getPayoffDate();
+    }
     return payment;
   }
 
@@ -136,25 +120,23 @@ export default class Account {
    */
   getPayoffDate() {
     const lastPayment = last(this.payments);
-    this.payoffDate = get(lastPayment, 'date');
-    return this.payoffDate;
+    return get(lastPayment, 'date');
   }
 
-  /**
-   * @description
-   * Runs all calculation methods, returning an object of relavent
-   * data pertaining to the account
-   *
-   * @returns {Object}
-   * @memberof Account
-   */
-  run() {
-    while (this.remainingBalance > 0) {
-      this.makeMonthlyPayment();
-    }
-    return {
-      payments: this.getPaymentsJSON(),
-      payoffDate: this.getPayoffDate(),
-    };
-  }
+  // dispatch(event, ...args) {
+  //   if(this._boundEvents.has(event)) {
+  //     const callback = this._boundEvents.get(event);
+  //     callback(...args);
+  //   }
+  // }
+
+  // on(event, callback){
+  //   this._boundEvents.set(event, callback);
+  // }
+
+  // off(event){
+  //   if(this._boundEvents.has(event)) {
+  //     this._boundEvents.delete(event)
+  //   }
+  // }
 }

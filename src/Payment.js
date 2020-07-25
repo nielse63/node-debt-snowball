@@ -5,19 +5,16 @@ export default class Payment {
 
   index = 0;
 
-  remainingBalance = 0;
-
   date = new Date();
 
-  constructor({ amount, index, remainingBalance }) {
+  constructor({ amount, index }) {
     this.amount = amount;
     this.index = index;
-    this.remainingBalance = remainingBalance;
     this.date = this.calculateDate();
   }
 
   calculateDate() {
-    const date = addMonths(new Date(), this.index);
+    const date = addMonths(new Date(), this.index + 1);
     return date;
   }
 
@@ -25,7 +22,6 @@ export default class Payment {
     return {
       amount: this.amount,
       index: this.index,
-      remainingBalance: this.remainingBalance,
       date: this.date,
     };
   }

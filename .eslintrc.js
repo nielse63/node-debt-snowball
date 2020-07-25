@@ -12,4 +12,7 @@ module.exports = {
     node: true,
     browser: false,
   },
+  rules: {
+    'import/no-extraneous-dependencies': 'off',
+  },
 };

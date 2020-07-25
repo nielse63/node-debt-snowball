@@ -72,46 +72,27 @@ describe('Account', () => {
       });
     });
 
-    describe('addMonthlyInterest', () => {
-      it('should return a number type', () => {
-        const results = account.addMonthlyInterest();
-        expect(typeof results).toEqual('number');
-      });
-
-      it('should execute the calculateMonthlyInterest method', () => {
-        const spy = jest.spyOn(account, 'calculateMonthlyInterest');
-        account.addMonthlyInterest();
-        expect(spy).toHaveBeenCalled();
-      });
-
-      it('should add the accrued monthly interest to the remaining balance', () => {
-        const results = account.addMonthlyInterest();
-        const expectedValue = 1008.33;
-        expect(results).toEqual(expectedValue);
-        expect(account.remainingBalance).toEqual(expectedValue);
-      });
-    });
-
     describe('makeMonthlyPayment', () => {
       it('should accurately calculate the remaining balance after interest is added and payment is deducted', () => {
+        const { principal, minPayment, additionalPayment } = options;
+        expect(account.principal).toEqual(principal);
         account.makeMonthlyPayment();
         const accruedInterest = 8.33;
-        const paymentAmount = options.minPayment + options.additionalPayment;
         const expectedValue =
-          options.principal + accruedInterest - paymentAmount;
-        expect(account.remainingBalance).toEqual(expectedValue);
+          principal + accruedInterest - (minPayment + additionalPayment);
+        expect(account.principal).toEqual(expectedValue);
       });
 
       it('should return a Payment object', () => {
         const payment = account.makeMonthlyPayment();
         expect(payment).toBeInstanceOf(Payment);
-        ['amount', 'index', 'date', 'remainingBalance'].forEach((prop) => {
+        ['amount', 'index', 'date'].forEach((prop) => {
           expect(payment[prop]).toBeDefined();
         });
       });
 
-      it('should execute addMonthlyInterest', () => {
-        const spy = jest.spyOn(account, 'addMonthlyInterest');
+      it('should execute calculateMonthlyInterest', () => {
+        const spy = jest.spyOn(account, 'calculateMonthlyInterest');
         account.makeMonthlyPayment();
         expect(spy).toHaveBeenCalled();
       });
@@ -120,35 +101,6 @@ describe('Account', () => {
         expect(account.payments.length).toEqual(0);
         account.makeMonthlyPayment();
         expect(account.payments.length).toEqual(1);
-      });
-    });
-
-    describe('run', () => {
-      it('should execute makeMonthlyPayment at least once', () => {
-        const spy = jest.spyOn(account, 'makeMonthlyPayment');
-        account.run();
-        expect(spy).toHaveBeenCalled();
-      });
-
-      it('should call getPaymentsJSON and getPayoffDate', () => {
-        const spy1 = jest.spyOn(account, 'getPaymentsJSON');
-        const spy2 = jest.spyOn(account, 'getPayoffDate');
-        account.run();
-        expect(spy1).toHaveBeenCalled();
-        expect(spy2).toHaveBeenCalled();
-      });
-
-      it('should return an object with the account payments and payoff date', () => {
-        const results = account.run();
-        const keys = Object.keys(results);
-        expect(keys).toEqual(['payments', 'payoffDate']);
-        expect(Array.isArray(results.payments)).toBe(true);
-        expect(results.payoffDate).toBeInstanceOf(Date);
-      });
-
-      it('should set Payment objects to the account.payments property', () => {
-        const { payments } = account.run();
-        expect(account.payments.length).toEqual(payments.length);
       });
     });
   });
