@@ -1,6 +1,6 @@
 {
   "name": "node-debt-snowball",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Node script to calculate debt repayment using the snowball method",
   "main": "dist/index.js",
   "scripts": {
