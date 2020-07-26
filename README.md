@@ -70,3 +70,22 @@ const results = snowball(accounts, additionalPayment);
 }
  */
 ```
+
+## Development
+
+Clone the repo and install the dependencies:
+
+```bash
+git clone https://github.com/nielse63/node-debt-snowball.git
+cd node-debt-snowball
+npm ci
+```
+
+### NPM Scripts
+
+| Script            | Description                                              |
+| ----------------- | -------------------------------------------------------- |
+| `npm run lint`    | Lint and autofix source files                            |
+| `npm test`        | Runs unit tests with Jest                                |
+| `npm run build`   | Transpile source to `dist/` folder                       |
+| `npm run release` | Runs `release-it` to bump the version and release to npm |

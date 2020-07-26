@@ -4,10 +4,10 @@
   "description": "Node script to calculate debt repayment using the snowball method",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest",
-    "prebuild": "npm run lint",
-    "build": "webpack --mode production",
     "lint": "eslint --fix . && prettier --write .",
+    "test": "jest",
+    "prebuild": "npm run lint && npm test",
+    "build": "webpack --mode production",
     "release": "release-it",
     "docs": "esdoc -c config/esdoc.config.js"
   },
@@ -34,9 +34,6 @@
     "babel-jest": "^26.1.0",
     "babel-loader": "^8.1.0",
     "core-js": "^3.6.5",
-    "esdoc": "^1.1.0",
-    "esdoc-ecmascript-proposal-plugin": "^1.0.0",
-    "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^7.2.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
