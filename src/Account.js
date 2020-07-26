@@ -1,7 +1,6 @@
 import get from 'lodash/get';
 import last from 'lodash/last';
 import Payment from './Payment';
-import '../config/typedef';
 
 export default class Account {
   static formatFloat(value) {

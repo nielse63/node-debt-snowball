@@ -1,7 +1,7 @@
 import addMonths from 'date-fns/addMonths';
 import format from 'date-fns/format';
+import parseISO from 'date-fns/parseISO';
 import Account from './Account';
-import '../config/typedef';
 
 /**
  * Primary class to generate a debt repayment plan
@@ -96,6 +96,11 @@ export default class DebtSnowball {
     this.accounts = DebtSnowball.createAccounts(accounts);
   }
 
+  /**
+   * Appliies the additional repayment amount to the account with the highest interest rate
+   *
+   * @memberof DebtSnowball
+   */
   setAddiitionalAmount() {
     const firstAccount = this.accounts.find((account) => {
       return account.principal > 0;
@@ -103,6 +108,14 @@ export default class DebtSnowball {
     firstAccount.set('additionalPayment', this.additionalPayment);
   }
 
+  /**
+   * Make a payment on a single account
+   * @param {Object} account
+   * @param {number} account.minPayment
+   * @param {string} account.name
+   * @returns {Object} {{name:String, payment:Number, balance:Number}}
+   * @memberof DebtSnowball
+   */
   makePaymentForAccount = (account) => {
     const { minPayment, name } = account;
     const payment = account.makeMonthlyPayment();
@@ -117,10 +130,8 @@ export default class DebtSnowball {
   };
 
   getPaymentDate() {
-    return format(
-      addMonths(new Date(), this.results.payments.length + 1),
-      'MM/yyyy'
-    );
+    const date = addMonths(new Date(), this.results.payments.length + 1);
+    return parseISO(format(date, 'yyyy-MM-01'));
   }
 
   makePayments() {

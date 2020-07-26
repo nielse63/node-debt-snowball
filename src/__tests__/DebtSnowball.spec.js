@@ -42,13 +42,13 @@ describe('DebtSnowball', () => {
       });
 
       it('should return expected shape and data types', () => {
-        expect(typeof results.payoffDate).toEqual('string');
+        expect(results.payoffDate).toBeValidDate();
         expect(Array.isArray(results.payments)).toBe(true);
       });
 
       it('should have payments array with expected shape', () => {
         const payment = results.payments[0];
-        expect(typeof payment.date).toEqual('string');
+        expect(payment.date).toBeValidDate();
         expect(typeof payment.totalBalance).toEqual('number');
         expect(Array.isArray(payment.accounts)).toBe(true);
       });
