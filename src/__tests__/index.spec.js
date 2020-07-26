@@ -1,14 +1,10 @@
 import snowball from '..';
 import accounts from '../__mocks__/accounts.mock';
-// import DebtSnowball from '../DebtSnowball';
 
-const options = {
-  accounts,
-  additionalPayment: 100,
-};
+const additionalPayment = 100;
 
 describe('snowball', () => {
-  const repaymentPlan = snowball(options);
+  const repaymentPlan = snowball(accounts, additionalPayment);
 
   it('should be a function', () => {
     expect(snowball).toBeFunction();

@@ -1,10 +1,9 @@
 import get from 'lodash/get';
 import last from 'lodash/last';
 import Payment from './Payment';
+import '../config/typedef';
 
 export default class Account {
-  static requiredKeys = ['name', 'principal', 'interest', 'minPayment'];
-
   static formatFloat(value) {
     return Number(parseFloat(value).toFixed(2));
   }
@@ -23,8 +22,6 @@ export default class Account {
 
   payoffDate = new Date();
 
-  errors = [];
-
   constructor({
     name = '',
     principal = 0,
@@ -38,23 +35,10 @@ export default class Account {
     this.interest = interest;
     this.minPayment = minPayment;
     this.additionalPayment = additionalPayment;
-
-    // validate props
-    this.validateProperties();
   }
 
   set(key, value) {
     this[key] = value;
-  }
-
-  validateProperties() {
-    Account.requiredKeys.forEach((key) => {
-      if (!get(this, key)) {
-        this.errors.push(
-          `The proptery '${key}' is required  on the Account class`
-        );
-      }
-    });
   }
 
   /**

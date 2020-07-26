@@ -1,37 +1,7 @@
 import DebtSnowball from '../DebtSnowball';
 import accounts from '../__mocks__/accounts.mock';
 
-// const accounts = [
-//   {
-//     name: 'account 1',
-//     principal: 1000,
-//     interest: 10.0,
-//     minPayment: 50,
-//   },
-//   {
-//     name: 'account 2',
-//     principal: 500,
-//     interest: 25.5,
-//     minPayment: 100,
-//   },
-//   {
-//     name: 'account 3',
-//     principal: 5000,
-//     interest: 15,
-//     minPayment: 100,
-//   },
-//   {
-//     name: 'account 4',
-//     principal: 1000,
-//     interest: 15,
-//     minPayment: 100,
-//   },
-// ];
-
-const options = {
-  accounts,
-  additionalPayment: 100,
-};
+const additionalPayment = 100;
 
 describe('DebtSnowball', () => {
   it('should be defined', () => {
@@ -40,7 +10,7 @@ describe('DebtSnowball', () => {
 
   describe('properties', () => {
     it('should have expected properties', () => {
-      const snowball = new DebtSnowball(options);
+      const snowball = new DebtSnowball(accounts, additionalPayment);
       ['accounts'].forEach((key) => {
         expect(snowball[key]).toBeDefined();
       });
@@ -49,12 +19,12 @@ describe('DebtSnowball', () => {
 
   describe('constructor', () => {
     it('should handle empty args', () => {
-      const snowball = new DebtSnowball({});
+      const snowball = new DebtSnowball();
       expect(snowball.accounts).toEqual([]);
     });
 
     it('should set accounts array on init', () => {
-      const snowball = new DebtSnowball(options);
+      const snowball = new DebtSnowball(accounts, additionalPayment);
       expect(snowball.accounts.length).toEqual(accounts.length);
     });
   });
@@ -62,7 +32,7 @@ describe('DebtSnowball', () => {
   describe('methods', () => {
     let snowball;
     beforeAll(() => {
-      snowball = new DebtSnowball(options);
+      snowball = new DebtSnowball(accounts, additionalPayment);
     });
 
     describe('simulate', () => {

@@ -1,8 +1,21 @@
 import addMonths from 'date-fns/addMonths';
 import format from 'date-fns/format';
 import Account from './Account';
+import '../config/typedef';
 
+/**
+ * Primary class to generate a debt repayment plan
+ * @export
+ * @class DebtSnowball
+ */
 export default class DebtSnowball {
+  /**
+   * Maps over array of accounts to return a sum of all balances
+   * @static
+   * @param {Array} accounts - Array of account objects
+   * @returns {number}
+   * @memberof DebtSnowball
+   */
   static getTotalBalance(accounts) {
     return Number(
       accounts
@@ -12,6 +25,13 @@ export default class DebtSnowball {
     );
   }
 
+  /**
+   * Sorts accounts by interest rate in descending order
+   * @static
+   * @param {Array} accounts
+   * @returns {Array}
+   * @memberof DebtSnowball
+   */
   static sortAccounts(accounts) {
     return accounts.sort((a, b) => {
       if (a.interest > b.interest) return -1;
@@ -20,25 +40,58 @@ export default class DebtSnowball {
     });
   }
 
-  static createAccounts(accountsArray) {
-    const accounts = accountsArray.map((options) => new Account(options));
-    return DebtSnowball.sortAccounts(accounts);
+  /**
+   * Instatiates an Account object for each plain object, then sorts the array
+   *
+   * @static
+   * @param {Array} accounts
+   * @returns {Array}
+   * @memberof DebtSnowball
+   */
+  static createAccounts(accounts) {
+    const array = accounts.map((options) => new Account(options));
+    return DebtSnowball.sortAccounts(array);
   }
 
+  /**
+   * Array of Accounts
+   * @type {Array}
+   * @memberof DebtSnowball
+   */
   accounts = [];
 
+  /**
+   * The additional amount to apply to repayments each month
+   * @type {number}
+   * @memberof DebtSnowball
+   */
   additionalPayment = 0;
 
-  #totalBalance = 0;
+  /**
+   * The sum of all account balances
+   * @type {number}
+   * @memberof DebtSnowball
+   */
+  totalBalance = 0;
 
-  #payoffDate = 0;
-
+  /**
+   * The object returned by `simulate` - includes the final
+   * repayment month and an array of oayment objects
+   * @type {Object}
+   * @memberof DebtSnowball
+   */
   results = {
     payoffDate: '',
     payments: [],
   };
 
-  constructor({ accounts = [], additionalPayment = 0 }) {
+  /**
+   * Creates an instance of DebtSnowball.
+   * @param {[]} accounts - An array of plain objects representing accounts
+   * @param {number} additionalPayment - The additional amount applied to payments each month
+   * @memberof DebtSnowball
+   */
+  constructor(accounts = [], additionalPayment = 0) {
     this.additionalPayment = additionalPayment;
     this.accounts = DebtSnowball.createAccounts(accounts);
   }
@@ -76,12 +129,12 @@ export default class DebtSnowball {
     const accounts = this.accounts
       .filter(({ principal }) => principal > 0)
       .map(this.makePaymentForAccount);
-    this.#totalBalance = DebtSnowball.getTotalBalance(accounts);
+    this.totalBalance = DebtSnowball.getTotalBalance(accounts);
     const date = this.getPaymentDate();
-    this.#payoffDate = date;
+    this.results.payoffDate = date;
     return {
       date,
-      totalBalance: this.#totalBalance,
+      totalBalance: this.totalBalance,
       accounts,
     };
   }
@@ -91,13 +144,10 @@ export default class DebtSnowball {
     while (shouldContinue) {
       const results = this.makePayments();
       this.results.payments.push(results);
-      if (this.#totalBalance <= 0) {
+      if (this.totalBalance <= 0) {
         shouldContinue = false;
       }
     }
-    return {
-      ...this.results,
-      payoffDate: this.#payoffDate,
-    };
+    return this.results;
   }
 }

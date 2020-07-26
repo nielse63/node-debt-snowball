@@ -1,4 +1,3 @@
-import omit from 'lodash/omit';
 import Account from '../Account';
 import Payment from '../Payment';
 
@@ -25,7 +24,6 @@ describe('Account', () => {
       Object.keys(options).forEach((key) => {
         expect(account[key]).toBeDefined();
       });
-      expect(account.errors).toBeDefined();
     });
   });
 
@@ -42,15 +40,6 @@ describe('Account', () => {
       Object.entries(options).forEach(([key, value]) => {
         expect(account[key]).toEqual(value);
       });
-      expect(account.errors.length).toEqual(0);
-    });
-
-    it('should set an error when a required field is empty', () => {
-      const account = new Account(omit(options, ['name']));
-      expect(account.errors.length).toEqual(1);
-      expect(account.errors[0]).toEqual(
-        "The proptery 'name' is required  on the Account class"
-      );
     });
   });
 
