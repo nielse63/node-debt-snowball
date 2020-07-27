@@ -15,7 +15,11 @@
     "type": "git",
     "url": "git+https://github.com/nielse63/node-debt-snowball.git"
   },
-  "keywords": [],
+  "keywords": [
+    "finance",
+    "debt-snowball",
+    "fintech"
+  ],
   "author": "Erik Nielsen <erik@312development.com>",
   "license": "ISC",
   "bugs": {
@@ -34,12 +38,12 @@
     "babel-jest": "^26.1.0",
     "babel-loader": "^8.1.0",
     "core-js": "^3.6.5",
-    "eslint": "^7.2.0",
+    "eslint": "^7.5.0",
     "eslint-config-airbnb-base": "^14.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jest": "^23.18.0",
+    "eslint-plugin-jest": "^23.18.2",
     "husky": "^4.2.5",
     "jest": "^26.1.0",
     "jest-extended": "^0.11.5",
