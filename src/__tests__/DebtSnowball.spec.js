@@ -35,10 +35,10 @@ describe('DebtSnowball', () => {
       snowball = new DebtSnowball(accounts, additionalPayment);
     });
 
-    describe('simulate', () => {
+    describe('createPaymentPlan', () => {
       let results;
       beforeAll(() => {
-        results = snowball.simulate();
+        results = snowball.createPaymentPlan();
       });
 
       it('should return expected shape and data types', () => {

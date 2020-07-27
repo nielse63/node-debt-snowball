@@ -7,7 +7,7 @@ Given an array of accounts and additional payment amount, `node-debt-snowball` w
 ## Installation
 
 ```bash
-npm iinstall --save node-debt-snowball
+npm install node-debt-snowball
 ```
 
 ## API

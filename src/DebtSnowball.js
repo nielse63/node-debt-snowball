@@ -75,7 +75,7 @@ export default class DebtSnowball {
   totalBalance = 0;
 
   /**
-   * The object returned by `simulate` - includes the final
+   * The object returned by `createPaymentPlan` - includes the final
    * repayment month and an array of oayment objects
    * @type {Object}
    * @memberof DebtSnowball
@@ -150,7 +150,7 @@ export default class DebtSnowball {
     };
   }
 
-  simulate() {
+  createPaymentPlan() {
     let shouldContinue = true;
     while (shouldContinue) {
       const results = this.makePayments();
