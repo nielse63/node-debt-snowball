@@ -7,68 +7,36 @@ Given an array of accounts and additional payment amount, `node-debt-snowball` w
 ## Installation
 
 ```bash
-npm iinstall --save node-debt-snowball
+npm install node-debt-snowball
 ```
 
-## API
+## Usage
 
-`node-debt-snowball` is a function with two arguments and returns an object:
-
-### Arguments
-
-| Argument            | Type     | Description                           |
-| ------------------- | -------- | ------------------------------------- |
-| `accounts`          | `Array`  | Array of objects (see below)          |
-| `additionalPayment` | `number` | Additional amount to apply each month |
-
-### Response
-
-| Key | Type | Description |
-| --- | --- | --- |
-| `payoffDate` | `Date` | The month and year of your last payment |
-| `payments` | `Array` | Array of objects representing each month payments are made |
-
-## Example
+Example usage and output can be found in the [`examples/`](./examples) directory.
 
 ```js
-const snowball = require('node-debt-snowball');
+const Snowball = require('node-debt-snowball');
 
 const accounts = [
   {
-    name: 'Student Loan',
-    principal: 10000,
-    interest: 4.25,
-    minPayment: 75,
+    name: 'Credit Card',
+    interest: 14.99,
+    balance: 5000,
+    minPayment: 120,
   },
   {
-    name: 'Credit Card',
-    principal: 5000,
-    interest: 15.75,
-    minPayment: 90,
+    name: 'Student Loan',
+    interest: 6.55,
+    balance: 1000,
+    minPayment: 40,
   },
 ];
 const additionalPayment = 100;
 
-const results = snowball(accounts, additionalPayment);
-/**
-{
-  payoffDate: // Date object - the month of your final payment
-  payments: [
-    {
-      date: // Date object - month and year of payments
-      totalBalance: // number - the sum balance of all accounts after making payments
-      accounts: [
-        {
-          name: 'Studient Loan',
-          payment: number // the payment amount
-          balance: number // the balance of this account after payment
-        },
-        ...
-      ]
-    }
-  ]
-}
- */
+const snowball = new Snowball(accounts, additionalPayment);
+const repaymentPlan = snowball.createPaymentPlan();
+// repaymentPlan is an array of objects representing each payment made
+// an example response can be found in examples/repaymentPlan.json
 ```
 
 ## Development
@@ -87,5 +55,5 @@ npm ci
 | ----------------- | -------------------------------------------------------- |
 | `npm run lint`    | Lint and autofix source files                            |
 | `npm test`        | Runs unit tests with Jest                                |
-| `npm run build`   | Transpile source to `dist/` folder                       |
+| `npm run docs`    | Generate documentation                                   |
 | `npm run release` | Runs `release-it` to bump the version and release to npm |
