@@ -55,4 +55,5 @@ npm ci
 | ----------------- | -------------------------------------------------------- |
 | `npm run lint`    | Lint and autofix source files                            |
 | `npm test`        | Runs unit tests with Jest                                |
+| `npm run docs`    | Generate documentation                                   |
 | `npm run release` | Runs `release-it` to bump the version and release to npm |
