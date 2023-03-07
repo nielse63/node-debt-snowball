@@ -1,8 +1,13 @@
+/* eslint-disable no-template-curly-in-string */
 module.exports = {
   hooks: {
     'before:init': ['npm run lint', 'npm test'],
   },
+  github: {
+    release: true,
+  },
   git: {
-    commitMessage: 'chore: release',
+    changelog: 'git log --pretty=format:"* %s (%h)" ${from}...${to}',
+    commitMessage: 'chore: release v${version}',
   },
 };
