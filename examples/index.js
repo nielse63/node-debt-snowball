@@ -19,4 +19,4 @@ const additionalPayment = 100;
 
 const snowball = new Snowball(accounts, additionalPayment);
 const repaymentPlan = snowball.createPaymentPlan();
-console.log(repaymentPlan)
+console.log(JSON.stringify(repaymentPlan, null, '  '));
