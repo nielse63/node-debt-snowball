@@ -29,7 +29,7 @@
     "fintech"
   ],
   "author": "Erik Nielsen <erik@312development.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nielse63/node-debt-snowball/issues"
   },
