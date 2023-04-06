@@ -2,9 +2,22 @@
   "name": "node-debt-snowball",
   "version": "1.2.1",
   "description": "Node script to calculate debt repayment using the snowball method",
-  "main": "./dist/index.js",
+  "types": "./dist/cjs/types/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/esm/types/index.d.ts",
+        "default": "./dist/esm/index.mjs"
+      },
+      "require": {
+        "types": "./dist/cjs/types/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
+    }
+  },
   "files": [
-    "dist"
+    "dist/**/*"
   ],
   "scripts": {
     "prepare": "husky install",
@@ -13,9 +26,12 @@
     "release": "release-it",
     "dev": "node examples/index.js",
     "prepublishOnly": "npm run build",
-    "prebuild": "rm -rf dist/",
-    "build": "tsc --project tsconfig.json",
-    "postbuild": "echo 'module.exports = debtSnowball;' >> dist/index.js"
+    "clean": "rm -rf ./dist",
+    "build:esm": "tsc -p ./config/tsconfig.esm.json",
+    "postbuild:esm": "mv dist/esm/index.js dist/esm/index.mjs",
+    "build:cjs": "tsc -p ./config/tsconfig.cjs.json",
+    "postbuild:cjs": "echo 'module.exports = debtSnowball;' >> dist/cjs/index.js",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs"
   },
   "repository": {
     "type": "git",
