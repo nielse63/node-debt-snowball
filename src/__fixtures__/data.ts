@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     Month: 'Aug 2020',
     'Credit Card': '$220.00',

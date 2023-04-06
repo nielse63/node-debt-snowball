@@ -2,22 +2,20 @@
   "name": "node-debt-snowball",
   "version": "1.2.1",
   "description": "Node script to calculate debt repayment using the snowball method",
-  "main": "index.js",
+  "main": "./dist/index.js",
   "files": [
-    "index.js",
-    "lib/"
+    "dist"
   ],
-  "directories": {
-    "lib": "lib/",
-    "example": "examples/",
-    "doc": "docs/"
-  },
   "scripts": {
     "prepare": "husky install",
-    "lint": "eslint --fix . && prettier --write .",
+    "lint": "prettier --write . && eslint --fix .",
     "test": "jest",
-    "release": "dotenv release-it",
-    "dev": "node examples/index.js"
+    "release": "release-it",
+    "dev": "node examples/index.js",
+    "prepublishOnly": "npm run build",
+    "prebuild": "rm -rf dist/",
+    "build": "tsc --project tsconfig.json",
+    "postbuild": "echo 'module.exports = debtSnowball;' >> dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -40,10 +38,15 @@
   "devDependencies": {
     "@babel/core": "^7.21.4",
     "@babel/preset-env": "^7.21.4",
+    "@babel/preset-typescript": "^7.21.4",
+    "@nielse63/eslint-config": "^1.1.0",
+    "@types/jest": "^29.5.0",
+    "@typescript-eslint/eslint-plugin": "^5.57.1",
+    "@typescript-eslint/parser": "^5.57.1",
     "babel-jest": "^29.5.0",
-    "dotenv-cli": "^7.2.1",
     "eslint": "^8.37.0",
     "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^27.2.1",
@@ -53,7 +56,8 @@
     "jest-extended": "^3.2.4",
     "lint-staged": "^13.1.2",
     "prettier": "^2.8.7",
-    "release-it": "^15.10.1"
+    "release-it": "^15.10.1",
+    "typescript": "^5.0.3"
   },
   "lint-staged": {
     "*.{js,json,md,html,scss,css}": "prettier --write"

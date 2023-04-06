@@ -1,6 +1,6 @@
-const Snowball = require('../Snowball');
-const accounts = require('../__mocks__/input.mock');
-const fixture = require('../__mocks__/data.mock');
+import Snowball from '../Snowball';
+import fixture from '../__fixtures__/data';
+import accounts from '../__fixtures__/input';
 
 const additionalPayment = 100;
 
