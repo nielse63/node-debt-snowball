@@ -1,24 +1,24 @@
-const toCurrency = require('./helpers/toCurrency');
+import { toCurrency } from './helpers';
 
-/**
- * @class Account
- */
+export type Config = {
+  name: string;
+  balance: number;
+  interest: number;
+  minPayment: number;
+};
+
 class Account {
-  name = '';
-
-  balance = 0;
-
-  interest = 0;
-
-  minPayment = 0;
-
-  // calculated in class
+  name: string;
+  balance: number;
+  interest: number;
+  minPayment: number;
   payments = [];
 
   startingBalance = 0;
 
-  constructor({ name, balance, interest, minPayment }) {
-    // set props
+  constructor(config: Config) {
+    const { name, balance, interest, minPayment } = config;
+
     this.name = name;
     this.balance = balance;
     this.interest = interest;
@@ -59,4 +59,4 @@ class Account {
   }
 }
 
-module.exports = Account;
+export default Account;

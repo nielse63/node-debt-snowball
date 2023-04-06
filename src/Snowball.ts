@@ -1,21 +1,26 @@
-const Account = require('./Account');
-const toCurrency = require('./helpers/toCurrency');
+import Account from './Account';
+import { toCurrency } from './helpers';
 
-/**
- * @class Snowball
- */
+export type Payment = {
+  balance: number;
+  accounts: Account[];
+};
+
+export type AccountType = {
+  name: string;
+  interest: number;
+  balance: number;
+  minPayment: number;
+};
+
 class Snowball {
-  accounts = [];
+  accounts: Account[] = [];
+  additionalPayment: number;
+  balance: number;
+  currentAdditionalPayment: number;
+  paymentPlan: Payment[] = [];
 
-  additionalPayment = 0;
-
-  balance = 0;
-
-  currentAdditionalPayment = 0;
-
-  paymentPlan = [];
-
-  constructor(accounts, additionalPayment = 0) {
+  constructor(accounts: AccountType[], additionalPayment = 0) {
     this.setAccounts(accounts);
     const balance = this.getCurrentBalance();
     this.balance = balance;
@@ -23,7 +28,7 @@ class Snowball {
     this.currentAdditionalPayment = additionalPayment;
   }
 
-  setAccounts(accounts) {
+  setAccounts(accounts: AccountType[]) {
     this.accounts = accounts
       .sort((a, b) => {
         if (a.interest > b.interest) return -1;
@@ -41,13 +46,13 @@ class Snowball {
     return toCurrency(sum);
   }
 
-  setNewAdditionalPayment(value) {
+  setNewAdditionalPayment(value: number) {
     const newAdditionalPayment =
       (this.currentAdditionalPayment || this.additionalPayment) - value;
     return newAdditionalPayment < 0 ? 0 : newAdditionalPayment;
   }
 
-  makePaymentForAccount = (account) => {
+  makePaymentForAccount = (account: Account) => {
     if (account.balance <= 0) {
       return {
         name: account.name,
@@ -86,10 +91,11 @@ class Snowball {
 
     while (this.balance > 0) {
       const payment = this.makePaymentsForMonth();
+      // @ts-expect-error payment is of valid type
       this.paymentPlan.push(payment);
     }
     return this.paymentPlan;
   }
 }
 
-module.exports = Snowball;
+export default Snowball;

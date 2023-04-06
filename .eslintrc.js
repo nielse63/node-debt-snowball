@@ -1,30 +1,58 @@
 module.exports = {
+  root: true,
   env: {
-    jest: true,
     node: true,
-    commonjs: true,
-    es2021: true,
+    browser: true,
+    jest: true,
   },
-  extends: ['airbnb-base', 'prettier'],
-  plugins: ['jest'],
+  plugins: ['import', 'prettier', 'jest'],
+  extends: ['airbnb-typescript/base', 'prettier', 'plugin:jest/recommended'],
   parserOptions: {
-    ecmaVersion: 'latest',
+    project: './tsconfig.eslint.json',
   },
   rules: {
-    'import/no-extraneous-dependencies': 'off',
-    'lines-between-class-members': [
+    'import/extensions': [
+      'error',
+      'ignorePackages',
+      {
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+      },
+    ],
+    'no-console': ['error', { allow: ['error', 'debug'] }],
+    '@typescript-eslint/lines-between-class-members': [
       'warn',
       'always',
-      { exceptAfterSingleLine: true },
+      {
+        exceptAfterSingleLine: true,
+      },
     ],
-    'no-console': ['error', { allow: ['error'] }],
   },
   overrides: [
     {
-      files: ['*.spec.js'],
+      files: ['.bin/**/*', '**/*.spec.{js,ts}', 'config/**/*'],
       rules: {
+        'import/no-extraneous-dependencies': 'off',
+        'no-underscore-dangle': 'off',
         'no-console': 'off',
       },
+    },
+    {
+      files: ['**/*.spec.{js,ts}'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'warn',
+      },
+    },
+    {
+      files: ['**/*.ts'],
+      parser: '@typescript-eslint/parser',
+      plugins: ['@typescript-eslint'],
+      extends: [
+        'plugin:@typescript-eslint/recommended',
+        'plugin:import/typescript',
+      ],
     },
   ],
 };

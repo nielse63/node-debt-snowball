@@ -11,30 +11,33 @@ module.exports = {
   // bail: 0,
 
   // The directory where Jest should store its cached dependency information
-  // cacheDirectory: "/private/var/folders/34/hwxs5t3n7hq9jv3r5q8wspg40000gn/T/jest_dx",
+  // cacheDirectory: "/private/var/folders/t1/893nhmds1xq4fmsvgmz11_nm0000gn/T/jest_dx",
 
   // Automatically clear mock calls, instances, contexts and results before every test
   // clearMocks: false,
 
   // Indicates whether the coverage information should be collected while executing the test
-  // collectCoverage: false,
+  // collectCoverage: true,
 
   // An array of glob patterns indicating a set of files for which coverage information should be collected
-  collectCoverageFrom: ['<rootDir>/lib/**/*.js', '!<rootDir>/**/index.js'],
+  // collectCoverageFrom: undefined,
 
   // The directory where Jest should output its coverage files
-  // coverageDirectory: undefined,
+  // coverageDirectory: 'coverage',
 
   // An array of regexp pattern strings used to skip coverage collection
-  // coveragePathIgnorePatterns: [
-  //   "/node_modules/"
-  // ],
+  coveragePathIgnorePatterns: ['/__fixtures__/'],
 
   // Indicates which provider should be used to instrument code for coverage
-  coverageProvider: 'v8',
+  coverageProvider: 'babel',
 
   // A list of reporter names that Jest uses when writing coverage reports
-  coverageReporters: ['text-summary', 'lcov', 'html'],
+  coverageReporters: [
+    // "json",
+    'text-summary',
+    'lcov',
+    'html',
+  ],
 
   // An object that configures minimum threshold enforcement for coverage results
   // coverageThreshold: undefined,

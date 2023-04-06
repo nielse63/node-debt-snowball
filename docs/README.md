@@ -15,7 +15,8 @@ npm install node-debt-snowball
 Example usage and output can be found in the [`examples/`](./examples) directory.
 
 ```js
-const Snowball = require('node-debt-snowball');
+const snowball = require('node-debt-snowball');
+// or import snowball from 'node-debt-snowball';
 
 const accounts = [
   {
@@ -33,8 +34,7 @@ const accounts = [
 ];
 const additionalPayment = 100;
 
-const snowball = new Snowball(accounts, additionalPayment);
-const repaymentPlan = snowball.createPaymentPlan();
+const repaymentPlan = snowball(accounts, additionalPayment);
 // repaymentPlan is an array of objects representing each payment made
 // an example response can be found in examples/repaymentPlan.json
 ```
@@ -55,5 +55,4 @@ npm ci
 | ----------------- | -------------------------------------------------------- |
 | `npm run lint`    | Lint and autofix source files                            |
 | `npm test`        | Runs unit tests with Jest                                |
-| `npm run docs`    | Generate documentation                                   |
 | `npm run release` | Runs `release-it` to bump the version and release to npm |

@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   {
     name: 'Credit Card',
     interest: 14.99,

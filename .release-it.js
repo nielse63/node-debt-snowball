@@ -1,4 +1,3 @@
-/* eslint-disable no-template-curly-in-string */
 module.exports = {
   hooks: {
     'before:init': ['npm run lint', 'npm test'],

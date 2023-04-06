@@ -1,5 +1,7 @@
-const Account = require('../Account');
-const [creditCard] = require('../__mocks__/input.mock');
+import Account from '../Account';
+import input from '../__fixtures__/input';
+
+const [creditCard] = input;
 
 const getMonthlyInterest = (object) => {
   const interest = object.interest / 100;

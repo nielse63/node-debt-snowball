@@ -1,5 +1,4 @@
-// usage: node examples/index.js
-const Snowball = require('..');
+const snowball = require('..');
 
 const accounts = [
   {
@@ -17,6 +16,5 @@ const accounts = [
 ];
 const additionalPayment = 100;
 
-const snowball = new Snowball(accounts, additionalPayment);
-const repaymentPlan = snowball.createPaymentPlan();
+const repaymentPlan = snowball(accounts, additionalPayment);
 console.log(JSON.stringify(repaymentPlan, null, '  '));
