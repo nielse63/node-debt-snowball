@@ -2,6 +2,9 @@
   "name": "node-debt-snowball",
   "version": "2.0.0",
   "description": "Node script to calculate debt repayment using the snowball method",
+  "publishConfig": {
+    "access": "public"
+  },
   "types": "./dist/cjs/types/index.d.ts",
   "main": "./dist/cjs/index.js",
   "exports": {
@@ -17,7 +20,7 @@
     }
   },
   "files": [
-    "dist/**/*"
+    "dist"
   ],
   "scripts": {
     "prepare": "husky install",
