@@ -1,15 +1,17 @@
+const fs = require('fs');
+const path = require('path');
 const snowball = require('..');
 
 const accounts = [
   {
     name: 'Credit Card',
     interest: 14.99,
-    balance: 5000,
-    minPayment: 120,
+    balance: 7500,
+    minPayment: 125,
   },
   {
     name: 'Student Loan',
-    interest: 6.55,
+    interest: 4.75,
     balance: 1000,
     minPayment: 40,
   },
@@ -17,4 +19,11 @@ const accounts = [
 const additionalPayment = 100;
 
 const repaymentPlan = snowball(accounts, additionalPayment);
-console.log(JSON.stringify(repaymentPlan, null, '  '));
+console.log('repaymentPlan', repaymentPlan);
+
+// update the example values and run `npm run dev` to see the
+// differences in `examples/response.json`
+fs.writeFileSync(
+  path.join(__dirname, 'response.json'),
+  JSON.stringify(repaymentPlan, null, '  ')
+);
