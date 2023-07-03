@@ -1,11 +1,6 @@
 import Account from './Account';
 import { toCurrency } from './helpers';
-import { AccountConfig } from './types';
-
-export type Payment = {
-  balance: number;
-  accounts: Account[];
-};
+import { AccountConfig, Payment } from './types';
 
 class Snowball {
   accounts: Account[] = [];
@@ -112,7 +107,6 @@ class Snowball {
 
     while (this.currentBalance > 0) {
       const payment = this.makePaymentsForMonth();
-      // @ts-expect-error payment is of valid type
       this.paymentPlan.push(payment);
     }
     return this.paymentPlan;

@@ -1,0 +1,12 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "basePath": "../",
+  "entryPoints": ["../src/index.ts", "../src/types.d.ts"],
+  "out": "../docs",
+  "json": "../docs/api.json",
+  "exclude": ["**/__tests__/**", "**/__mocks__/**"],
+  "cleanOutputDir": true,
+  "excludePrivate": false,
+  "excludeInternal": false,
+  "excludeProtected": false
+}

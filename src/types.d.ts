@@ -5,6 +5,11 @@ export type AccountConfig = {
   minPayment: number;
 };
 
+export type Payment = {
+  balance: number;
+  accounts: Account[];
+};
+
 export interface IPayment {
   startingBalance: number;
   endingBalance: number;

@@ -2,7 +2,3 @@
 . "$(dirname "$0")/_/husky.sh"
 
 npx lint-staged
-
-# copy readme
-cp README.md docs/README.md
-git add docs/README.md
