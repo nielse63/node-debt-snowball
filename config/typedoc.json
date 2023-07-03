@@ -8,5 +8,7 @@
   "cleanOutputDir": true,
   "excludePrivate": false,
   "excludeInternal": false,
-  "excludeProtected": false
+  "excludeProtected": false,
+  "includeVersion": true,
+  "gitRevision": "main"
 }

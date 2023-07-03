@@ -35,7 +35,7 @@
     "build:cjs": "tsc -p ./config/tsconfig.cjs.json",
     "postbuild:cjs": "echo 'module.exports = debtSnowball;' >> dist/cjs/index.js",
     "build": "npm run clean && npm run build:esm && npm run build:cjs",
-    "docs": "typedoc --options config/typedoc.json"
+    "docs": ".bin/docs"
   },
   "repository": {
     "type": "git",

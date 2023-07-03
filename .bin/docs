@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -e
+
+icon_file="docs/assets/icon.svg"
+icon_tmp="icon.svg.tmp"
+
+if [ -f $icon_file ]; then
+  mv $icon_file $icon_tmp
+fi
+
+npx typedoc --options config/typedoc.json
+
+if [ -f $icon_tmp ]; then
+  mv $icon_tmp $icon_file
+fi

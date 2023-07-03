@@ -8,7 +8,7 @@ changed_files=$(git diff --cached --name-only)
 build_docs=
 
 for file in $changed_files; do
-  if [[ $file = src* ]]; then
+  if [[ $file = src* || $file = "README.md" ]]; then
     build_docs=true
     break
   fi
