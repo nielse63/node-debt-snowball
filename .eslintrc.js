@@ -5,8 +5,21 @@ module.exports = {
     browser: true,
     jest: true,
   },
-  plugins: ['import', 'prettier', 'jest'],
-  extends: ['airbnb-typescript/base', 'prettier', 'plugin:jest/recommended'],
+  plugins: [
+    '@typescript-eslint',
+    'import',
+    'jest',
+    'jest-extended',
+    'prettier',
+  ],
+  extends: [
+    'plugin:@typescript-eslint/recommended',
+    'plugin:import/typescript',
+    'airbnb-typescript/base',
+    'plugin:jest/recommended',
+    'prettier',
+  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
     project: './tsconfig.eslint.json',
   },
@@ -21,7 +34,7 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'no-console': ['error', { allow: ['error', 'debug'] }],
+    'no-console': ['warn', { allow: ['error', 'debug'] }],
     '@typescript-eslint/lines-between-class-members': [
       'warn',
       'always',
@@ -44,15 +57,6 @@ module.exports = {
       rules: {
         '@typescript-eslint/no-var-requires': 'warn',
       },
-    },
-    {
-      files: ['**/*.ts'],
-      parser: '@typescript-eslint/parser',
-      plugins: ['@typescript-eslint'],
-      extends: [
-        'plugin:@typescript-eslint/recommended',
-        'plugin:import/typescript',
-      ],
     },
   ],
 };

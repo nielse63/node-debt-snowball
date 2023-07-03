@@ -34,7 +34,8 @@
     "postbuild:esm": "mv dist/esm/index.js dist/esm/index.mjs",
     "build:cjs": "tsc -p ./config/tsconfig.cjs.json",
     "postbuild:cjs": "echo 'module.exports = debtSnowball;' >> dist/cjs/index.js",
-    "build": "npm run clean && npm run build:esm && npm run build:cjs"
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "docs": "typedoc --options config/typedoc.json"
   },
   "repository": {
     "type": "git",
@@ -54,7 +55,7 @@
   },
   "homepage": "https://github.com/nielse63/node-debt-snowball#readme",
   "engines": {
-    "node": "^16.20.1"
+    "node": ">=16.20.1"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
@@ -64,19 +65,21 @@
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",
     "babel-jest": "^29.5.0",
-    "eslint": "^8.43.0",
+    "eslint": "^8.44.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-jest": "^27.2.2",
+    "eslint-plugin-jest-extended": "^2.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
     "jest": "^29.5.0",
-    "jest-extended": "^3.2.4",
-    "lint-staged": "^13.2.2",
+    "jest-extended": "^4.0.0",
+    "lint-staged": "^13.2.3",
     "prettier": "^2.8.8",
     "release-it": "^15.11.0",
+    "typedoc": "^0.24.8",
     "typescript": "^5.1.6"
   },
   "lint-staged": {

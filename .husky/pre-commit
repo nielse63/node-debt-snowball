@@ -3,6 +3,19 @@
 
 npx lint-staged
 
-# copy readme
-cp README.md docs/README.md
-git add docs/README.md
+# build docs
+changed_files=$(git diff --cached --name-only)
+build_docs=
+
+for file in $changed_files; do
+  if [[ $file = src* ]]; then
+    build_docs=true
+    break
+  fi
+done
+if [ $build_docs ]; then
+  echo ""
+  echo "Building docs..."
+  npm run docs
+  git add docs
+fi
