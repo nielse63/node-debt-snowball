@@ -1,6 +1,6 @@
 import Account from './Account';
 import { toCurrency } from './helpers';
-import { AccountConfig, Payment } from './types';
+import { AccountOptions, Payment } from './types';
 
 class Snowball {
   accounts: Account[] = [];
@@ -12,17 +12,24 @@ class Snowball {
   unappliedAdditionalPayment = 0;
   paymentPlan: Payment[] = [];
 
-  constructor(accounts: AccountConfig[], additionalPayment = 0) {
+  constructor(accounts: AccountOptions[], additionalPayment = 0) {
     this.setAccounts(accounts);
     this.startingBalance = this.getCurrentBalance();
     this.currentBalance = this.startingBalance;
     this.additionalPayment = additionalPayment;
   }
 
-  parseAccounts(accounts: AccountConfig[]) {
+  parseAccounts(accounts: AccountOptions[]) {
     if (!Array.isArray(accounts)) {
       throw new Error('accounts must be an array');
     }
+
+    const defaultAccount = {
+      name: '',
+      interest: 0,
+      balance: 0,
+      minPayment: 0,
+    };
 
     return accounts
       .filter((account) => {
@@ -30,20 +37,13 @@ class Snowball {
       })
       .map((account) => {
         return {
-          // @ts-expect-error set default values for account object
-          name: '',
-          // @ts-expect-error set default values for account object
-          interest: 0,
-          // @ts-expect-error set default values for account object
-          balance: 0,
-          // @ts-expect-error set default values for account object
-          minPayment: 0,
+          ...defaultAccount,
           ...account,
         };
       });
   }
 
-  setAccounts(accounts: AccountConfig[]) {
+  setAccounts(accounts: AccountOptions[]) {
     this.accounts = this.parseAccounts(accounts)
       .sort((a, b) => {
         if (a.interest > b.interest) return -1;

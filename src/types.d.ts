@@ -1,4 +1,4 @@
-export type AccountConfig = {
+export type AccountOptions = {
   name: string;
   balance: number;
   interest: number;

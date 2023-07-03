@@ -169,6 +169,9 @@ describe('Snowball', () => {
     it('should calculate correct balances', () => {
       const paymentPlan = snowball.createPaymentPlan();
       expect(paymentPlan[1].balance).toEqual(7931.85);
+      expect(paymentPlan[4].accounts[0].paymentAmount).toEqual(175);
+      expect(paymentPlan[5].accounts[0].paymentAmount).toEqual(168.99);
+      expect(paymentPlan[6].accounts).toBeArrayOfSize(1);
     });
   });
 });

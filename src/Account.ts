@@ -1,5 +1,5 @@
 import { toCurrency } from './helpers';
-import { AccountConfig, IPayment } from './types';
+import { AccountOptions, IPayment } from './types';
 
 class Account {
   name: string;
@@ -8,7 +8,7 @@ class Account {
   minPayment: number;
   originalBalance: number;
 
-  constructor(config: AccountConfig) {
+  constructor(config: AccountOptions) {
     const { name, balance, interest, minPayment } = config;
 
     this.name = name;
