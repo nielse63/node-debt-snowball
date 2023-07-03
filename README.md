@@ -86,10 +86,10 @@ npm ci
 
 ### Prerequisites
 
-Node `v16.20.0`:
+Node `v16.20.1`:
 
 ```bash
-nvm use v16.20.0
+nvm use v16.20.1
 ```
 
 ### NPM Scripts
