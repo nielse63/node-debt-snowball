@@ -66,9 +66,9 @@ Each account must be an object following the schema:
         "name": "string",
         "startingBalance": "number",
         "endingBalance": "number",
-        "paymentAmount": "number",
         "accruedInterest": "number",
-        "additionalPayment": "number"
+        "additionalPayment": "number",
+        "paymentAmount": "number"
       }
       // more accounts...
     ]

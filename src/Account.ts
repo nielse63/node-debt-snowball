@@ -1,31 +1,21 @@
 import { toCurrency } from './helpers';
-
-export type Config = {
-  name: string;
-  balance: number;
-  interest: number;
-  minPayment: number;
-};
+import { AccountConfig, IPayment } from './types';
 
 class Account {
   name: string;
   balance: number;
   interest: number;
   minPayment: number;
-  payments = [];
+  originalBalance: number;
 
-  startingBalance = 0;
-
-  constructor(config: Config) {
+  constructor(config: AccountConfig) {
     const { name, balance, interest, minPayment } = config;
 
     this.name = name;
     this.balance = balance;
+    this.originalBalance = balance;
     this.interest = interest;
     this.minPayment = minPayment;
-
-    // calculated values
-    this.startingBalance = balance;
   }
 
   calculateMonthlyInterest() {
@@ -35,26 +25,28 @@ class Account {
     return toCurrency(monthlyAccruedInterest);
   }
 
-  makePayment(additionalPayment = 0) {
+  makePayment(additionalPayment = 0): IPayment {
+    // account balance before interest or payment is applied
     const startingBalance = this.balance;
     const accruedInterest = this.calculateMonthlyInterest();
-    let endingBalance = toCurrency(startingBalance + accruedInterest);
+    let endPeriodBalance = toCurrency(startingBalance + accruedInterest);
     let initialPaymentAmount = this.minPayment + additionalPayment;
-    if (endingBalance - initialPaymentAmount <= 0) {
-      initialPaymentAmount = endingBalance;
+    if (endPeriodBalance - initialPaymentAmount <= 0) {
+      initialPaymentAmount = endPeriodBalance;
     }
     const paymentAmount = toCurrency(initialPaymentAmount);
-    endingBalance -= paymentAmount;
+    endPeriodBalance -= paymentAmount;
 
-    // set new class values
-    this.balance = toCurrency(endingBalance);
+    // set new balance values
+    const endingBalance = toCurrency(endPeriodBalance);
+    this.balance = endingBalance;
 
     return {
       startingBalance,
-      endingBalance: this.balance,
-      paymentAmount,
+      endingBalance,
       accruedInterest,
       additionalPayment,
+      paymentAmount,
     };
   }
 }

@@ -1,6 +1,19 @@
 import Account from '../Account';
-import input from '../__fixtures__/input';
 
+const input = [
+  {
+    name: 'Credit Card',
+    interest: 14.99,
+    balance: 1000,
+    minPayment: 75,
+  },
+  {
+    name: 'Student Loan',
+    interest: 4.75,
+    balance: 7500,
+    minPayment: 150,
+  },
+];
 const [creditCard] = input;
 
 const getMonthlyInterest = (object) => {

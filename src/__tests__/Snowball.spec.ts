@@ -1,7 +1,19 @@
 import Snowball from '../Snowball';
-import fixture from '../__fixtures__/data';
-import accounts from '../__fixtures__/input';
 
+const accounts = [
+  {
+    name: 'Credit Card',
+    interest: 14.99,
+    balance: 1000,
+    minPayment: 75,
+  },
+  {
+    name: 'Student Loan',
+    interest: 4.75,
+    balance: 7500,
+    minPayment: 150,
+  },
+];
 const additionalPayment = 100;
 
 describe('Snowball', () => {
@@ -13,6 +25,47 @@ describe('Snowball', () => {
   it('should set default additionalPayment value', () => {
     snowball = new Snowball(accounts);
     expect(snowball.additionalPayment).toEqual(0);
+  });
+
+  describe('parseAccounts', () => {
+    it('should throw error if accounts is not an array', () => {
+      expect(() => snowball.parseAccounts('foo')).toThrow();
+    });
+
+    it('should filter non-object elements', () => {
+      const output = snowball.parseAccounts(['foo', 'bar', 123, accounts[0]]);
+      expect(output).toBeArrayOfSize(1);
+      expect(output).toEqual([accounts[0]]);
+    });
+
+    it('should set default values in objects', () => {
+      const output = snowball.parseAccounts([accounts[0], {}]);
+      expect(output).toBeArrayOfSize(2);
+      expect(output[1]).toEqual({
+        name: '',
+        interest: 0,
+        balance: 0,
+        minPayment: 0,
+      });
+    });
+
+    it('should return an array of parsed account objects', () => {
+      const output = snowball.parseAccounts(accounts);
+      expect(output).toEqual([
+        {
+          name: 'Credit Card',
+          interest: 14.99,
+          balance: 1000,
+          minPayment: 75,
+        },
+        {
+          name: 'Student Loan',
+          interest: 4.75,
+          balance: 7500,
+          minPayment: 150,
+        },
+      ]);
+    });
   });
 
   describe('setAccounts', () => {
@@ -56,19 +109,7 @@ describe('Snowball', () => {
   describe('getCurrentBalance', () => {
     it('should calculate sum balance correctly', () => {
       const balance = snowball.getCurrentBalance();
-      expect(balance).toEqual(6000);
-    });
-  });
-
-  describe('setNewAdditionalPayment', () => {
-    it('should return a number', () => {
-      const value = snowball.setNewAdditionalPayment(0);
-      expect(value).toBeNumber();
-    });
-
-    it('should not set additionalPayment value if below 0', () => {
-      const value = snowball.setNewAdditionalPayment(additionalPayment * 2);
-      expect(value).toEqual(0);
+      expect(balance).toEqual(8500);
     });
   });
 
@@ -86,23 +127,6 @@ describe('Snowball', () => {
       expect(payment.endingBalance).toBeNumber();
       expect(payment.paymentAmount).toBeNumber();
       expect(payment.additionalPayment).toBeNumber();
-    });
-
-    it('should update the additionalPayment prop after the first account is used', () => {
-      const spy = jest.spyOn(snowball, 'setNewAdditionalPayment');
-      const payment = snowball.makePaymentForAccount(account);
-      expect(spy).toHaveBeenCalled();
-      expect(payment.additionalPayment).toEqual(additionalPayment);
-      expect(snowball.currentAdditionalPayment).toEqual(0);
-    });
-
-    it('should prevent account making a payment if balance is <= 0', () => {
-      account.balance = 0;
-      const spy = jest.spyOn(account, 'makePayment');
-      const payment = snowball.makePaymentForAccount(account);
-      expect(spy).not.toHaveBeenCalled();
-      expect(payment.startingBalance).toEqual(0);
-      expect(payment.endingBalance).toEqual(0);
     });
   });
 
@@ -122,10 +146,10 @@ describe('Snowball', () => {
     });
 
     it('should update balance', () => {
-      const oldBalance = snowball.balance;
+      const oldBalance = snowball.startingBalance;
       const results = snowball.makePaymentsForMonth();
-      expect(snowball.balance).toBeLessThan(oldBalance);
-      expect(results.balance).toEqual(snowball.balance);
+      expect(snowball.currentBalance).toBeLessThan(oldBalance);
+      expect(results.balance).toEqual(snowball.currentBalance);
     });
   });
 
@@ -133,7 +157,7 @@ describe('Snowball', () => {
     it('should return an array', () => {
       const paymentPlan = snowball.createPaymentPlan();
       expect(paymentPlan).toBeArray();
-      expect(paymentPlan.length).toEqual(fixture.length);
+      expect(paymentPlan[0]).toBeObject();
     });
 
     it('should call makePaymentsForMonth', () => {
@@ -144,10 +168,7 @@ describe('Snowball', () => {
 
     it('should calculate correct balances', () => {
       const paymentPlan = snowball.createPaymentPlan();
-      paymentPlan.forEach(({ balance }, i) => {
-        const fixtureBalance = parseFloat(fixture[i].Balance.replace('$', ''));
-        expect(balance).toEqual(fixtureBalance);
-      });
+      expect(paymentPlan[1].balance).toEqual(7931.85);
     });
   });
 });

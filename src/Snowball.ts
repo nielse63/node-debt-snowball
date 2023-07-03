@@ -1,35 +1,55 @@
 import Account from './Account';
 import { toCurrency } from './helpers';
+import { AccountConfig } from './types';
 
 export type Payment = {
   balance: number;
   accounts: Account[];
 };
 
-export type AccountType = {
-  name: string;
-  interest: number;
-  balance: number;
-  minPayment: number;
-};
-
 class Snowball {
   accounts: Account[] = [];
   additionalPayment: number;
-  balance: number;
-  currentAdditionalPayment: number;
+  startingBalance: number;
+  currentBalance: number;
+  appliedAdditionalPayment = 0;
+  accruedAdditionalPayment = 0;
+  unappliedAdditionalPayment = 0;
   paymentPlan: Payment[] = [];
 
-  constructor(accounts: AccountType[], additionalPayment = 0) {
+  constructor(accounts: AccountConfig[], additionalPayment = 0) {
     this.setAccounts(accounts);
-    const balance = this.getCurrentBalance();
-    this.balance = balance;
+    this.startingBalance = this.getCurrentBalance();
+    this.currentBalance = this.startingBalance;
     this.additionalPayment = additionalPayment;
-    this.currentAdditionalPayment = additionalPayment;
   }
 
-  setAccounts(accounts: AccountType[]) {
-    this.accounts = accounts
+  parseAccounts(accounts: AccountConfig[]) {
+    if (!Array.isArray(accounts)) {
+      throw new Error('accounts must be an array');
+    }
+
+    return accounts
+      .filter((account) => {
+        return account?.constructor === Object;
+      })
+      .map((account) => {
+        return {
+          // @ts-expect-error set default values for account object
+          name: '',
+          // @ts-expect-error set default values for account object
+          interest: 0,
+          // @ts-expect-error set default values for account object
+          balance: 0,
+          // @ts-expect-error set default values for account object
+          minPayment: 0,
+          ...account,
+        };
+      });
+  }
+
+  setAccounts(accounts: AccountConfig[]) {
+    this.accounts = this.parseAccounts(accounts)
       .sort((a, b) => {
         if (a.interest > b.interest) return -1;
         if (a.interest < b.interest) return 1;
@@ -46,28 +66,21 @@ class Snowball {
     return toCurrency(sum);
   }
 
-  setNewAdditionalPayment(value: number) {
-    const newAdditionalPayment =
-      (this.currentAdditionalPayment || this.additionalPayment) - value;
-    return newAdditionalPayment < 0 ? 0 : newAdditionalPayment;
-  }
-
   makePaymentForAccount = (account: Account) => {
-    if (account.balance <= 0) {
-      return {
-        name: account.name,
-        startingBalance: 0,
-        endingBalance: 0,
-        paymentAmount: 0,
-        additionalPayment: 0,
-      };
+    const additionalPayment =
+      this.appliedAdditionalPayment + this.accruedAdditionalPayment;
+    if (this.appliedAdditionalPayment) {
+      this.appliedAdditionalPayment = 0;
     }
-    const additionalPayment = this.currentAdditionalPayment;
-    const payment = account.makePayment(additionalPayment);
-
-    this.currentAdditionalPayment = this.setNewAdditionalPayment(
-      payment.additionalPayment
-    );
+    if (this.accruedAdditionalPayment) {
+      this.accruedAdditionalPayment = 0;
+    }
+    const payment = account.makePayment(toCurrency(additionalPayment));
+    if (!payment.endingBalance) {
+      this.accruedAdditionalPayment =
+        account.minPayment - payment.paymentAmount;
+      this.unappliedAdditionalPayment = account.minPayment;
+    }
 
     return {
       name: account.name,
@@ -76,12 +89,20 @@ class Snowball {
   };
 
   makePaymentsForMonth() {
-    this.currentAdditionalPayment = this.additionalPayment;
-    const accounts = this.accounts.map(this.makePaymentForAccount);
-    this.balance = this.getCurrentBalance();
+    if (this.unappliedAdditionalPayment) {
+      this.additionalPayment += this.unappliedAdditionalPayment;
+      this.unappliedAdditionalPayment = 0;
+    }
+    this.appliedAdditionalPayment = this.additionalPayment;
+    const accounts = this.accounts
+      .filter((account) => {
+        return account.balance > 0;
+      })
+      .map(this.makePaymentForAccount);
+    this.currentBalance = this.getCurrentBalance();
 
     return {
-      balance: this.balance,
+      balance: this.currentBalance,
       accounts,
     };
   }
@@ -89,7 +110,7 @@ class Snowball {
   createPaymentPlan() {
     this.paymentPlan = [];
 
-    while (this.balance > 0) {
+    while (this.currentBalance > 0) {
       const payment = this.makePaymentsForMonth();
       // @ts-expect-error payment is of valid type
       this.paymentPlan.push(payment);
