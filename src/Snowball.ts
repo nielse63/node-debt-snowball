@@ -102,6 +102,12 @@ class Snowball {
     };
   }
 
+  /**
+   * Generates a payment plan
+   *
+   * @public
+   * @returns {Payment[]} - An array of payments
+   */
   createPaymentPlan() {
     this.paymentPlan = [];
 

@@ -22,17 +22,21 @@
 <li>Fully tested with 100% code coverage</li>
 <li>Module and CommonJS compatible</li>
 <li>Nightly builds to evaluate accuracy</li>
+<li>Lightweight - completely dependency free</li>
 </ul>
 <a id="md:installation" class="tsd-anchor"></a><h2><a href="#md:installation">Installation</a></h2><pre><code class="language-bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">node-debt-snowball</span>
 </code><button>Copy</button></pre>
 <a id="md:usage" class="tsd-anchor"></a><h2><a href="#md:usage">Usage</a></h2><a id="md:basic-usage" class="tsd-anchor"></a><h3><a href="#md:basic-usage">Basic Usage</a></h3><pre><code class="language-js"><span class="hl-3">import</span><span class="hl-1"> </span><span class="hl-4">snowball</span><span class="hl-1"> </span><span class="hl-3">from</span><span class="hl-1"> </span><span class="hl-2">&#39;node-debt-snowball&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">accounts</span><span class="hl-1"> = [</span><br/><span class="hl-1">  {</span><br/><span class="hl-1">    </span><span class="hl-4">name:</span><span class="hl-1"> </span><span class="hl-2">&#39;Credit Card&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">interest:</span><span class="hl-1"> </span><span class="hl-7">14.99</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">balance:</span><span class="hl-1"> </span><span class="hl-7">1000</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">minPayment:</span><span class="hl-1"> </span><span class="hl-7">75</span><span class="hl-1">,</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">  {</span><br/><span class="hl-1">    </span><span class="hl-4">name:</span><span class="hl-1"> </span><span class="hl-2">&#39;Student Loan&#39;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">interest:</span><span class="hl-1"> </span><span class="hl-7">4.75</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">balance:</span><span class="hl-1"> </span><span class="hl-7">7500</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-4">minPayment:</span><span class="hl-1"> </span><span class="hl-7">150</span><span class="hl-1">,</span><br/><span class="hl-1">  },</span><br/><span class="hl-1">];</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">additionalPayment</span><span class="hl-1"> = </span><span class="hl-7">100</span><span class="hl-1">;</span><br/><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-6">repaymentPlan</span><span class="hl-1"> = </span><span class="hl-0">snowball</span><span class="hl-1">(</span><span class="hl-4">accounts</span><span class="hl-1">, </span><span class="hl-4">additionalPayment</span><span class="hl-1">);</span><br/><span class="hl-4">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-2">&#39;repaymentPlan&#39;</span><span class="hl-1">, </span><span class="hl-4">repaymentPlan</span><span class="hl-1">);</span>
 </code><button>Copy</button></pre>
-<a id="md:api" class="tsd-anchor"></a><h3><a href="#md:api">API</a></h3><p>Full API documentation is available can be found in <a href="docs/api/modules/node_debt_snowball.html"><code>docs/api</code></a>.</p>
+<a id="md:api" class="tsd-anchor"></a><h3><a href="#md:api">API</a></h3><p>Full API documentation is available can be found in the <a href="docs/modules/node_debt_snowball.html"><code>docs/</code></a> directory.</p>
 <a id="md:response-schema" class="tsd-anchor"></a><h3><a href="#md:response-schema">Response Schema</a></h3><pre><code class="language-jsonc"><span class="hl-1">[</span><br/><span class="hl-1">  {</span><br/><span class="hl-1">    </span><span class="hl-8">&quot;balance&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;number&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">    </span><span class="hl-8">&quot;accounts&quot;</span><span class="hl-1">: [</span><br/><span class="hl-1">      {</span><br/><span class="hl-1">        </span><span class="hl-8">&quot;name&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;string&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-8">&quot;startingBalance&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;number&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-8">&quot;endingBalance&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;number&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-8">&quot;accruedInterest&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;number&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-8">&quot;additionalPayment&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;number&quot;</span><span class="hl-1">,</span><br/><span class="hl-1">        </span><span class="hl-8">&quot;paymentAmount&quot;</span><span class="hl-1">: </span><span class="hl-2">&quot;number&quot;</span><br/><span class="hl-1">      }</span><br/><span class="hl-1">      </span><span class="hl-9">// more accounts...</span><br/><span class="hl-1">    ]</span><br/><span class="hl-1">  }</span><br/><span class="hl-1">  </span><span class="hl-9">// more payment periods...</span><br/><span class="hl-1">]</span>
 </code><button>Copy</button></pre>
 <p>A full sample response can be found at <a href="examples/response.json"><code>examples/response.json</code></a>.</p>
 <a id="md:contributing" class="tsd-anchor"></a><h2><a href="#md:contributing">Contributing</a></h2><p>Clone the repo and install the dependencies:</p>
 <pre><code class="language-bash"><span class="hl-0">git</span><span class="hl-1"> </span><span class="hl-2">clone</span><span class="hl-1"> </span><span class="hl-2">https://github.com/nielse63/node-debt-snowball.git</span><br/><span class="hl-0">cd</span><span class="hl-1"> </span><span class="hl-2">node-debt-snowball</span><br/><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">ci</span>
+</code><button>Copy</button></pre>
+<a id="md:prerequisites" class="tsd-anchor"></a><h3><a href="#md:prerequisites">Prerequisites</a></h3><p>Node <code>v16.20.1</code>:</p>
+<pre><code class="language-bash"><span class="hl-0">nvm</span><span class="hl-1"> </span><span class="hl-2">use</span><span class="hl-1"> </span><span class="hl-2">v16.20.1</span>
 </code><button>Copy</button></pre>
 <a id="md:npm-scripts" class="tsd-anchor"></a><h3><a href="#md:npm-scripts">NPM Scripts</a></h3><!-- prettier-ignore-start -->
 <table>
@@ -57,6 +61,10 @@
 <tr>
 <td><code>npm run dev</code></td>
 <td>Executes the example script, saving the response to the file system</td>
+</tr>
+<tr>
+<td><code>npm run docs</code></td>
+<td>Builds the documentation</td>
 </tr>
 </tbody></table>
 <!-- prettier-ignore-end --></div></div>
@@ -95,6 +103,7 @@
 <li><a href="#md:contributing"><span>Contributing</span></a></li>
 <li>
 <ul>
+<li><a href="#md:prerequisites"><span>Prerequisites</span></a></li>
 <li><a href="#md:npm-scripts"><span>NPM <wbr/>Scripts</span></a></li></ul></li></ul></li></ul></li></ul></div></details></div>
 <div class="site-menu">
 <nav class="tsd-navigation"><a href="index.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><g id="icon-4"><rect fill="var(--color-icon-background)" stroke="var(--color-ts-namespace)" stroke-width="1.5" x="1" y="1" width="22" height="22" rx="6"></rect><path d="M9.33 16V7.24H10.77L13.446 14.74C13.43 14.54 13.41 14.296 13.386 14.008C13.37 13.712 13.354 13.404 13.338 13.084C13.33 12.756 13.326 12.448 13.326 12.16V7.24H14.37V16H12.93L10.266 8.5C10.282 8.692 10.298 8.936 10.314 9.232C10.33 9.52 10.342 9.828 10.35 10.156C10.366 10.476 10.374 10.784 10.374 11.08V16H9.33Z" fill="var(--color-text)"></path></g></svg><span>node-<wbr/>debt-<wbr/>snowball</span></a>
