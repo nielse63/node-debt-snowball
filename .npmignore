@@ -1,4 +1,2 @@
-*.config.js
-config/
 **/__tests__/
 **/__mocks__/
