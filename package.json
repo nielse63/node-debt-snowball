@@ -24,17 +24,14 @@
   ],
   "scripts": {
     "prepare": "husky || true",
-    "lint": "prettier --write . && eslint --fix .",
+    "lint": "eslint --fix . && prettier --write .",
     "test": "jest",
     "release": "release-it",
-    "dev": "node examples/index.js",
+    "predev": "npm run build",
+    "dev": "node examples/index.mjs",
     "prepublishOnly": "npm run build",
     "clean": "rm -rf ./dist",
-    "build:esm": "tsc -p ./config/tsconfig.esm.json",
-    "postbuild:esm": "mv dist/esm/index.js dist/esm/index.mjs",
-    "build:cjs": "tsc -p ./config/tsconfig.cjs.json",
-    "postbuild:cjs": "echo 'module.exports = debtSnowball;' >> dist/cjs/index.js",
-    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build": ".bin/build",
     "docs": ".bin/docs"
   },
   "repository": {

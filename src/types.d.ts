@@ -1,4 +1,4 @@
-export type AccountOptions = {
+export interface AccountObject {
   name: string;
   balance: number;
   interest: number;
@@ -10,7 +10,7 @@ export type Payment = {
   accounts: Account[];
 };
 
-export interface IPayment {
+export interface PaymentObject {
   startingBalance: number;
   endingBalance: number;
   accruedInterest: number;

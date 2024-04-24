@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+npm run clean
+tsc -p config/tsconfig.esm.json
+mv dist/esm/index.js dist/esm/index.mjs
+tsc -p ./config/tsconfig.cjs.json
+echo 'module.exports = debtSnowball;' >> dist/cjs/index.js

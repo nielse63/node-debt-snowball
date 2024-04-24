@@ -1,8 +1,6 @@
-const fs = require('fs');
-const path = require('path');
-const snowball = require('..');
+import snowball, { AccountObject } from '..';
 
-const accounts = [
+const accounts: AccountObject[] = [
   {
     name: 'Credit Card',
     interest: 14.99,
@@ -16,14 +14,8 @@ const accounts = [
     minPayment: 150,
   },
 ];
+
 const additionalPayment = 100;
 
 const repaymentPlan = snowball(accounts, additionalPayment);
 console.log('repaymentPlan', repaymentPlan);
-
-// update the example values and run `npm run dev` to see the
-// differences in `examples/response.json`
-fs.writeFileSync(
-  path.join(__dirname, 'response.json'),
-  JSON.stringify(repaymentPlan, null, '  ') + '\n'
-);

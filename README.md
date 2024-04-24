@@ -54,7 +54,7 @@ Full API documentation is available can be found at [https://nielse63.github.io/
 
 ### Response Schema
 
-```jsonc
+```json
 [
   {
     "balance": "number",

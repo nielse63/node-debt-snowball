@@ -4,13 +4,13 @@
  */
 import Account from './Account';
 import Snowball from './Snowball';
+import { AccountObject } from './types';
 
 /**
  *
- * @public
- * @param accounts {Account[]} array of Account objects
- * @param additionalPayment {number} additional payment to apply to each account
- * @returns {Payment[]} an array of Payment objects
+ * @param {AccountObject[]} accounts array of Account objects
+ * @param {number} additionalPayment additional payment to apply to each account
+ * @returns {Payment[]}
  * @example
  * import snowball from 'node-debt-snowball';
 
@@ -32,10 +32,10 @@ import Snowball from './Snowball';
 
  * const repaymentPlan = snowball(accounts, additionalPayment);
  */
-const debtSnowball = (accounts: Account[], additionalPayment = 0) => {
+const debtSnowball = (accounts: AccountObject[], additionalPayment = 0) => {
   const snowball = new Snowball(accounts, additionalPayment);
   return snowball.createPaymentPlan();
 };
 
-export { Account, Snowball };
+export { Account, AccountObject, Snowball };
 export default debtSnowball;

@@ -1,6 +1,6 @@
 import Account from './Account';
 import { toCurrency } from './helpers';
-import { AccountOptions, Payment } from './types';
+import { AccountObject, Payment } from './types';
 
 class Snowball {
   accounts: Account[] = [];
@@ -12,14 +12,14 @@ class Snowball {
   unappliedAdditionalPayment = 0;
   paymentPlan: Payment[] = [];
 
-  constructor(accounts: AccountOptions[], additionalPayment = 0) {
+  constructor(accounts: AccountObject[], additionalPayment = 0) {
     this.setAccounts(accounts);
     this.startingBalance = this.getCurrentBalance();
     this.currentBalance = this.startingBalance;
     this.additionalPayment = additionalPayment;
   }
 
-  parseAccounts(accounts: AccountOptions[]) {
+  parseAccounts(accounts: AccountObject[]) {
     if (!Array.isArray(accounts)) {
       throw new Error('accounts must be an array');
     }
@@ -43,7 +43,7 @@ class Snowball {
       });
   }
 
-  setAccounts(accounts: AccountOptions[]) {
+  setAccounts(accounts: AccountObject[]) {
     this.accounts = this.parseAccounts(accounts)
       .sort((a, b) => {
         if (a.interest > b.interest) return -1;

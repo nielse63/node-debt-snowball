@@ -1,5 +1,5 @@
 import { toCurrency } from './helpers';
-import { AccountOptions, IPayment } from './types';
+import { AccountObject, PaymentObject } from './types';
 
 class Account {
   name: string;
@@ -8,7 +8,7 @@ class Account {
   minPayment: number;
   originalBalance: number;
 
-  constructor(config: AccountOptions) {
+  constructor(config: AccountObject) {
     const { name, balance, interest, minPayment } = config;
 
     this.name = name;
@@ -25,7 +25,7 @@ class Account {
     return toCurrency(monthlyAccruedInterest);
   }
 
-  makePayment(additionalPayment = 0): IPayment {
+  makePayment(additionalPayment = 0): PaymentObject {
     // account balance before interest or payment is applied
     const startingBalance = this.balance;
     const accruedInterest = this.calculateMonthlyInterest();
