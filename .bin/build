@@ -3,9 +3,7 @@ set -e
 
 npm run clean
 tsc -p config/tsconfig.esm.json
-js_files=$(find dist/esm -name '*.js')
-for js_file in $js_files; do
-  mv "$js_file" "${js_file%.js}".mjs
-done
 tsc -p ./config/tsconfig.cjs.json
-echo 'module.exports = debtSnowball;' >> dist/cjs/index.js
+
+echo 'module.exports = snowball;' >> dist/esm/index.js
+echo 'module.exports = snowball;' >> dist/cjs/index.js
