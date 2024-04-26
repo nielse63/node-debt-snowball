@@ -1,6 +1,6 @@
 module.exports = {
   hooks: {
-    'before:init': ['npm run lint', 'npm test'],
+    'before:init': ['npm run lint', 'npm test', 'npm run build'],
   },
   github: {
     release: true,

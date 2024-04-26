@@ -32,10 +32,10 @@ import { AccountObject } from './types';
 
  * const repaymentPlan = snowball(accounts, additionalPayment);
  */
-const debtSnowball = (accounts: AccountObject[], additionalPayment = 0) => {
-  const snowball = new Snowball(accounts, additionalPayment);
-  return snowball.createPaymentPlan();
+const snowball = (accounts: AccountObject[], additionalPayment = 0) => {
+  const output = new Snowball(accounts, additionalPayment);
+  return output.createPaymentPlan();
 };
 
 export { Account, AccountObject, Snowball };
-export default debtSnowball;
+export default snowball;

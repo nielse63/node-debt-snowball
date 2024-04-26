@@ -1402,7 +1402,7 @@
 								{
 									"fileName": "src/index.ts",
 									"line": 35,
-									"character": 21,
+									"character": 17,
 									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/index.ts#L35"
 								}
 							],
@@ -1855,7 +1855,7 @@
 		}
 	],
 	"packageName": "node-debt-snowball",
-	"packageVersion": "2.1.0",
+	"packageVersion": "2.1.1",
 	"readme": [
 		{
 			"kind": "text",
@@ -1973,11 +1973,11 @@
 		},
 		"2": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "debtSnowball"
+			"qualifiedName": "snowball"
 		},
 		"3": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "debtSnowball"
+			"qualifiedName": "snowball"
 		},
 		"4": {
 			"sourceFileName": "src/index.ts",
