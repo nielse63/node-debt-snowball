@@ -173,5 +173,10 @@ describe('Snowball', () => {
       expect(paymentPlan[5].accounts[0].paymentAmount).toEqual(168.99);
       expect(paymentPlan[6].accounts).toBeArrayOfSize(1);
     });
+
+    it('should match snapshot', () => {
+      const paymentPlan = snowball.createPaymentPlan();
+      expect(paymentPlan).toMatchSnapshot();
+    });
   });
 });
