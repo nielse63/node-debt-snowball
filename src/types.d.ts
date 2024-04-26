@@ -3,7 +3,7 @@ export interface AccountObject {
   balance: number;
   interest: number;
   minPayment: number;
-};
+}
 
 export type Payment = {
   balance: number;
