@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const snowball = require('..');
+const snowball = require('../dist/index.js');
 
 const accounts = [
   {

@@ -1,4 +1,4 @@
-import snowball from '../dist/esm/index.js';
+import snowball from '../dist/index.js';
 
 const accounts = [
   {

@@ -10,10 +10,29 @@ export type Payment = {
   accounts: Account[];
 };
 
+export interface PaymentOptions {
+  balance: number;
+  interest: number;
+  payment: number;
+}
+
 export interface PaymentObject {
-  startingBalance: number;
-  endingBalance: number;
+  balanceStart: number;
+  balanceEnd: number;
+  // interestRate: number;
   accruedInterest: number;
   additionalPayment: number;
   paymentAmount: number;
+  minPayment: number;
+}
+
+export interface PaymentPlanObject {
+  balance: number;
+  accounts: PaymentObject[];
+}
+
+export interface ResultsObject {
+  totalInterestPaid: number;
+  totalPayments: number;
+  payments: Array<PaymentPlanObject>;
 }

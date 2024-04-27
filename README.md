@@ -61,8 +61,8 @@ Full API documentation is available can be found at [https://nielse63.github.io/
     "accounts": [
       {
         "name": "string",
-        "startingBalance": "number",
-        "endingBalance": "number",
+        "balanceStart": "number",
+        "balanceEnd": "number",
         "accruedInterest": "number",
         "additionalPayment": "number",
         "paymentAmount": "number"

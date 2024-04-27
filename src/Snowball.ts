@@ -1,22 +1,21 @@
 import Account from './Account';
+import Results from './Results';
 import { toCurrency } from './helpers';
-import { AccountObject, Payment } from './types';
+import { AccountObject } from './types';
 
 class Snowball {
   accounts: Account[] = [];
   additionalPayment: number;
-  startingBalance: number;
+  balanceStart: number;
   currentBalance: number;
-  appliedAdditionalPayment = 0;
-  accruedAdditionalPayment = 0;
-  unappliedAdditionalPayment = 0;
-  paymentPlan: Payment[] = [];
+  snowballAmount: number;
 
   constructor(accounts: AccountObject[], additionalPayment = 0) {
-    this.setAccounts(accounts);
-    this.startingBalance = this.getCurrentBalance();
-    this.currentBalance = this.startingBalance;
+    this.accounts = this.setAccounts(accounts);
+    this.balanceStart = this.getCurrentBalance();
+    this.currentBalance = this.balanceStart;
     this.additionalPayment = additionalPayment;
+    this.snowballAmount = additionalPayment;
   }
 
   parseAccounts(accounts: AccountObject[]) {
@@ -62,19 +61,13 @@ class Snowball {
   }
 
   makePaymentForAccount = (account: Account) => {
-    const additionalPayment =
-      this.appliedAdditionalPayment + this.accruedAdditionalPayment;
-    if (this.appliedAdditionalPayment) {
-      this.appliedAdditionalPayment = 0;
-    }
-    if (this.accruedAdditionalPayment) {
-      this.accruedAdditionalPayment = 0;
-    }
-    const payment = account.makePayment(toCurrency(additionalPayment));
-    if (!payment.endingBalance) {
-      this.accruedAdditionalPayment =
-        account.minPayment - payment.paymentAmount;
-      this.unappliedAdditionalPayment = account.minPayment;
+    const payment = account.makePayment(this.snowballAmount);
+    if (payment.balanceEnd > 0) {
+      this.snowballAmount = 0;
+    } else {
+      this.snowballAmount = toCurrency(
+        this.additionalPayment + account.minPayment - payment.paymentAmount
+      );
     }
 
     return {
@@ -84,16 +77,8 @@ class Snowball {
   };
 
   makePaymentsForMonth() {
-    if (this.unappliedAdditionalPayment) {
-      this.additionalPayment += this.unappliedAdditionalPayment;
-      this.unappliedAdditionalPayment = 0;
-    }
-    this.appliedAdditionalPayment = this.additionalPayment;
-    const accounts = this.accounts
-      .filter((account) => {
-        return account.balance > 0;
-      })
-      .map(this.makePaymentForAccount);
+    this.snowballAmount = this.additionalPayment;
+    const accounts = this.accounts.map(this.makePaymentForAccount);
     this.currentBalance = this.getCurrentBalance();
 
     return {
@@ -104,18 +89,16 @@ class Snowball {
 
   /**
    * Generates a payment plan
-   *
-   * @public
    * @returns {Payment[]} - An array of payments
    */
   createPaymentPlan() {
-    this.paymentPlan = [];
+    const paymentPlan = [];
 
     while (this.currentBalance > 0) {
       const payment = this.makePaymentsForMonth();
-      this.paymentPlan.push(payment);
+      paymentPlan.push(payment);
     }
-    return this.paymentPlan;
+    return new Results(paymentPlan);
   }
 }
 

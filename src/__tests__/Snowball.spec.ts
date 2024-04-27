@@ -123,8 +123,8 @@ describe('Snowball', () => {
       const payment = snowball.makePaymentForAccount(account);
       expect(payment).toBeObject();
       expect(payment.name).toEqual(account.name);
-      expect(payment.startingBalance).toBeNumber();
-      expect(payment.endingBalance).toBeNumber();
+      expect(payment.balanceStart).toBeNumber();
+      expect(payment.balanceEnd).toBeNumber();
       expect(payment.paymentAmount).toBeNumber();
       expect(payment.additionalPayment).toBeNumber();
     });
@@ -141,12 +141,12 @@ describe('Snowball', () => {
     it('should calculate balance correctly', () => {
       const results = snowball.makePaymentsForMonth();
       const expected =
-        results.accounts[0].endingBalance + results.accounts[1].endingBalance;
+        results.accounts[0].balanceEnd + results.accounts[1].balanceEnd;
       expect(results.balance).toEqual(expected);
     });
 
     it('should update balance', () => {
-      const oldBalance = snowball.startingBalance;
+      const oldBalance = snowball.balanceStart;
       const results = snowball.makePaymentsForMonth();
       expect(snowball.currentBalance).toBeLessThan(oldBalance);
       expect(results.balance).toEqual(snowball.currentBalance);
@@ -155,9 +155,9 @@ describe('Snowball', () => {
 
   describe('createPaymentPlan', () => {
     it('should return an array', () => {
-      const paymentPlan = snowball.createPaymentPlan();
-      expect(paymentPlan).toBeArray();
-      expect(paymentPlan[0]).toBeObject();
+      const { payments } = snowball.createPaymentPlan();
+      expect(payments).toBeArray();
+      expect(payments[0]).toBeObject();
     });
 
     it('should call makePaymentsForMonth', () => {
@@ -167,16 +167,15 @@ describe('Snowball', () => {
     });
 
     it('should calculate correct balances', () => {
-      const paymentPlan = snowball.createPaymentPlan();
-      expect(paymentPlan[1].balance).toEqual(7931.85);
-      expect(paymentPlan[4].accounts[0].paymentAmount).toEqual(175);
-      expect(paymentPlan[5].accounts[0].paymentAmount).toEqual(168.99);
-      expect(paymentPlan[6].accounts).toBeArrayOfSize(1);
+      const { payments } = snowball.createPaymentPlan();
+      expect(payments[1].balance).toEqual(7931.85);
+      expect(payments[4].accounts[0].paymentAmount).toEqual(175);
+      expect(payments[5].accounts[0].paymentAmount).toEqual(166.91);
     });
 
     it('should match snapshot', () => {
-      const paymentPlan = snowball.createPaymentPlan();
-      expect(paymentPlan).toMatchSnapshot();
+      const payments = snowball.createPaymentPlan();
+      expect(payments).toMatchSnapshot();
     });
   });
 });

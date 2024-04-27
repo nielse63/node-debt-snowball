@@ -2,8 +2,6 @@
 set -e
 
 npm run clean
-tsc -p config/tsconfig.esm.json
-tsc -p ./config/tsconfig.cjs.json
+tsc -p ./config/tsconfig.build.json
 
-echo 'module.exports = snowball;' >> dist/esm/index.js
-echo 'module.exports = snowball;' >> dist/cjs/index.js
+echo 'module.exports = snowball;' >> dist/index.js

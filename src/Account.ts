@@ -1,3 +1,4 @@
+import Payment from './Payment';
 import { toCurrency } from './helpers';
 import { AccountObject, PaymentObject } from './types';
 
@@ -16,36 +17,42 @@ class Account {
     this.originalBalance = balance;
     this.interest = interest;
     this.minPayment = minPayment;
-  }
 
-  calculateMonthlyInterest() {
-    // (Total Amount Owed X Interest Rate) / 12 = Monthly Interest You Pay
-    const interestRate = this.interest / 100;
-    const monthlyAccruedInterest = (this.balance * interestRate) / 12;
-    return toCurrency(monthlyAccruedInterest);
+    if (this.minPayment <= 0) {
+      throw new Error('Minimum payment must be greater than 0');
+    }
   }
 
   makePayment(additionalPayment = 0): PaymentObject {
-    // account balance before interest or payment is applied
-    const startingBalance = this.balance;
-    const accruedInterest = this.calculateMonthlyInterest();
-    let endPeriodBalance = toCurrency(startingBalance + accruedInterest);
-    let initialPaymentAmount = this.minPayment + additionalPayment;
-    if (endPeriodBalance - initialPaymentAmount <= 0) {
-      initialPaymentAmount = endPeriodBalance;
+    if (this.balance <= 0) {
+      return {
+        balanceStart: this.balance,
+        balanceEnd: this.balance,
+        accruedInterest: 0,
+        minPayment: this.minPayment,
+        additionalPayment: 0,
+        paymentAmount: 0,
+      };
     }
-    const paymentAmount = toCurrency(initialPaymentAmount);
-    endPeriodBalance -= paymentAmount;
 
-    // set new balance values
-    const endingBalance = toCurrency(endPeriodBalance);
-    this.balance = endingBalance;
+    const payment = new Payment({
+      balance: this.balance,
+      interest: this.interest,
+      payment: this.minPayment + additionalPayment,
+    });
+    const { interest: accruedInterest } = payment;
+
+    const originalBalance = this.balance;
+    this.balance = payment.balance;
+    const paymentAmount = this.balance <= 0 ? originalBalance : payment.payment;
 
     return {
-      startingBalance,
-      endingBalance,
+      balanceStart: toCurrency(originalBalance),
+      balanceEnd: toCurrency(this.balance),
       accruedInterest,
+      minPayment: toCurrency(this.minPayment),
       additionalPayment,
+      // paymentAmount: toCurrency(payment.payment),
       paymentAmount,
     };
   }

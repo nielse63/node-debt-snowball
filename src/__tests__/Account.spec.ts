@@ -28,23 +28,15 @@ describe('Account', () => {
     account = new Account(creditCard);
   });
 
-  describe('calculateMonthlyInterest', () => {
-    it('should return monthly interest rate accurately', () => {
-      const expected = getMonthlyInterest(creditCard);
-      const actual = account.calculateMonthlyInterest();
-      expect(actual).toEqual(expected);
-    });
-  });
-
   describe('makePayment', () => {
     it('should return object with defined shape', () => {
       const payment = account.makePayment(additionalPayment);
       expect(payment).toBeObject();
 
-      expect(payment.startingBalance).toBeNumber();
-      expect(payment.startingBalance).toEqual(creditCard.balance);
+      expect(payment.balanceStart).toBeNumber();
+      expect(payment.balanceStart).toEqual(creditCard.balance);
 
-      expect(payment.endingBalance).toBeNumber();
+      expect(payment.balanceEnd).toBeNumber();
 
       expect(payment.paymentAmount).toBeNumber();
       expect(payment.paymentAmount).toEqual(
@@ -62,12 +54,12 @@ describe('Account', () => {
 
     it('should accurately calculate new balance', () => {
       const interest = getMonthlyInterest(creditCard);
-      const endingBalance =
+      const balanceEnd =
         creditCard.balance +
         interest -
         (creditCard.minPayment + additionalPayment);
       const payment = account.makePayment(additionalPayment);
-      expect(payment.endingBalance).toEqual(endingBalance);
+      expect(payment.balanceEnd).toEqual(balanceEnd);
     });
   });
 });

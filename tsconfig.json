@@ -15,5 +15,5 @@
     "**/dist/**",
     "**/*.spec.*"
   ],
-  "files": ["global.d.ts"]
+  "files": ["global.d.ts", "src/types.d.ts"]
 }
