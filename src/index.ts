@@ -6,7 +6,7 @@ import Account from './Account';
 import Payment from './Payment';
 import Results from './Results';
 import Snowball from './Snowball';
-import type { AccountObject } from './types';
+import type { AccountObject } from './types.d';
 
 /**
  *
@@ -39,6 +39,5 @@ const snowball = (accounts: AccountObject[], additionalPayment = 0) => {
   return output.createPaymentPlan();
 };
 
-export * from './types';
 export { Account, Payment, Results, Snowball, snowball };
 export default snowball;

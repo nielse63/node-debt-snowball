@@ -1,7 +1,7 @@
 import Payment from './Payment';
 import { ERROR_MESSAGES } from './constants';
 import { toCurrency } from './helpers';
-import { AccountObject, PaymentObject } from './types';
+import type { AccountObject, PaymentObject } from './types.d';
 
 class Account {
   name: string;

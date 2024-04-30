@@ -1,7 +1,7 @@
 import Account from './Account';
 import Results from './Results';
 import { toCurrency } from './helpers';
-import { AccountObject } from './types';
+import type { AccountObject } from './types.d';
 
 class Snowball {
   accounts: Account[] = [];

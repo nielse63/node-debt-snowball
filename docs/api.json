@@ -21,86 +21,6 @@
 			},
 			"children": [
 				{
-					"id": 116,
-					"name": "AccountObject",
-					"variant": "reference",
-					"kind": 4194304,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "src/types.d.ts",
-							"line": 1,
-							"character": 17,
-							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.d.ts#L1"
-						}
-					],
-					"target": 8
-				},
-				{
-					"id": 118,
-					"name": "PaymentObject",
-					"variant": "reference",
-					"kind": 4194304,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "src/types.d.ts",
-							"line": 19,
-							"character": 17,
-							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.d.ts#L19"
-						}
-					],
-					"target": 21
-				},
-				{
-					"id": 117,
-					"name": "PaymentOptions",
-					"variant": "reference",
-					"kind": 4194304,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "src/types.d.ts",
-							"line": 13,
-							"character": 17,
-							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.d.ts#L13"
-						}
-					],
-					"target": 17
-				},
-				{
-					"id": 119,
-					"name": "PaymentPlanObject",
-					"variant": "reference",
-					"kind": 4194304,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "src/types.d.ts",
-							"line": 29,
-							"character": 17,
-							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.d.ts#L29"
-						}
-					],
-					"target": 28
-				},
-				{
-					"id": 120,
-					"name": "ResultsObject",
-					"variant": "reference",
-					"kind": 4194304,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "src/types.d.ts",
-							"line": 34,
-							"character": 17,
-							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.d.ts#L34"
-						}
-					],
-					"target": 31
-				},
-				{
 					"id": 6,
 					"name": "default",
 					"variant": "reference",
@@ -109,9 +29,9 @@
 					"sources": [
 						{
 							"fileName": "src/index.ts",
-							"line": 44,
+							"line": 43,
 							"character": 0,
-							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/index.ts#L44"
+							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/index.ts#L43"
 						}
 					],
 					"target": 2
@@ -1914,11 +1834,6 @@
 				{
 					"title": "References",
 					"children": [
-						116,
-						118,
-						117,
-						119,
-						120,
 						6
 					]
 				},
@@ -2579,7 +2494,7 @@
 		}
 	],
 	"packageName": "node-debt-snowball",
-	"packageVersion": "2.2.0",
+	"packageVersion": "2.3.0",
 	"readme": [
 		{
 			"kind": "text",
@@ -3150,26 +3065,6 @@
 		"115": {
 			"sourceFileName": "src/Snowball.ts",
 			"qualifiedName": "Snowball.createPaymentPlan"
-		},
-		"116": {
-			"sourceFileName": "src/types.d.ts",
-			"qualifiedName": "AccountObject"
-		},
-		"117": {
-			"sourceFileName": "src/types.d.ts",
-			"qualifiedName": "PaymentOptions"
-		},
-		"118": {
-			"sourceFileName": "src/types.d.ts",
-			"qualifiedName": "PaymentObject"
-		},
-		"119": {
-			"sourceFileName": "src/types.d.ts",
-			"qualifiedName": "PaymentPlanObject"
-		},
-		"120": {
-			"sourceFileName": "src/types.d.ts",
-			"qualifiedName": "ResultsObject"
 		}
 	}
 }
