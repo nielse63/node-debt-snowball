@@ -3,8 +3,10 @@
  * @module node-debt-snowball
  */
 import Account from './Account';
+import Payment from './Payment';
+import Results from './Results';
 import Snowball from './Snowball';
-import { AccountObject } from './types';
+import type { AccountObject } from './types';
 
 /**
  *
@@ -37,5 +39,6 @@ const snowball = (accounts: AccountObject[], additionalPayment = 0) => {
   return output.createPaymentPlan();
 };
 
-export { Account, AccountObject, Snowball };
+export * from './types';
+export { Account, Payment, Results, Snowball, snowball };
 export default snowball;
