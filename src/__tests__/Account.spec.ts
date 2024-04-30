@@ -28,6 +28,25 @@ describe('Account', () => {
     account = new Account(creditCard);
   });
 
+  describe('constructor', () => {
+    it('should throw errors for 0 values', () => {
+      expect(() => {
+        new Account({ name: 'test', balance: 0, interest: 0, minPayment: 0 });
+      }).toThrow();
+      expect(() => {
+        new Account({ name: 'test', balance: 100, interest: 0, minPayment: 0 });
+      }).toThrow();
+      expect(() => {
+        new Account({
+          name: 'test',
+          balance: 100,
+          interest: 10,
+          minPayment: 0,
+        });
+      }).toThrow();
+    });
+  });
+
   describe('makePayment', () => {
     it('should return object with defined shape', () => {
       const payment = account.makePayment(additionalPayment);

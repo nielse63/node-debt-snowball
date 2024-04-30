@@ -64,7 +64,7 @@ class Snowball {
     const payment = account.makePayment(this.snowballAmount);
     if (payment.balanceEnd > 0) {
       this.snowballAmount = 0;
-    } else {
+    } else if (this.balanceStart > 0) {
       this.snowballAmount = toCurrency(
         this.additionalPayment + account.minPayment - payment.paymentAmount
       );

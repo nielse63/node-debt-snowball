@@ -1,5 +1,6 @@
 import { toCurrency } from './helpers';
 import { PaymentOptions } from './types';
+import { ERROR_MESSAGES } from './constants';
 
 class Payment {
   private _balance: number;
@@ -8,7 +9,7 @@ class Payment {
 
   constructor(options: PaymentOptions) {
     if (!options.balance || !options.interest || !options.payment) {
-      throw new Error('Balance, interest, and payment are required');
+      throw new Error(ERROR_MESSAGES.PAYMENT_OPTIONS_ERROR);
     }
     this._balance = options.balance;
     this.interestRate = options.interest;

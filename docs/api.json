@@ -52,9 +52,9 @@
 							"sources": [
 								{
 									"fileName": "src/Account.ts",
-									"line": 12,
+									"line": 13,
 									"character": 2,
-									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Account.ts#L12"
+									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Account.ts#L13"
 								}
 							],
 							"signatures": [
@@ -67,9 +67,9 @@
 									"sources": [
 										{
 											"fileName": "src/Account.ts",
-											"line": 12,
+											"line": 13,
 											"character": 2,
-											"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Account.ts#L12"
+											"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Account.ts#L13"
 										}
 									],
 									"parameters": [
@@ -97,17 +97,19 @@
 							]
 						},
 						{
-							"id": 39,
-							"name": "balance",
+							"id": 42,
+							"name": "_originalBalance",
 							"variant": "declaration",
 							"kind": 1024,
-							"flags": {},
+							"flags": {
+								"isPrivate": true
+							},
 							"sources": [
 								{
 									"fileName": "src/Account.ts",
-									"line": 7,
-									"character": 2,
-									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Account.ts#L7"
+									"line": 11,
+									"character": 10,
+									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Account.ts#L11"
 								}
 							],
 							"type": {
@@ -116,8 +118,8 @@
 							}
 						},
 						{
-							"id": 40,
-							"name": "interest",
+							"id": 39,
+							"name": "balance",
 							"variant": "declaration",
 							"kind": 1024,
 							"flags": {},
@@ -135,8 +137,8 @@
 							}
 						},
 						{
-							"id": 41,
-							"name": "minPayment",
+							"id": 40,
+							"name": "interest",
 							"variant": "declaration",
 							"kind": 1024,
 							"flags": {},
@@ -154,27 +156,8 @@
 							}
 						},
 						{
-							"id": 38,
-							"name": "name",
-							"variant": "declaration",
-							"kind": 1024,
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "src/Account.ts",
-									"line": 6,
-									"character": 2,
-									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Account.ts#L6"
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "string"
-							}
-						},
-						{
-							"id": 42,
-							"name": "originalBalance",
+							"id": 41,
+							"name": "minPayment",
 							"variant": "declaration",
 							"kind": 1024,
 							"flags": {},
@@ -192,6 +175,25 @@
 							}
 						},
 						{
+							"id": 38,
+							"name": "name",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "src/Account.ts",
+									"line": 7,
+									"character": 2,
+									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Account.ts#L7"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							}
+						},
+						{
 							"id": 43,
 							"name": "makePayment",
 							"variant": "declaration",
@@ -200,9 +202,9 @@
 							"sources": [
 								{
 									"fileName": "src/Account.ts",
-									"line": 26,
+									"line": 33,
 									"character": 2,
-									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Account.ts#L26"
+									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Account.ts#L33"
 								}
 							],
 							"signatures": [
@@ -215,9 +217,9 @@
 									"sources": [
 										{
 											"fileName": "src/Account.ts",
-											"line": 26,
+											"line": 33,
 											"character": 2,
-											"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Account.ts#L26"
+											"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Account.ts#L33"
 										}
 									],
 									"parameters": [
@@ -254,11 +256,11 @@
 						{
 							"title": "Properties",
 							"children": [
+								42,
 								39,
 								40,
 								41,
-								38,
-								42
+								38
 							]
 						},
 						{
@@ -271,9 +273,9 @@
 					"sources": [
 						{
 							"fileName": "src/Account.ts",
-							"line": 5,
+							"line": 6,
 							"character": 6,
-							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Account.ts#L5"
+							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Account.ts#L6"
 						}
 					]
 				},
@@ -2050,7 +2052,7 @@
 		}
 	],
 	"packageName": "node-debt-snowball",
-	"packageVersion": "2.1.5",
+	"packageVersion": "2.2.0",
 	"readme": [
 		{
 			"kind": "text",
@@ -2328,7 +2330,7 @@
 		},
 		"42": {
 			"sourceFileName": "src/Account.ts",
-			"qualifiedName": "Account.originalBalance"
+			"qualifiedName": "Account._originalBalance"
 		},
 		"43": {
 			"sourceFileName": "src/Account.ts",

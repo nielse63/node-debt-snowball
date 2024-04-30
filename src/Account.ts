@@ -1,4 +1,5 @@
 import Payment from './Payment';
+import { ERROR_MESSAGES } from './constants';
 import { toCurrency } from './helpers';
 import { AccountObject, PaymentObject } from './types';
 
@@ -7,19 +8,25 @@ class Account {
   balance: number;
   interest: number;
   minPayment: number;
-  originalBalance: number;
+  private _originalBalance: number;
 
   constructor(config: AccountObject) {
     const { name, balance, interest, minPayment } = config;
 
     this.name = name;
     this.balance = balance;
-    this.originalBalance = balance;
+    this._originalBalance = balance;
     this.interest = interest;
     this.minPayment = minPayment;
 
+    if (this.balance <= 0) {
+      throw new Error(ERROR_MESSAGES.BALANCE_ERROR);
+    }
+    if (this.interest <= 0) {
+      throw new Error(ERROR_MESSAGES.INTEREST_RATE_ERROR);
+    }
     if (this.minPayment <= 0) {
-      throw new Error('Minimum payment must be greater than 0');
+      throw new Error(ERROR_MESSAGES.MIN_PAYMENT_ERROR);
     }
   }
 
@@ -42,6 +49,11 @@ class Account {
     });
     const { interest: accruedInterest } = payment;
 
+    // throw error if accrued interest is greater than the minimum payment
+    if (accruedInterest >= this.minPayment) {
+      throw new Error(ERROR_MESSAGES.MIN_PAYMENT_NOT_ENOUGH);
+    }
+
     const originalBalance = this.balance;
     this.balance = payment.balance;
     const paymentAmount = this.balance <= 0 ? originalBalance : payment.payment;
@@ -52,7 +64,6 @@ class Account {
       accruedInterest,
       minPayment: toCurrency(this.minPayment),
       additionalPayment,
-      // paymentAmount: toCurrency(payment.payment),
       paymentAmount,
     };
   }
