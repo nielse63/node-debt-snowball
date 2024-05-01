@@ -1,7 +1,7 @@
 {
   "$schema": "https://typedoc.org/schema.json",
   "basePath": "../",
-  "entryPoints": ["../src/index.ts", "../src/types.ts"],
+  "entryPoints": ["../src/index.ts"],
   "out": "../docs",
   "json": "../docs/api.json",
   "exclude": ["**/__tests__/**", "**/__mocks__/**"],
