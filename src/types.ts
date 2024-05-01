@@ -24,6 +24,7 @@ export interface PaymentObject {
   additionalPayment: number;
   paymentAmount: number;
   minPayment: number;
+  name?: string;
 }
 
 export interface PaymentPlanObject {

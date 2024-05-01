@@ -517,7 +517,7 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"target": 102,
+											"target": 103,
 											"name": "PaymentPlanObject",
 											"package": "node-debt-snowball"
 										}
@@ -551,7 +551,7 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"target": 102,
+							"target": 103,
 							"name": "PaymentPlanObject",
 							"package": "node-debt-snowball"
 						}
@@ -559,7 +559,7 @@
 					"defaultValue": "[]",
 					"implementationOf": {
 						"type": "reference",
-						"target": 108,
+						"target": 109,
 						"name": "ResultsObject.payments"
 					}
 				},
@@ -584,7 +584,7 @@
 					"defaultValue": "0",
 					"implementationOf": {
 						"type": "reference",
-						"target": 106,
+						"target": 107,
 						"name": "ResultsObject.totalInterestPaid"
 					}
 				},
@@ -609,7 +609,7 @@
 					"defaultValue": "0",
 					"implementationOf": {
 						"type": "reference",
-						"target": 107,
+						"target": 108,
 						"name": "ResultsObject.totalPayments"
 					}
 				},
@@ -683,7 +683,7 @@
 			"implementedTypes": [
 				{
 					"type": "reference",
-					"target": 105,
+					"target": 106,
 					"name": "ResultsObject",
 					"package": "node-debt-snowball"
 				}
@@ -1118,6 +1118,12 @@
 													"line": 74,
 													"character": 6,
 													"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Snowball.ts#L74"
+												},
+												{
+													"fileName": "src/types.ts",
+													"line": 27,
+													"character": 2,
+													"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.ts#L27"
 												}
 											],
 											"type": {
@@ -1343,6 +1349,12 @@
 																		"line": 74,
 																		"character": 6,
 																		"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Snowball.ts#L74"
+																	},
+																	{
+																		"fileName": "src/types.ts",
+																		"line": 27,
+																		"character": 2,
+																		"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.ts#L27"
 																	}
 																],
 																"type": {
@@ -1905,6 +1917,27 @@
 					}
 				},
 				{
+					"id": 102,
+					"name": "name",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 27,
+							"character": 2,
+							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.ts#L27"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
 					"id": 100,
 					"name": "paymentAmount",
 					"variant": "declaration",
@@ -1933,6 +1966,7 @@
 						97,
 						96,
 						101,
+						102,
 						100
 					]
 				}
@@ -2031,14 +2065,14 @@
 			]
 		},
 		{
-			"id": 102,
+			"id": 103,
 			"name": "PaymentPlanObject",
 			"variant": "declaration",
 			"kind": 256,
 			"flags": {},
 			"children": [
 				{
-					"id": 104,
+					"id": 105,
 					"name": "accounts",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2046,9 +2080,9 @@
 					"sources": [
 						{
 							"fileName": "src/types.ts",
-							"line": 31,
+							"line": 32,
 							"character": 2,
-							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.ts#L31"
+							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.ts#L32"
 						}
 					],
 					"type": {
@@ -2062,7 +2096,7 @@
 					}
 				},
 				{
-					"id": 103,
+					"id": 104,
 					"name": "balance",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2070,9 +2104,9 @@
 					"sources": [
 						{
 							"fileName": "src/types.ts",
-							"line": 30,
+							"line": 31,
 							"character": 2,
-							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.ts#L30"
+							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.ts#L31"
 						}
 					],
 					"type": {
@@ -2085,29 +2119,29 @@
 				{
 					"title": "Properties",
 					"children": [
-						104,
-						103
+						105,
+						104
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "src/types.ts",
-					"line": 29,
+					"line": 30,
 					"character": 17,
-					"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.ts#L29"
+					"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.ts#L30"
 				}
 			]
 		},
 		{
-			"id": 105,
+			"id": 106,
 			"name": "ResultsObject",
 			"variant": "declaration",
 			"kind": 256,
 			"flags": {},
 			"children": [
 				{
-					"id": 108,
+					"id": 109,
 					"name": "payments",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2115,43 +2149,24 @@
 					"sources": [
 						{
 							"fileName": "src/types.ts",
-							"line": 37,
+							"line": 38,
 							"character": 2,
-							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.ts#L37"
+							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.ts#L38"
 						}
 					],
 					"type": {
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"target": 102,
+							"target": 103,
 							"name": "PaymentPlanObject",
 							"package": "node-debt-snowball"
 						}
 					}
 				},
 				{
-					"id": 106,
-					"name": "totalInterestPaid",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "src/types.ts",
-							"line": 35,
-							"character": 2,
-							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.ts#L35"
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "number"
-					}
-				},
-				{
 					"id": 107,
-					"name": "totalPayments",
+					"name": "totalInterestPaid",
 					"variant": "declaration",
 					"kind": 1024,
 					"flags": {},
@@ -2167,24 +2182,43 @@
 						"type": "intrinsic",
 						"name": "number"
 					}
+				},
+				{
+					"id": 108,
+					"name": "totalPayments",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/types.ts",
+							"line": 37,
+							"character": 2,
+							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.ts#L37"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
 				}
 			],
 			"groups": [
 				{
 					"title": "Properties",
 					"children": [
-						108,
-						106,
-						107
+						109,
+						107,
+						108
 					]
 				}
 			],
 			"sources": [
 				{
 					"fileName": "src/types.ts",
-					"line": 34,
+					"line": 35,
 					"character": 17,
-					"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.ts#L34"
+					"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/types.ts#L35"
 				}
 			],
 			"implementedBy": [
@@ -2320,8 +2354,8 @@
 				86,
 				95,
 				91,
-				102,
-				105
+				103,
+				106
 			]
 		},
 		{
@@ -2332,7 +2366,7 @@
 		}
 	],
 	"packageName": "node-debt-snowball",
-	"packageVersion": "2.3.1",
+	"packageVersion": "2.3.2",
 	"readme": [
 		{
 			"kind": "text",
@@ -2726,7 +2760,7 @@
 		},
 		"70": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "__object.name"
+			"qualifiedName": "name"
 		},
 		"71": {
 			"sourceFileName": "src/Snowball.ts",
@@ -2778,7 +2812,7 @@
 		},
 		"83": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "__object.name"
+			"qualifiedName": "name"
 		},
 		"84": {
 			"sourceFileName": "src/Snowball.ts",
@@ -2854,29 +2888,33 @@
 		},
 		"102": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentPlanObject"
+			"qualifiedName": "PaymentObject.name"
 		},
 		"103": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentPlanObject.balance"
+			"qualifiedName": "PaymentPlanObject"
 		},
 		"104": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentPlanObject.accounts"
+			"qualifiedName": "PaymentPlanObject.balance"
 		},
 		"105": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "ResultsObject"
+			"qualifiedName": "PaymentPlanObject.accounts"
 		},
 		"106": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "ResultsObject.totalInterestPaid"
+			"qualifiedName": "ResultsObject"
 		},
 		"107": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "ResultsObject.totalPayments"
+			"qualifiedName": "ResultsObject.totalInterestPaid"
 		},
 		"108": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "ResultsObject.totalPayments"
+		},
+		"109": {
 			"sourceFileName": "src/types.ts",
 			"qualifiedName": "ResultsObject.payments"
 		}
