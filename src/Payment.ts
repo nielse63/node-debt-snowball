@@ -1,6 +1,6 @@
 import { ERROR_MESSAGES } from './constants';
 import { toCurrency } from './helpers';
-import type { PaymentOptions } from './types.d';
+import type { PaymentOptions } from './types';
 
 class Payment {
   private _balance: number;

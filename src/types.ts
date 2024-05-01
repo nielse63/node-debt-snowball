@@ -7,7 +7,7 @@ export interface AccountObject {
 
 export type Payment = {
   balance: number;
-  accounts: Account[];
+  accounts: AccountObject[];
 };
 
 export interface PaymentOptions {

@@ -1,21 +1,19 @@
 import Payment from './Payment';
 import { ERROR_MESSAGES } from './constants';
 import { toCurrency } from './helpers';
-import type { AccountObject, PaymentObject } from './types.d';
+import type { AccountObject, PaymentObject } from './types';
 
 class Account {
   name: string;
   balance: number;
   interest: number;
   minPayment: number;
-  private _originalBalance: number;
 
   constructor(config: AccountObject) {
     const { name, balance, interest, minPayment } = config;
 
     this.name = name;
     this.balance = balance;
-    this._originalBalance = balance;
     this.interest = interest;
     this.minPayment = minPayment;
 

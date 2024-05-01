@@ -1,5 +1,5 @@
 import { toCurrency } from './helpers';
-import type { PaymentPlanObject, ResultsObject } from './types.d';
+import type { PaymentPlanObject, ResultsObject } from './types';
 
 class Results implements ResultsObject {
   totalInterestPaid = 0;
