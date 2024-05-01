@@ -19,12 +19,11 @@ export interface PaymentOptions {
 export interface PaymentObject {
   balanceStart: number;
   balanceEnd: number;
-  // interestRate: number;
   accruedInterest: number;
   additionalPayment: number;
   paymentAmount: number;
   minPayment: number;
-  name?: string;
+  name: string;
 }
 
 export interface PaymentPlanObject {

@@ -70,10 +70,7 @@ class Snowball {
       );
     }
 
-    return {
-      name: account.name,
-      ...payment,
-    };
+    return { ...payment };
   };
 
   makePaymentsForMonth() {

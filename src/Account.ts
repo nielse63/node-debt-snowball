@@ -37,6 +37,7 @@ class Account {
         minPayment: this.minPayment,
         additionalPayment: 0,
         paymentAmount: 0,
+        name: this.name,
       };
     }
 
@@ -63,6 +64,7 @@ class Account {
       minPayment: toCurrency(this.minPayment),
       additionalPayment,
       paymentAmount,
+      name: this.name,
     };
   }
 }
