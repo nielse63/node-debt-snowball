@@ -80,5 +80,17 @@ describe('Account', () => {
       const payment = account.makePayment(additionalPayment);
       expect(payment.balanceEnd).toEqual(balanceEnd);
     });
+
+    it('should throw an error if accrued interest > min payment', () => {
+      account = new Account({
+        name: 'Credit Card',
+        interest: 29.99,
+        balance: 1000,
+        minPayment: 5,
+      });
+      expect(() => {
+        account.makePayment(0);
+      }).toThrow();
+    });
   });
 });

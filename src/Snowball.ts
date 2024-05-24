@@ -60,7 +60,7 @@ class Snowball {
     return toCurrency(sum);
   }
 
-  makePaymentForAccount = (account: Account) => {
+  makePaymentForAccount(account: Account) {
     const payment = account.makePayment(this.snowballAmount);
     if (payment.balanceEnd > 0) {
       this.snowballAmount = 0;
@@ -71,11 +71,13 @@ class Snowball {
     }
 
     return { ...payment };
-  };
+  }
 
   makePaymentsForMonth() {
     this.snowballAmount = this.additionalPayment;
-    const accounts = this.accounts.map(this.makePaymentForAccount);
+    const accounts = this.accounts.map((account) => {
+      return this.makePaymentForAccount(account);
+    });
     this.currentBalance = this.getCurrentBalance();
 
     return {

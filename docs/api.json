@@ -874,9 +874,9 @@
 					"sources": [
 						{
 							"fileName": "src/Snowball.ts",
-							"line": 91,
+							"line": 93,
 							"character": 2,
-							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Snowball.ts#L91"
+							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Snowball.ts#L93"
 						}
 					],
 					"signatures": [
@@ -908,9 +908,9 @@
 							"sources": [
 								{
 									"fileName": "src/Snowball.ts",
-									"line": 91,
+									"line": 93,
 									"character": 2,
-									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Snowball.ts#L91"
+									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Snowball.ts#L93"
 								}
 							],
 							"type": {
@@ -983,7 +983,7 @@
 								{
 									"fileName": "src/Snowball.ts",
 									"line": 63,
-									"character": 26,
+									"character": 2,
 									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Snowball.ts#L63"
 								}
 							],
@@ -1219,9 +1219,9 @@
 											"sources": [
 												{
 													"fileName": "src/Snowball.ts",
-													"line": 83,
+													"line": 85,
 													"character": 6,
-													"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Snowball.ts#L83"
+													"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Snowball.ts#L85"
 												}
 											],
 											"type": {
@@ -1404,9 +1404,9 @@
 											"sources": [
 												{
 													"fileName": "src/Snowball.ts",
-													"line": 82,
+													"line": 84,
 													"character": 6,
-													"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Snowball.ts#L82"
+													"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Snowball.ts#L84"
 												}
 											],
 											"type": {
@@ -1428,9 +1428,9 @@
 									"sources": [
 										{
 											"fileName": "src/Snowball.ts",
-											"line": 81,
+											"line": 83,
 											"character": 11,
-											"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Snowball.ts#L81"
+											"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Snowball.ts#L83"
 										}
 									]
 								}
@@ -2350,7 +2350,7 @@
 		}
 	],
 	"packageName": "node-debt-snowball",
-	"packageVersion": "2.3.3",
+	"packageVersion": "2.3.4",
 	"readme": [
 		{
 			"kind": "text",
