@@ -69,7 +69,7 @@ describe('Snowball', () => {
   });
 
   describe('sortAccounts', () => {
-    it('should sort accounts by interest rate descending for avalance strategy', () => {
+    it('should sort accounts by interest rate descending for avalanche strategy', () => {
       const sorted = snowball.sortAccounts(accounts);
       expect(sorted[0].name).toEqual('Credit Card');
     });
@@ -98,8 +98,8 @@ describe('Snowball', () => {
   });
 
   describe('getSortKeyAndOrder', () => {
-    it('should return correct key and order for avalance strategy', () => {
-      snowball.strategy = 'avalance';
+    it('should return correct key and order for avalanche strategy', () => {
+      snowball.strategy = 'avalanche';
       const { key, order } = snowball.getSortKeyAndOrder();
       expect(key).toEqual('interest');
       expect(order).toEqual('descending');
@@ -218,7 +218,7 @@ describe('Snowball', () => {
       expect(payments[5].accounts[0].paymentAmount).toEqual(166.91);
     });
 
-    it('should match snapshot for avalance', () => {
+    it('should match snapshot for avalanche', () => {
       const payments = snowball.createPaymentPlan();
       expect(payments).toMatchSnapshot();
     });

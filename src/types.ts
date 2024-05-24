@@ -18,7 +18,7 @@ export enum OrderDirection {
 }
 
 export enum RepaymentStrategy {
-  avalance = 'avalance',
+  avalanche = 'avalanche',
   snowball = 'snowball',
 }
 

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Snowball createPaymentPlan should match snapshot for avalance 1`] = `
+exports[`Snowball createPaymentPlan should match snapshot for avalanche 1`] = `
 Results {
   "payments": [
     {

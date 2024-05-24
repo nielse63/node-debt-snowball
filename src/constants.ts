@@ -7,6 +7,6 @@ export const ERROR_MESSAGES = {
 };
 
 export const REPAYMENT_STRATEGIES = {
-  AVALANCHE: 'avalance',
+  AVALANCHE: 'avalanche',
   SNOWBALL: 'snowball',
 };

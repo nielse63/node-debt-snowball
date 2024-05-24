@@ -206,7 +206,7 @@
 			"children": [
 				{
 					"id": 116,
-					"name": "avalance",
+					"name": "avalanche",
 					"variant": "declaration",
 					"kind": 16,
 					"flags": {},
@@ -220,7 +220,7 @@
 					],
 					"type": {
 						"type": "literal",
-						"value": "avalance"
+						"value": "avalanche"
 					}
 				},
 				{
@@ -2714,7 +2714,7 @@
 								"type": "intrinsic",
 								"name": "string"
 							},
-							"defaultValue": "'avalance'"
+							"defaultValue": "'avalanche'"
 						},
 						{
 							"id": 31,
@@ -2925,7 +2925,7 @@
 		},
 		{
 			"kind": "code",
-			"text": "```js\nimport snowball from 'node-debt-snowball';\n\nconst accounts = [\n  {\n    name: 'Credit Card',\n    interest: 14.99,\n    balance: 1000,\n    minPayment: 75,\n  },\n  {\n    name: 'Student Loan',\n    interest: 4.75,\n    balance: 7500,\n    minPayment: 150,\n  },\n];\nconst additionalPayment = 100;\nconst strategy = 'avalance'; // possible values: avalance (default), snowball\n\nconst repaymentPlan = snowball(accounts, additionalPayment, strategy);\nconsole.log('repaymentPlan', repaymentPlan);\n```"
+			"text": "```js\nimport snowball from 'node-debt-snowball';\n\nconst accounts = [\n  {\n    name: 'Credit Card',\n    interest: 14.99,\n    balance: 1000,\n    minPayment: 75,\n  },\n  {\n    name: 'Student Loan',\n    interest: 4.75,\n    balance: 7500,\n    minPayment: 150,\n  },\n];\nconst additionalPayment = 100;\nconst strategy = 'avalanche'; // possible values: avalanche (default), snowball\n\nconst repaymentPlan = snowball(accounts, additionalPayment, strategy);\nconsole.log('repaymentPlan', repaymentPlan);\n```"
 		},
 		{
 			"kind": "text",
@@ -3487,7 +3487,7 @@
 		},
 		"116": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "RepaymentStrategy.avalance"
+			"qualifiedName": "RepaymentStrategy.avalanche"
 		},
 		"117": {
 			"sourceFileName": "src/types.ts",

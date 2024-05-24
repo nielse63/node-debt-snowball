@@ -43,7 +43,7 @@ const accounts = [
   },
 ];
 const additionalPayment = 100;
-const strategy = 'avalance'; // possible values: avalance (default), snowball
+const strategy = 'avalanche'; // possible values: avalanche (default), snowball
 
 const repaymentPlan = snowball(accounts, additionalPayment, strategy);
 console.log('repaymentPlan', repaymentPlan);

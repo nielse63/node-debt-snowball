@@ -75,7 +75,7 @@ class Snowball {
           key: AccountObjectKeys.balance,
           order: OrderDirection.ascending,
         };
-      case RepaymentStrategy.avalance:
+      case RepaymentStrategy.avalanche:
       default:
         return {
           key: AccountObjectKeys.interest,
