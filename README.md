@@ -4,7 +4,7 @@
 
 <hr />
 
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/nielse63/node-debt-snowball/node.js.yml?style=for-the-badge) ![Depfu](https://img.shields.io/depfu/dependencies/github/nielse63/node-debt-snowball?style=for-the-badge) ![Codecov](https://img.shields.io/codecov/c/github/nielse63/node-debt-snowball?style=for-the-badge) ![GitHub issues by-label](https://img.shields.io/github/issues-raw/nielse63/node-debt-snowball/bug?label=open%20issues&style=for-the-badge) ![GitHub](https://img.shields.io/github/license/nielse63/node-debt-snowball?style=for-the-badge)
+![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/nielse63/node-debt-snowball/node.js.yml) ![Depfu](https://img.shields.io/depfu/dependencies/github/nielse63/node-debt-snowball) ![Codecov](https://img.shields.io/codecov/c/github/nielse63/node-debt-snowball) ![GitHub issues by-label](https://img.shields.io/github/issues-raw/nielse63/node-debt-snowball/bug?label=open%20issues) ![GitHub](https://img.shields.io/github/license/nielse63/node-debt-snowball)
 
 > Node script to calculate debt repayment using the snowball method
 
@@ -50,28 +50,30 @@ console.log('repaymentPlan', repaymentPlan);
 
 ### API
 
-Full API documentation is available can be found at [https://nielse63.github.io/node-debt-snowball](https://nielse63.github.io/node-debt-snowball/modules/node_debt_snowball.html)
+Full API documentation is available can be found at [https://nielse63.github.io/node-debt-snowball](https://nielse63.github.io/node-debt-snowball/)
 
 ### Response Schema
 
 ```json
-[
-  {
-    "balance": "number",
-    "accounts": [
-      {
-        "name": "string",
-        "balanceStart": "number",
-        "balanceEnd": "number",
-        "accruedInterest": "number",
-        "additionalPayment": "number",
-        "paymentAmount": "number"
-      }
-      // more accounts...
-    ]
-  }
-  // more payment periods...
-]
+{
+  "totalInterestPaid": "number",
+  "totalPayments": "number",
+  "payments": [
+    {
+      "balance": "number",
+      "accounts": [
+        {
+          "name": "string",
+          "balanceStart": "number",
+          "balanceEnd": "number",
+          "accruedInterest": "number",
+          "additionalPayment": "number",
+          "paymentAmount": "number"
+        }
+      ]
+    }
+  ]
+}
 ```
 
 A full sample response can be found at [`examples/response.json`](https://github.com/nielse63/node-debt-snowball/blob/main/examples/response.json).
@@ -88,10 +90,10 @@ npm ci
 
 ### Prerequisites
 
-Node `v16.20.1`:
+Node `v20.13.1`:
 
 ```bash
-nvm use v16.20.1
+nvm use v20.13.1
 ```
 
 ### NPM Scripts
