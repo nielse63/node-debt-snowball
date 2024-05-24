@@ -14,7 +14,7 @@
 	},
 	"children": [
 		{
-			"id": 5,
+			"id": 6,
 			"name": "default",
 			"variant": "reference",
 			"kind": 4194304,
@@ -22,22 +22,22 @@
 			"sources": [
 				{
 					"fileName": "src/index.ts",
-					"line": 45,
+					"line": 50,
 					"character": 0,
-					"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/index.ts#L45"
+					"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/index.ts#L50"
 				}
 			],
 			"target": 1
 		},
 		{
-			"id": 107,
+			"id": 110,
 			"name": "AccountObjectKeys",
 			"variant": "declaration",
 			"kind": 8,
 			"flags": {},
 			"children": [
 				{
-					"id": 109,
+					"id": 112,
 					"name": "balance",
 					"variant": "declaration",
 					"kind": 16,
@@ -56,7 +56,7 @@
 					}
 				},
 				{
-					"id": 110,
+					"id": 113,
 					"name": "interest",
 					"variant": "declaration",
 					"kind": 16,
@@ -75,7 +75,7 @@
 					}
 				},
 				{
-					"id": 111,
+					"id": 114,
 					"name": "minPayment",
 					"variant": "declaration",
 					"kind": 16,
@@ -94,7 +94,7 @@
 					}
 				},
 				{
-					"id": 108,
+					"id": 111,
 					"name": "name",
 					"variant": "declaration",
 					"kind": 16,
@@ -117,10 +117,10 @@
 				{
 					"title": "Enumeration Members",
 					"children": [
-						109,
-						110,
-						111,
-						108
+						112,
+						113,
+						114,
+						111
 					]
 				}
 			],
@@ -134,14 +134,14 @@
 			]
 		},
 		{
-			"id": 112,
+			"id": 115,
 			"name": "OrderDirection",
 			"variant": "declaration",
 			"kind": 8,
 			"flags": {},
 			"children": [
 				{
-					"id": 113,
+					"id": 116,
 					"name": "ascending",
 					"variant": "declaration",
 					"kind": 16,
@@ -160,7 +160,7 @@
 					}
 				},
 				{
-					"id": 114,
+					"id": 117,
 					"name": "descending",
 					"variant": "declaration",
 					"kind": 16,
@@ -183,8 +183,8 @@
 				{
 					"title": "Enumeration Members",
 					"children": [
-						113,
-						114
+						116,
+						117
 					]
 				}
 			],
@@ -198,14 +198,14 @@
 			]
 		},
 		{
-			"id": 115,
+			"id": 118,
 			"name": "RepaymentStrategy",
 			"variant": "declaration",
 			"kind": 8,
 			"flags": {},
 			"children": [
 				{
-					"id": 116,
+					"id": 119,
 					"name": "avalanche",
 					"variant": "declaration",
 					"kind": 16,
@@ -224,7 +224,7 @@
 					}
 				},
 				{
-					"id": 117,
+					"id": 120,
 					"name": "snowball",
 					"variant": "declaration",
 					"kind": 16,
@@ -247,8 +247,8 @@
 				{
 					"title": "Enumeration Members",
 					"children": [
-						116,
-						117
+						119,
+						120
 					]
 				}
 			],
@@ -262,14 +262,14 @@
 			]
 		},
 		{
-			"id": 6,
+			"id": 7,
 			"name": "Account",
 			"variant": "declaration",
 			"kind": 128,
 			"flags": {},
 			"children": [
 				{
-					"id": 7,
+					"id": 8,
 					"name": "constructor",
 					"variant": "declaration",
 					"kind": 512,
@@ -284,7 +284,7 @@
 					],
 					"signatures": [
 						{
-							"id": 8,
+							"id": 9,
 							"name": "new Account",
 							"variant": "signature",
 							"kind": 16384,
@@ -299,14 +299,14 @@
 							],
 							"parameters": [
 								{
-									"id": 9,
+									"id": 10,
 									"name": "config",
 									"variant": "param",
 									"kind": 32768,
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": 102,
+										"target": 105,
 										"name": "AccountObject",
 										"package": "node-debt-snowball"
 									}
@@ -314,7 +314,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 6,
+								"target": 7,
 								"name": "Account",
 								"package": "node-debt-snowball"
 							}
@@ -322,7 +322,7 @@
 					]
 				},
 				{
-					"id": 11,
+					"id": 12,
 					"name": "balance",
 					"variant": "declaration",
 					"kind": 1024,
@@ -341,7 +341,7 @@
 					}
 				},
 				{
-					"id": 12,
+					"id": 13,
 					"name": "interest",
 					"variant": "declaration",
 					"kind": 1024,
@@ -360,7 +360,7 @@
 					}
 				},
 				{
-					"id": 13,
+					"id": 14,
 					"name": "minPayment",
 					"variant": "declaration",
 					"kind": 1024,
@@ -379,7 +379,7 @@
 					}
 				},
 				{
-					"id": 10,
+					"id": 11,
 					"name": "name",
 					"variant": "declaration",
 					"kind": 1024,
@@ -398,7 +398,7 @@
 					}
 				},
 				{
-					"id": 14,
+					"id": 15,
 					"name": "makePayment",
 					"variant": "declaration",
 					"kind": 2048,
@@ -413,7 +413,7 @@
 					],
 					"signatures": [
 						{
-							"id": 15,
+							"id": 16,
 							"name": "makePayment",
 							"variant": "signature",
 							"kind": 4096,
@@ -428,7 +428,7 @@
 							],
 							"parameters": [
 								{
-									"id": 16,
+									"id": 17,
 									"name": "additionalPayment",
 									"variant": "param",
 									"kind": 32768,
@@ -442,7 +442,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 122,
+								"target": 125,
 								"name": "PaymentObject",
 								"package": "node-debt-snowball"
 							}
@@ -454,22 +454,22 @@
 				{
 					"title": "Constructors",
 					"children": [
-						7
+						8
 					]
 				},
 				{
 					"title": "Properties",
 					"children": [
-						11,
 						12,
 						13,
-						10
+						14,
+						11
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						14
+						15
 					]
 				}
 			],
@@ -483,14 +483,14 @@
 			]
 		},
 		{
-			"id": 17,
+			"id": 18,
 			"name": "Payment",
 			"variant": "declaration",
 			"kind": 128,
 			"flags": {},
 			"children": [
 				{
-					"id": 18,
+					"id": 19,
 					"name": "constructor",
 					"variant": "declaration",
 					"kind": 512,
@@ -505,7 +505,7 @@
 					],
 					"signatures": [
 						{
-							"id": 19,
+							"id": 20,
 							"name": "new Payment",
 							"variant": "signature",
 							"kind": 16384,
@@ -520,14 +520,14 @@
 							],
 							"parameters": [
 								{
-									"id": 20,
+									"id": 21,
 									"name": "options",
 									"variant": "param",
 									"kind": 32768,
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": 118,
+										"target": 121,
 										"name": "PaymentOptions",
 										"package": "node-debt-snowball"
 									}
@@ -535,7 +535,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 17,
+								"target": 18,
 								"name": "Payment",
 								"package": "node-debt-snowball"
 							}
@@ -543,7 +543,7 @@
 					]
 				},
 				{
-					"id": 21,
+					"id": 22,
 					"name": "_balance",
 					"variant": "declaration",
 					"kind": 1024,
@@ -564,7 +564,7 @@
 					}
 				},
 				{
-					"id": 22,
+					"id": 23,
 					"name": "interestRate",
 					"variant": "declaration",
 					"kind": 1024,
@@ -583,7 +583,7 @@
 					}
 				},
 				{
-					"id": 23,
+					"id": 24,
 					"name": "payment",
 					"variant": "declaration",
 					"kind": 1024,
@@ -602,7 +602,7 @@
 					}
 				},
 				{
-					"id": 26,
+					"id": 27,
 					"name": "balance",
 					"variant": "declaration",
 					"kind": 262144,
@@ -616,7 +616,7 @@
 						}
 					],
 					"getSignature": {
-						"id": 27,
+						"id": 28,
 						"name": "balance",
 						"variant": "signature",
 						"kind": 524288,
@@ -636,7 +636,7 @@
 					}
 				},
 				{
-					"id": 24,
+					"id": 25,
 					"name": "interest",
 					"variant": "declaration",
 					"kind": 262144,
@@ -650,7 +650,7 @@
 						}
 					],
 					"getSignature": {
-						"id": 25,
+						"id": 26,
 						"name": "interest",
 						"variant": "signature",
 						"kind": 524288,
@@ -674,22 +674,22 @@
 				{
 					"title": "Constructors",
 					"children": [
-						18
+						19
 					]
 				},
 				{
 					"title": "Properties",
 					"children": [
-						21,
 						22,
-						23
+						23,
+						24
 					]
 				},
 				{
 					"title": "Accessors",
 					"children": [
-						26,
-						24
+						27,
+						25
 					]
 				}
 			],
@@ -703,14 +703,14 @@
 			]
 		},
 		{
-			"id": 32,
+			"id": 33,
 			"name": "Results",
 			"variant": "declaration",
 			"kind": 128,
 			"flags": {},
 			"children": [
 				{
-					"id": 33,
+					"id": 34,
 					"name": "constructor",
 					"variant": "declaration",
 					"kind": 512,
@@ -718,14 +718,14 @@
 					"sources": [
 						{
 							"fileName": "src/Results.ts",
-							"line": 9,
+							"line": 10,
 							"character": 2,
-							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Results.ts#L9"
+							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Results.ts#L10"
 						}
 					],
 					"signatures": [
 						{
-							"id": 34,
+							"id": 35,
 							"name": "new Results",
 							"variant": "signature",
 							"kind": 16384,
@@ -733,14 +733,14 @@
 							"sources": [
 								{
 									"fileName": "src/Results.ts",
-									"line": 9,
+									"line": 10,
 									"character": 2,
-									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Results.ts#L9"
+									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Results.ts#L10"
 								}
 							],
 							"parameters": [
 								{
-									"id": 35,
+									"id": 36,
 									"name": "data",
 									"variant": "param",
 									"kind": 32768,
@@ -749,16 +749,27 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"target": 130,
+											"target": 133,
 											"name": "PaymentPlanObject",
 											"package": "node-debt-snowball"
 										}
+									}
+								},
+								{
+									"id": 37,
+									"name": "strategy",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
 									}
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": 32,
+								"target": 33,
 								"name": "Results",
 								"package": "node-debt-snowball"
 							}
@@ -766,8 +777,38 @@
 					]
 				},
 				{
-					"id": 38,
+					"id": 41,
 					"name": "payments",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "src/Results.ts",
+							"line": 8,
+							"character": 2,
+							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Results.ts#L8"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"target": 133,
+							"name": "PaymentPlanObject",
+							"package": "node-debt-snowball"
+						}
+					},
+					"defaultValue": "[]",
+					"implementationOf": {
+						"type": "reference",
+						"target": 139,
+						"name": "ResultsObject.payments"
+					}
+				},
+				{
+					"id": 40,
+					"name": "strategy",
 					"variant": "declaration",
 					"kind": 1024,
 					"flags": {},
@@ -780,23 +821,13 @@
 						}
 					],
 					"type": {
-						"type": "array",
-						"elementType": {
-							"type": "reference",
-							"target": 130,
-							"name": "PaymentPlanObject",
-							"package": "node-debt-snowball"
-						}
+						"type": "intrinsic",
+						"name": "string"
 					},
-					"defaultValue": "[]",
-					"implementationOf": {
-						"type": "reference",
-						"target": 136,
-						"name": "ResultsObject.payments"
-					}
+					"defaultValue": "''"
 				},
 				{
-					"id": 36,
+					"id": 38,
 					"name": "totalInterestPaid",
 					"variant": "declaration",
 					"kind": 1024,
@@ -816,12 +847,12 @@
 					"defaultValue": "0",
 					"implementationOf": {
 						"type": "reference",
-						"target": 134,
+						"target": 137,
 						"name": "ResultsObject.totalInterestPaid"
 					}
 				},
 				{
-					"id": 37,
+					"id": 39,
 					"name": "totalPayments",
 					"variant": "declaration",
 					"kind": 1024,
@@ -841,12 +872,12 @@
 					"defaultValue": "0",
 					"implementationOf": {
 						"type": "reference",
-						"target": 135,
+						"target": 138,
 						"name": "ResultsObject.totalPayments"
 					}
 				},
 				{
-					"id": 39,
+					"id": 42,
 					"name": "calculateTotalInterestPaid",
 					"variant": "declaration",
 					"kind": 2048,
@@ -854,14 +885,14 @@
 					"sources": [
 						{
 							"fileName": "src/Results.ts",
-							"line": 15,
+							"line": 17,
 							"character": 2,
-							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Results.ts#L15"
+							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Results.ts#L17"
 						}
 					],
 					"signatures": [
 						{
-							"id": 40,
+							"id": 43,
 							"name": "calculateTotalInterestPaid",
 							"variant": "signature",
 							"kind": 4096,
@@ -869,9 +900,9 @@
 							"sources": [
 								{
 									"fileName": "src/Results.ts",
-									"line": 15,
+									"line": 17,
 									"character": 2,
-									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Results.ts#L15"
+									"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/Results.ts#L17"
 								}
 							],
 							"type": {
@@ -886,21 +917,22 @@
 				{
 					"title": "Constructors",
 					"children": [
-						33
+						34
 					]
 				},
 				{
 					"title": "Properties",
 					"children": [
+						41,
+						40,
 						38,
-						36,
-						37
+						39
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						39
+						42
 					]
 				}
 			],
@@ -915,21 +947,21 @@
 			"implementedTypes": [
 				{
 					"type": "reference",
-					"target": 133,
+					"target": 136,
 					"name": "ResultsObject",
 					"package": "node-debt-snowball"
 				}
 			]
 		},
 		{
-			"id": 41,
+			"id": 44,
 			"name": "Snowball",
 			"variant": "declaration",
 			"kind": 128,
 			"flags": {},
 			"children": [
 				{
-					"id": 42,
+					"id": 45,
 					"name": "constructor",
 					"variant": "declaration",
 					"kind": 512,
@@ -944,7 +976,7 @@
 					],
 					"signatures": [
 						{
-							"id": 43,
+							"id": 46,
 							"name": "new Snowball",
 							"variant": "signature",
 							"kind": 16384,
@@ -959,7 +991,7 @@
 							],
 							"parameters": [
 								{
-									"id": 44,
+									"id": 47,
 									"name": "accounts",
 									"variant": "param",
 									"kind": 32768,
@@ -968,14 +1000,14 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"target": 102,
+											"target": 105,
 											"name": "AccountObject",
 											"package": "node-debt-snowball"
 										}
 									}
 								},
 								{
-									"id": 45,
+									"id": 48,
 									"name": "additionalPayment",
 									"variant": "param",
 									"kind": 32768,
@@ -987,7 +1019,7 @@
 									"defaultValue": "0"
 								},
 								{
-									"id": 46,
+									"id": 49,
 									"name": "strategy",
 									"variant": "param",
 									"kind": 32768,
@@ -1001,7 +1033,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 41,
+								"target": 44,
 								"name": "Snowball",
 								"package": "node-debt-snowball"
 							}
@@ -1009,7 +1041,7 @@
 					]
 				},
 				{
-					"id": 47,
+					"id": 50,
 					"name": "accounts",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1026,7 +1058,7 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"target": 6,
+							"target": 7,
 							"name": "Account",
 							"package": "node-debt-snowball"
 						}
@@ -1034,7 +1066,7 @@
 					"defaultValue": "[]"
 				},
 				{
-					"id": 48,
+					"id": 51,
 					"name": "additionalPayment",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1053,7 +1085,7 @@
 					}
 				},
 				{
-					"id": 49,
+					"id": 52,
 					"name": "balanceStart",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1072,7 +1104,7 @@
 					}
 				},
 				{
-					"id": 50,
+					"id": 53,
 					"name": "currentBalance",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1091,7 +1123,7 @@
 					}
 				},
 				{
-					"id": 51,
+					"id": 54,
 					"name": "snowballAmount",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1110,7 +1142,7 @@
 					}
 				},
 				{
-					"id": 52,
+					"id": 55,
 					"name": "strategy",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1129,7 +1161,7 @@
 					}
 				},
 				{
-					"id": 100,
+					"id": 103,
 					"name": "createPaymentPlan",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1144,7 +1176,7 @@
 					],
 					"signatures": [
 						{
-							"id": 101,
+							"id": 104,
 							"name": "createPaymentPlan",
 							"variant": "signature",
 							"kind": 4096,
@@ -1178,7 +1210,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 32,
+								"target": 33,
 								"name": "Results",
 								"package": "node-debt-snowball"
 							}
@@ -1186,7 +1218,7 @@
 					]
 				},
 				{
-					"id": 74,
+					"id": 77,
 					"name": "getCurrentBalance",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1201,7 +1233,7 @@
 					],
 					"signatures": [
 						{
-							"id": 75,
+							"id": 78,
 							"name": "getCurrentBalance",
 							"variant": "signature",
 							"kind": 4096,
@@ -1222,7 +1254,7 @@
 					]
 				},
 				{
-					"id": 66,
+					"id": 69,
 					"name": "getSortKeyAndOrder",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1237,7 +1269,7 @@
 					],
 					"signatures": [
 						{
-							"id": 67,
+							"id": 70,
 							"name": "getSortKeyAndOrder",
 							"variant": "signature",
 							"kind": 4096,
@@ -1253,14 +1285,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 68,
+									"id": 71,
 									"name": "__type",
 									"variant": "declaration",
 									"kind": 65536,
 									"flags": {},
 									"children": [
 										{
-											"id": 69,
+											"id": 72,
 											"name": "key",
 											"variant": "declaration",
 											"kind": 1024,
@@ -1275,14 +1307,14 @@
 											],
 											"type": {
 												"type": "reference",
-												"target": 107,
+												"target": 110,
 												"name": "AccountObjectKeys",
 												"package": "node-debt-snowball"
 											},
 											"defaultValue": "AccountObjectKeys.balance"
 										},
 										{
-											"id": 70,
+											"id": 73,
 											"name": "order",
 											"variant": "declaration",
 											"kind": 1024,
@@ -1297,7 +1329,7 @@
 											],
 											"type": {
 												"type": "reference",
-												"target": 112,
+												"target": 115,
 												"name": "OrderDirection",
 												"package": "node-debt-snowball"
 											},
@@ -1308,8 +1340,8 @@
 										{
 											"title": "Properties",
 											"children": [
-												69,
-												70
+												72,
+												73
 											]
 										}
 									],
@@ -1327,7 +1359,7 @@
 					]
 				},
 				{
-					"id": 76,
+					"id": 79,
 					"name": "makePaymentForAccount",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1342,7 +1374,7 @@
 					],
 					"signatures": [
 						{
-							"id": 77,
+							"id": 80,
 							"name": "makePaymentForAccount",
 							"variant": "signature",
 							"kind": 4096,
@@ -1357,14 +1389,14 @@
 							],
 							"parameters": [
 								{
-									"id": 78,
+									"id": 81,
 									"name": "account",
 									"variant": "param",
 									"kind": 32768,
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": 6,
+										"target": 7,
 										"name": "Account",
 										"package": "node-debt-snowball"
 									}
@@ -1373,14 +1405,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 79,
+									"id": 82,
 									"name": "__type",
 									"variant": "declaration",
 									"kind": 65536,
 									"flags": {},
 									"children": [
 										{
-											"id": 82,
+											"id": 85,
 											"name": "accruedInterest",
 											"variant": "declaration",
 											"kind": 1024,
@@ -1399,7 +1431,7 @@
 											}
 										},
 										{
-											"id": 83,
+											"id": 86,
 											"name": "additionalPayment",
 											"variant": "declaration",
 											"kind": 1024,
@@ -1418,7 +1450,7 @@
 											}
 										},
 										{
-											"id": 81,
+											"id": 84,
 											"name": "balanceEnd",
 											"variant": "declaration",
 											"kind": 1024,
@@ -1437,7 +1469,7 @@
 											}
 										},
 										{
-											"id": 80,
+											"id": 83,
 											"name": "balanceStart",
 											"variant": "declaration",
 											"kind": 1024,
@@ -1456,7 +1488,7 @@
 											}
 										},
 										{
-											"id": 85,
+											"id": 88,
 											"name": "minPayment",
 											"variant": "declaration",
 											"kind": 1024,
@@ -1475,7 +1507,7 @@
 											}
 										},
 										{
-											"id": 86,
+											"id": 89,
 											"name": "name",
 											"variant": "declaration",
 											"kind": 1024,
@@ -1494,7 +1526,7 @@
 											}
 										},
 										{
-											"id": 84,
+											"id": 87,
 											"name": "paymentAmount",
 											"variant": "declaration",
 											"kind": 1024,
@@ -1517,13 +1549,13 @@
 										{
 											"title": "Properties",
 											"children": [
-												82,
-												83,
-												81,
-												80,
 												85,
 												86,
-												84
+												84,
+												83,
+												88,
+												89,
+												87
 											]
 										}
 									],
@@ -1541,7 +1573,7 @@
 					]
 				},
 				{
-					"id": 87,
+					"id": 90,
 					"name": "makePaymentsForMonth",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1556,7 +1588,7 @@
 					],
 					"signatures": [
 						{
-							"id": 88,
+							"id": 91,
 							"name": "makePaymentsForMonth",
 							"variant": "signature",
 							"kind": 4096,
@@ -1572,14 +1604,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 89,
+									"id": 92,
 									"name": "__type",
 									"variant": "declaration",
 									"kind": 65536,
 									"flags": {},
 									"children": [
 										{
-											"id": 91,
+											"id": 94,
 											"name": "accounts",
 											"variant": "declaration",
 											"kind": 1024,
@@ -1597,14 +1629,14 @@
 												"elementType": {
 													"type": "reflection",
 													"declaration": {
-														"id": 92,
+														"id": 95,
 														"name": "__type",
 														"variant": "declaration",
 														"kind": 65536,
 														"flags": {},
 														"children": [
 															{
-																"id": 95,
+																"id": 98,
 																"name": "accruedInterest",
 																"variant": "declaration",
 																"kind": 1024,
@@ -1623,7 +1655,7 @@
 																}
 															},
 															{
-																"id": 96,
+																"id": 99,
 																"name": "additionalPayment",
 																"variant": "declaration",
 																"kind": 1024,
@@ -1642,7 +1674,7 @@
 																}
 															},
 															{
-																"id": 94,
+																"id": 97,
 																"name": "balanceEnd",
 																"variant": "declaration",
 																"kind": 1024,
@@ -1661,7 +1693,7 @@
 																}
 															},
 															{
-																"id": 93,
+																"id": 96,
 																"name": "balanceStart",
 																"variant": "declaration",
 																"kind": 1024,
@@ -1680,7 +1712,7 @@
 																}
 															},
 															{
-																"id": 98,
+																"id": 101,
 																"name": "minPayment",
 																"variant": "declaration",
 																"kind": 1024,
@@ -1699,7 +1731,7 @@
 																}
 															},
 															{
-																"id": 99,
+																"id": 102,
 																"name": "name",
 																"variant": "declaration",
 																"kind": 1024,
@@ -1718,7 +1750,7 @@
 																}
 															},
 															{
-																"id": 97,
+																"id": 100,
 																"name": "paymentAmount",
 																"variant": "declaration",
 																"kind": 1024,
@@ -1741,13 +1773,13 @@
 															{
 																"title": "Properties",
 																"children": [
-																	95,
-																	96,
-																	94,
-																	93,
 																	98,
 																	99,
-																	97
+																	97,
+																	96,
+																	101,
+																	102,
+																	100
 																]
 															}
 														],
@@ -1764,7 +1796,7 @@
 											}
 										},
 										{
-											"id": 90,
+											"id": 93,
 											"name": "balance",
 											"variant": "declaration",
 											"kind": 1024,
@@ -1788,8 +1820,8 @@
 										{
 											"title": "Properties",
 											"children": [
-												91,
-												90
+												94,
+												93
 											]
 										}
 									],
@@ -1807,7 +1839,7 @@
 					]
 				},
 				{
-					"id": 53,
+					"id": 56,
 					"name": "parseAccounts",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1822,7 +1854,7 @@
 					],
 					"signatures": [
 						{
-							"id": 54,
+							"id": 57,
 							"name": "parseAccounts",
 							"variant": "signature",
 							"kind": 4096,
@@ -1837,7 +1869,7 @@
 							],
 							"parameters": [
 								{
-									"id": 55,
+									"id": 58,
 									"name": "accounts",
 									"variant": "param",
 									"kind": 32768,
@@ -1846,7 +1878,7 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"target": 102,
+											"target": 105,
 											"name": "AccountObject",
 											"package": "node-debt-snowball"
 										}
@@ -1858,14 +1890,14 @@
 								"elementType": {
 									"type": "reflection",
 									"declaration": {
-										"id": 56,
+										"id": 59,
 										"name": "__type",
 										"variant": "declaration",
 										"kind": 65536,
 										"flags": {},
 										"children": [
 											{
-												"id": 58,
+												"id": 61,
 												"name": "balance",
 												"variant": "declaration",
 												"kind": 1024,
@@ -1884,7 +1916,7 @@
 												}
 											},
 											{
-												"id": 59,
+												"id": 62,
 												"name": "interest",
 												"variant": "declaration",
 												"kind": 1024,
@@ -1903,7 +1935,7 @@
 												}
 											},
 											{
-												"id": 60,
+												"id": 63,
 												"name": "minPayment",
 												"variant": "declaration",
 												"kind": 1024,
@@ -1922,7 +1954,7 @@
 												}
 											},
 											{
-												"id": 57,
+												"id": 60,
 												"name": "name",
 												"variant": "declaration",
 												"kind": 1024,
@@ -1945,10 +1977,10 @@
 											{
 												"title": "Properties",
 												"children": [
-													58,
-													59,
-													60,
-													57
+													61,
+													62,
+													63,
+													60
 												]
 											}
 										],
@@ -1967,7 +1999,7 @@
 					]
 				},
 				{
-					"id": 71,
+					"id": 74,
 					"name": "setAccounts",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1982,7 +2014,7 @@
 					],
 					"signatures": [
 						{
-							"id": 72,
+							"id": 75,
 							"name": "setAccounts",
 							"variant": "signature",
 							"kind": 4096,
@@ -1997,7 +2029,7 @@
 							],
 							"parameters": [
 								{
-									"id": 73,
+									"id": 76,
 									"name": "accounts",
 									"variant": "param",
 									"kind": 32768,
@@ -2006,7 +2038,7 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"target": 102,
+											"target": 105,
 											"name": "AccountObject",
 											"package": "node-debt-snowball"
 										}
@@ -2017,7 +2049,7 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"target": 6,
+									"target": 7,
 									"name": "Account",
 									"package": "node-debt-snowball"
 								}
@@ -2026,7 +2058,7 @@
 					]
 				},
 				{
-					"id": 61,
+					"id": 64,
 					"name": "sortAccounts",
 					"variant": "declaration",
 					"kind": 2048,
@@ -2041,7 +2073,7 @@
 					],
 					"signatures": [
 						{
-							"id": 62,
+							"id": 65,
 							"name": "sortAccounts",
 							"variant": "signature",
 							"kind": 4096,
@@ -2056,7 +2088,7 @@
 							],
 							"parameters": [
 								{
-									"id": 63,
+									"id": 66,
 									"name": "accounts",
 									"variant": "param",
 									"kind": 32768,
@@ -2065,35 +2097,35 @@
 										"type": "array",
 										"elementType": {
 											"type": "reference",
-											"target": 102,
+											"target": 105,
 											"name": "AccountObject",
 											"package": "node-debt-snowball"
 										}
 									}
 								},
 								{
-									"id": 64,
+									"id": 67,
 									"name": "key",
 									"variant": "param",
 									"kind": 32768,
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": 107,
+										"target": 110,
 										"name": "AccountObjectKeys",
 										"package": "node-debt-snowball"
 									},
 									"defaultValue": "AccountObjectKeys.interest"
 								},
 								{
-									"id": 65,
+									"id": 68,
 									"name": "order",
 									"variant": "param",
 									"kind": 32768,
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": 112,
+										"target": 115,
 										"name": "OrderDirection",
 										"package": "node-debt-snowball"
 									},
@@ -2104,7 +2136,7 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"target": 102,
+									"target": 105,
 									"name": "AccountObject",
 									"package": "node-debt-snowball"
 								}
@@ -2117,31 +2149,31 @@
 				{
 					"title": "Constructors",
 					"children": [
-						42
+						45
 					]
 				},
 				{
 					"title": "Properties",
 					"children": [
-						47,
-						48,
-						49,
 						50,
 						51,
-						52
+						52,
+						53,
+						54,
+						55
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						100,
+						103,
+						77,
+						69,
+						79,
+						90,
+						56,
 						74,
-						66,
-						76,
-						87,
-						53,
-						71,
-						61
+						64
 					]
 				}
 			],
@@ -2155,14 +2187,14 @@
 			]
 		},
 		{
-			"id": 102,
+			"id": 105,
 			"name": "AccountObject",
 			"variant": "declaration",
 			"kind": 256,
 			"flags": {},
 			"children": [
 				{
-					"id": 104,
+					"id": 107,
 					"name": "balance",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2181,7 +2213,7 @@
 					}
 				},
 				{
-					"id": 105,
+					"id": 108,
 					"name": "interest",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2200,7 +2232,7 @@
 					}
 				},
 				{
-					"id": 106,
+					"id": 109,
 					"name": "minPayment",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2219,7 +2251,7 @@
 					}
 				},
 				{
-					"id": 103,
+					"id": 106,
 					"name": "name",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2242,10 +2274,10 @@
 				{
 					"title": "Properties",
 					"children": [
-						104,
-						105,
-						106,
-						103
+						107,
+						108,
+						109,
+						106
 					]
 				}
 			],
@@ -2259,14 +2291,14 @@
 			]
 		},
 		{
-			"id": 122,
+			"id": 125,
 			"name": "PaymentObject",
 			"variant": "declaration",
 			"kind": 256,
 			"flags": {},
 			"children": [
 				{
-					"id": 125,
+					"id": 128,
 					"name": "accruedInterest",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2285,7 +2317,7 @@
 					}
 				},
 				{
-					"id": 126,
+					"id": 129,
 					"name": "additionalPayment",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2304,7 +2336,7 @@
 					}
 				},
 				{
-					"id": 124,
+					"id": 127,
 					"name": "balanceEnd",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2323,7 +2355,7 @@
 					}
 				},
 				{
-					"id": 123,
+					"id": 126,
 					"name": "balanceStart",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2342,7 +2374,7 @@
 					}
 				},
 				{
-					"id": 128,
+					"id": 131,
 					"name": "minPayment",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2361,7 +2393,7 @@
 					}
 				},
 				{
-					"id": 129,
+					"id": 132,
 					"name": "name",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2380,7 +2412,7 @@
 					}
 				},
 				{
-					"id": 127,
+					"id": 130,
 					"name": "paymentAmount",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2403,13 +2435,13 @@
 				{
 					"title": "Properties",
 					"children": [
-						125,
-						126,
-						124,
-						123,
 						128,
 						129,
-						127
+						127,
+						126,
+						131,
+						132,
+						130
 					]
 				}
 			],
@@ -2423,14 +2455,14 @@
 			]
 		},
 		{
-			"id": 118,
+			"id": 121,
 			"name": "PaymentOptions",
 			"variant": "declaration",
 			"kind": 256,
 			"flags": {},
 			"children": [
 				{
-					"id": 119,
+					"id": 122,
 					"name": "balance",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2449,7 +2481,7 @@
 					}
 				},
 				{
-					"id": 120,
+					"id": 123,
 					"name": "interest",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2468,7 +2500,7 @@
 					}
 				},
 				{
-					"id": 121,
+					"id": 124,
 					"name": "payment",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2491,9 +2523,9 @@
 				{
 					"title": "Properties",
 					"children": [
-						119,
-						120,
-						121
+						122,
+						123,
+						124
 					]
 				}
 			],
@@ -2507,14 +2539,14 @@
 			]
 		},
 		{
-			"id": 130,
+			"id": 133,
 			"name": "PaymentPlanObject",
 			"variant": "declaration",
 			"kind": 256,
 			"flags": {},
 			"children": [
 				{
-					"id": 132,
+					"id": 135,
 					"name": "accounts",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2531,14 +2563,14 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"target": 122,
+							"target": 125,
 							"name": "PaymentObject",
 							"package": "node-debt-snowball"
 						}
 					}
 				},
 				{
-					"id": 131,
+					"id": 134,
 					"name": "balance",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2561,8 +2593,8 @@
 				{
 					"title": "Properties",
 					"children": [
-						132,
-						131
+						135,
+						134
 					]
 				}
 			],
@@ -2576,14 +2608,14 @@
 			]
 		},
 		{
-			"id": 133,
+			"id": 136,
 			"name": "ResultsObject",
 			"variant": "declaration",
 			"kind": 256,
 			"flags": {},
 			"children": [
 				{
-					"id": 136,
+					"id": 139,
 					"name": "payments",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2600,14 +2632,14 @@
 						"type": "array",
 						"elementType": {
 							"type": "reference",
-							"target": 130,
+							"target": 133,
 							"name": "PaymentPlanObject",
 							"package": "node-debt-snowball"
 						}
 					}
 				},
 				{
-					"id": 134,
+					"id": 137,
 					"name": "totalInterestPaid",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2626,7 +2658,7 @@
 					}
 				},
 				{
-					"id": 135,
+					"id": 138,
 					"name": "totalPayments",
 					"variant": "declaration",
 					"kind": 1024,
@@ -2649,9 +2681,9 @@
 				{
 					"title": "Properties",
 					"children": [
-						136,
-						134,
-						135
+						139,
+						137,
+						138
 					]
 				}
 			],
@@ -2666,13 +2698,13 @@
 			"implementedBy": [
 				{
 					"type": "reference",
-					"target": 32,
+					"target": 33,
 					"name": "Results"
 				}
 			]
 		},
 		{
-			"id": 28,
+			"id": 29,
 			"name": "REPAYMENT_STRATEGIES",
 			"variant": "declaration",
 			"kind": 32,
@@ -2690,14 +2722,14 @@
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 29,
+					"id": 30,
 					"name": "__type",
 					"variant": "declaration",
 					"kind": 65536,
 					"flags": {},
 					"children": [
 						{
-							"id": 30,
+							"id": 31,
 							"name": "AVALANCHE",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2717,7 +2749,7 @@
 							"defaultValue": "'avalanche'"
 						},
 						{
-							"id": 31,
+							"id": 32,
 							"name": "SNOWBALL",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2741,8 +2773,8 @@
 						{
 							"title": "Properties",
 							"children": [
-								30,
-								31
+								31,
+								32
 							]
 						}
 					],
@@ -2767,9 +2799,9 @@
 			"sources": [
 				{
 					"fileName": "src/index.ts",
-					"line": 38,
+					"line": 39,
 					"character": 6,
-					"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/index.ts#L38"
+					"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/index.ts#L39"
 				}
 			],
 			"signatures": [
@@ -2791,7 +2823,7 @@
 								"content": [
 									{
 										"kind": "code",
-										"text": "```ts\nimport snowball from 'node-debt-snowball';\n\nconst accounts = [\n  {\n    name: 'Credit Card',\n    interest: 14.99,\n    balance: 1000,\n    minPayment: 75,\n  },\n  {\n    name: 'Student Loan',\n    interest: 4.75,\n    balance: 7500,\n    minPayment: 150,\n  },\n];\nconst additionalPayment = 100;\n\nconst repaymentPlan = snowball(accounts, additionalPayment);\n```"
+										"text": "```ts\nimport snowball from 'node-debt-snowball';\n\nconst accounts = [\n  {\n    name: 'Credit Card',\n    interest: 14.99,\n    balance: 1000,\n    minPayment: 75,\n  },\n  {\n    name: 'Student Loan',\n    interest: 4.75,\n    balance: 7500,\n    minPayment: 150,\n  },\n];\nconst additionalPayment = 100;\nconst strategy = 'avalanche';\n\nconst repaymentPlan = snowball(accounts, additionalPayment, strategy);\n```"
 									}
 								]
 							}
@@ -2800,9 +2832,9 @@
 					"sources": [
 						{
 							"fileName": "src/index.ts",
-							"line": 38,
+							"line": 39,
 							"character": 17,
-							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/index.ts#L38"
+							"url": "https://github.com/nielse63/node-debt-snowball/blob/main/src/index.ts#L39"
 						}
 					],
 					"parameters": [
@@ -2824,7 +2856,7 @@
 								"type": "array",
 								"elementType": {
 									"type": "reference",
-									"target": 102,
+									"target": 105,
 									"name": "AccountObject",
 									"package": "node-debt-snowball"
 								}
@@ -2849,11 +2881,23 @@
 								"name": "number"
 							},
 							"defaultValue": "0"
+						},
+						{
+							"id": 5,
+							"name": "strategy",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "string"
+							},
+							"defaultValue": "REPAYMENT_STRATEGIES.AVALANCHE"
 						}
 					],
 					"type": {
 						"type": "reference",
-						"target": 32,
+						"target": 33,
 						"name": "Results",
 						"package": "node-debt-snowball"
 					}
@@ -2865,40 +2909,40 @@
 		{
 			"title": "References",
 			"children": [
-				5
+				6
 			]
 		},
 		{
 			"title": "Enumerations",
 			"children": [
-				107,
-				112,
-				115
+				110,
+				115,
+				118
 			]
 		},
 		{
 			"title": "Classes",
 			"children": [
-				6,
-				17,
-				32,
-				41
+				7,
+				18,
+				33,
+				44
 			]
 		},
 		{
 			"title": "Interfaces",
 			"children": [
-				102,
-				122,
-				118,
-				130,
-				133
+				105,
+				125,
+				121,
+				133,
+				136
 			]
 		},
 		{
 			"title": "Variables",
 			"children": [
-				28
+				29
 			]
 		},
 		{
@@ -2925,15 +2969,39 @@
 		},
 		{
 			"kind": "code",
-			"text": "```js\nimport snowball from 'node-debt-snowball';\n\nconst accounts = [\n  {\n    name: 'Credit Card',\n    interest: 14.99,\n    balance: 1000,\n    minPayment: 75,\n  },\n  {\n    name: 'Student Loan',\n    interest: 4.75,\n    balance: 7500,\n    minPayment: 150,\n  },\n];\nconst additionalPayment = 100;\nconst strategy = 'avalanche'; // possible values: avalanche (default), snowball\n\nconst repaymentPlan = snowball(accounts, additionalPayment, strategy);\nconsole.log('repaymentPlan', repaymentPlan);\n```"
+			"text": "```js\nimport { snowball } from 'node-debt-snowball';\n\nconst accounts = [\n  {\n    name: 'Credit Card',\n    interest: 14.99,\n    balance: 1000,\n    minPayment: 75,\n  },\n  {\n    name: 'Student Loan',\n    interest: 4.75,\n    balance: 7500,\n    minPayment: 150,\n  },\n];\nconst additionalPayment = 100;\nconst strategy = 'avalanche'; // possible values: avalanche (default), snowball\n\nconst repaymentPlan = snowball(accounts, additionalPayment, strategy);\nconsole.log('repaymentPlan', repaymentPlan);\n```"
 		},
 		{
 			"kind": "text",
-			"text": "\n\n### API\n\nFull API documentation is available can be found at [https://nielse63.github.io/node-debt-snowball](https://nielse63.github.io/node-debt-snowball/)\n\n### Response Schema\n\n"
+			"text": "\n\n### Strategies\n\nThere are two options for the "
 		},
 		{
 			"kind": "code",
-			"text": "```json\n{\n  \"totalInterestPaid\": \"number\",\n  \"totalPayments\": \"number\",\n  \"payments\": [\n    {\n      \"balance\": \"number\",\n      \"accounts\": [\n        {\n          \"name\": \"string\",\n          \"balanceStart\": \"number\",\n          \"balanceEnd\": \"number\",\n          \"accruedInterest\": \"number\",\n          \"additionalPayment\": \"number\",\n          \"paymentAmount\": \"number\"\n        }\n      ]\n    }\n  ]\n}\n```"
+			"text": "`strategy`"
+		},
+		{
+			"kind": "text",
+			"text": " argument:\n\n1. "
+		},
+		{
+			"kind": "code",
+			"text": "`avalanche`"
+		},
+		{
+			"kind": "text",
+			"text": " - This strategy applies additional payments to the account with the highest interest rate. This is the default value\n2. "
+		},
+		{
+			"kind": "code",
+			"text": "`snowball`"
+		},
+		{
+			"kind": "text",
+			"text": " - This strategy focuses on paying off the account with the lowest balance first\n\nFor additional information on these strategies [read more on Investopedia](https://www.investopedia.com/articles/personal-finance/080716/debt-avalanche-vs-debt-snowball-which-best-you.asp).\n\n### API\n\nFull API documentation is available can be found at [https://nielse63.github.io/node-debt-snowball](https://nielse63.github.io/node-debt-snowball/)\n\n### Response Schema\n\n"
+		},
+		{
+			"kind": "code",
+			"text": "```json\n{\n  \"totalInterestPaid\": \"number\",\n  \"totalPayments\": \"number\",\n  \"strategy\": \"string\",\n  \"payments\": [\n    {\n      \"balance\": \"number\",\n      \"accounts\": [\n        {\n          \"name\": \"string\",\n          \"balanceStart\": \"number\",\n          \"balanceEnd\": \"number\",\n          \"accruedInterest\": \"number\",\n          \"additionalPayment\": \"number\",\n          \"paymentAmount\": \"number\"\n        }\n      ]\n    }\n  ]\n}\n```"
 		},
 		{
 			"kind": "text",
@@ -3043,43 +3111,43 @@
 		},
 		"5": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "default"
+			"qualifiedName": "strategy"
 		},
 		"6": {
-			"sourceFileName": "src/Account.ts",
-			"qualifiedName": "Account"
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "default"
 		},
 		"7": {
 			"sourceFileName": "src/Account.ts",
-			"qualifiedName": "Account.__constructor"
+			"qualifiedName": "Account"
 		},
 		"8": {
 			"sourceFileName": "src/Account.ts",
-			"qualifiedName": "Account"
+			"qualifiedName": "Account.__constructor"
 		},
 		"9": {
 			"sourceFileName": "src/Account.ts",
-			"qualifiedName": "config"
+			"qualifiedName": "Account"
 		},
 		"10": {
 			"sourceFileName": "src/Account.ts",
-			"qualifiedName": "Account.name"
+			"qualifiedName": "config"
 		},
 		"11": {
 			"sourceFileName": "src/Account.ts",
-			"qualifiedName": "Account.balance"
+			"qualifiedName": "Account.name"
 		},
 		"12": {
 			"sourceFileName": "src/Account.ts",
-			"qualifiedName": "Account.interest"
+			"qualifiedName": "Account.balance"
 		},
 		"13": {
 			"sourceFileName": "src/Account.ts",
-			"qualifiedName": "Account.minPayment"
+			"qualifiedName": "Account.interest"
 		},
 		"14": {
 			"sourceFileName": "src/Account.ts",
-			"qualifiedName": "Account.makePayment"
+			"qualifiedName": "Account.minPayment"
 		},
 		"15": {
 			"sourceFileName": "src/Account.ts",
@@ -3087,39 +3155,39 @@
 		},
 		"16": {
 			"sourceFileName": "src/Account.ts",
-			"qualifiedName": "additionalPayment"
+			"qualifiedName": "Account.makePayment"
 		},
 		"17": {
-			"sourceFileName": "src/Payment.ts",
-			"qualifiedName": "Payment"
+			"sourceFileName": "src/Account.ts",
+			"qualifiedName": "additionalPayment"
 		},
 		"18": {
 			"sourceFileName": "src/Payment.ts",
-			"qualifiedName": "Payment.__constructor"
+			"qualifiedName": "Payment"
 		},
 		"19": {
 			"sourceFileName": "src/Payment.ts",
-			"qualifiedName": "Payment"
+			"qualifiedName": "Payment.__constructor"
 		},
 		"20": {
 			"sourceFileName": "src/Payment.ts",
-			"qualifiedName": "options"
+			"qualifiedName": "Payment"
 		},
 		"21": {
 			"sourceFileName": "src/Payment.ts",
-			"qualifiedName": "Payment._balance"
+			"qualifiedName": "options"
 		},
 		"22": {
 			"sourceFileName": "src/Payment.ts",
-			"qualifiedName": "Payment.interestRate"
+			"qualifiedName": "Payment._balance"
 		},
 		"23": {
 			"sourceFileName": "src/Payment.ts",
-			"qualifiedName": "Payment.payment"
+			"qualifiedName": "Payment.interestRate"
 		},
 		"24": {
 			"sourceFileName": "src/Payment.ts",
-			"qualifiedName": "Payment.interest"
+			"qualifiedName": "Payment.payment"
 		},
 		"25": {
 			"sourceFileName": "src/Payment.ts",
@@ -3127,445 +3195,457 @@
 		},
 		"26": {
 			"sourceFileName": "src/Payment.ts",
-			"qualifiedName": "Payment.balance"
+			"qualifiedName": "Payment.interest"
 		},
 		"27": {
 			"sourceFileName": "src/Payment.ts",
 			"qualifiedName": "Payment.balance"
 		},
 		"28": {
-			"sourceFileName": "src/constants.ts",
-			"qualifiedName": "REPAYMENT_STRATEGIES"
+			"sourceFileName": "src/Payment.ts",
+			"qualifiedName": "Payment.balance"
 		},
 		"29": {
 			"sourceFileName": "src/constants.ts",
-			"qualifiedName": "__object"
+			"qualifiedName": "REPAYMENT_STRATEGIES"
 		},
 		"30": {
 			"sourceFileName": "src/constants.ts",
-			"qualifiedName": "__object.AVALANCHE"
+			"qualifiedName": "__object"
 		},
 		"31": {
 			"sourceFileName": "src/constants.ts",
-			"qualifiedName": "__object.SNOWBALL"
+			"qualifiedName": "__object.AVALANCHE"
 		},
 		"32": {
-			"sourceFileName": "src/Results.ts",
-			"qualifiedName": "Results"
+			"sourceFileName": "src/constants.ts",
+			"qualifiedName": "__object.SNOWBALL"
 		},
 		"33": {
 			"sourceFileName": "src/Results.ts",
-			"qualifiedName": "Results.__constructor"
+			"qualifiedName": "Results"
 		},
 		"34": {
 			"sourceFileName": "src/Results.ts",
-			"qualifiedName": "Results"
+			"qualifiedName": "Results.__constructor"
 		},
 		"35": {
 			"sourceFileName": "src/Results.ts",
-			"qualifiedName": "data"
+			"qualifiedName": "Results"
 		},
 		"36": {
 			"sourceFileName": "src/Results.ts",
-			"qualifiedName": "Results.totalInterestPaid"
+			"qualifiedName": "data"
 		},
 		"37": {
 			"sourceFileName": "src/Results.ts",
-			"qualifiedName": "Results.totalPayments"
+			"qualifiedName": "strategy"
 		},
 		"38": {
 			"sourceFileName": "src/Results.ts",
-			"qualifiedName": "Results.payments"
+			"qualifiedName": "Results.totalInterestPaid"
 		},
 		"39": {
 			"sourceFileName": "src/Results.ts",
-			"qualifiedName": "Results.calculateTotalInterestPaid"
+			"qualifiedName": "Results.totalPayments"
 		},
 		"40": {
 			"sourceFileName": "src/Results.ts",
-			"qualifiedName": "Results.calculateTotalInterestPaid"
+			"qualifiedName": "Results.strategy"
 		},
 		"41": {
-			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball"
+			"sourceFileName": "src/Results.ts",
+			"qualifiedName": "Results.payments"
 		},
 		"42": {
-			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.__constructor"
+			"sourceFileName": "src/Results.ts",
+			"qualifiedName": "Results.calculateTotalInterestPaid"
 		},
 		"43": {
-			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball"
+			"sourceFileName": "src/Results.ts",
+			"qualifiedName": "Results.calculateTotalInterestPaid"
 		},
 		"44": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "accounts"
+			"qualifiedName": "Snowball"
 		},
 		"45": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "additionalPayment"
+			"qualifiedName": "Snowball.__constructor"
 		},
 		"46": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "strategy"
+			"qualifiedName": "Snowball"
 		},
 		"47": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.accounts"
+			"qualifiedName": "accounts"
 		},
 		"48": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.additionalPayment"
+			"qualifiedName": "additionalPayment"
 		},
 		"49": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.balanceStart"
+			"qualifiedName": "strategy"
 		},
 		"50": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.currentBalance"
+			"qualifiedName": "Snowball.accounts"
 		},
 		"51": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.snowballAmount"
+			"qualifiedName": "Snowball.additionalPayment"
 		},
 		"52": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.strategy"
+			"qualifiedName": "Snowball.balanceStart"
 		},
 		"53": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.parseAccounts"
+			"qualifiedName": "Snowball.currentBalance"
 		},
 		"54": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.parseAccounts"
+			"qualifiedName": "Snowball.snowballAmount"
 		},
 		"55": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "accounts"
+			"qualifiedName": "Snowball.strategy"
 		},
 		"56": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "__object"
+			"qualifiedName": "Snowball.parseAccounts"
 		},
 		"57": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "AccountObject.name"
+			"sourceFileName": "src/Snowball.ts",
+			"qualifiedName": "Snowball.parseAccounts"
 		},
 		"58": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "AccountObject.balance"
+			"sourceFileName": "src/Snowball.ts",
+			"qualifiedName": "accounts"
 		},
 		"59": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "AccountObject.interest"
+			"sourceFileName": "src/Snowball.ts",
+			"qualifiedName": "__object"
 		},
 		"60": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "AccountObject.minPayment"
+			"qualifiedName": "AccountObject.name"
 		},
 		"61": {
-			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.sortAccounts"
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "AccountObject.balance"
 		},
 		"62": {
-			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.sortAccounts"
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "AccountObject.interest"
 		},
 		"63": {
-			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "accounts"
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "AccountObject.minPayment"
 		},
 		"64": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "key"
+			"qualifiedName": "Snowball.sortAccounts"
 		},
 		"65": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "order"
+			"qualifiedName": "Snowball.sortAccounts"
 		},
 		"66": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.getSortKeyAndOrder"
+			"qualifiedName": "accounts"
 		},
 		"67": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.getSortKeyAndOrder"
+			"qualifiedName": "key"
 		},
 		"68": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "__object"
+			"qualifiedName": "order"
 		},
 		"69": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "__object.key"
+			"qualifiedName": "Snowball.getSortKeyAndOrder"
 		},
 		"70": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "__object.order"
+			"qualifiedName": "Snowball.getSortKeyAndOrder"
 		},
 		"71": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.setAccounts"
+			"qualifiedName": "__object"
 		},
 		"72": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.setAccounts"
+			"qualifiedName": "__object.key"
 		},
 		"73": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "accounts"
+			"qualifiedName": "__object.order"
 		},
 		"74": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.getCurrentBalance"
+			"qualifiedName": "Snowball.setAccounts"
 		},
 		"75": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.getCurrentBalance"
+			"qualifiedName": "Snowball.setAccounts"
 		},
 		"76": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.makePaymentForAccount"
+			"qualifiedName": "accounts"
 		},
 		"77": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.makePaymentForAccount"
+			"qualifiedName": "Snowball.getCurrentBalance"
 		},
 		"78": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "account"
+			"qualifiedName": "Snowball.getCurrentBalance"
 		},
 		"79": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "__object"
+			"qualifiedName": "Snowball.makePaymentForAccount"
 		},
 		"80": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.balanceStart"
+			"sourceFileName": "src/Snowball.ts",
+			"qualifiedName": "Snowball.makePaymentForAccount"
 		},
 		"81": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.balanceEnd"
+			"sourceFileName": "src/Snowball.ts",
+			"qualifiedName": "account"
 		},
 		"82": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.accruedInterest"
+			"sourceFileName": "src/Snowball.ts",
+			"qualifiedName": "__object"
 		},
 		"83": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.additionalPayment"
+			"qualifiedName": "PaymentObject.balanceStart"
 		},
 		"84": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.paymentAmount"
+			"qualifiedName": "PaymentObject.balanceEnd"
 		},
 		"85": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.minPayment"
+			"qualifiedName": "PaymentObject.accruedInterest"
 		},
 		"86": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.name"
+			"qualifiedName": "PaymentObject.additionalPayment"
 		},
 		"87": {
-			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.makePaymentsForMonth"
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "PaymentObject.paymentAmount"
 		},
 		"88": {
-			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.makePaymentsForMonth"
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "PaymentObject.minPayment"
 		},
 		"89": {
-			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "__object"
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "PaymentObject.name"
 		},
 		"90": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "__object.balance"
+			"qualifiedName": "Snowball.makePaymentsForMonth"
 		},
 		"91": {
 			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "__object.accounts"
+			"qualifiedName": "Snowball.makePaymentsForMonth"
 		},
 		"92": {
 			"sourceFileName": "src/Snowball.ts",
 			"qualifiedName": "__object"
 		},
 		"93": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.balanceStart"
+			"sourceFileName": "src/Snowball.ts",
+			"qualifiedName": "__object.balance"
 		},
 		"94": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.balanceEnd"
+			"sourceFileName": "src/Snowball.ts",
+			"qualifiedName": "__object.accounts"
 		},
 		"95": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.accruedInterest"
+			"sourceFileName": "src/Snowball.ts",
+			"qualifiedName": "__object"
 		},
 		"96": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.additionalPayment"
+			"qualifiedName": "PaymentObject.balanceStart"
 		},
 		"97": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.paymentAmount"
+			"qualifiedName": "PaymentObject.balanceEnd"
 		},
 		"98": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.minPayment"
+			"qualifiedName": "PaymentObject.accruedInterest"
 		},
 		"99": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.name"
-		},
-		"100": {
-			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.createPaymentPlan"
-		},
-		"101": {
-			"sourceFileName": "src/Snowball.ts",
-			"qualifiedName": "Snowball.createPaymentPlan"
-		},
-		"102": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "AccountObject"
-		},
-		"103": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "AccountObject.name"
-		},
-		"104": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "AccountObject.balance"
-		},
-		"105": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "AccountObject.interest"
-		},
-		"106": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "AccountObject.minPayment"
-		},
-		"107": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "AccountObjectKeys"
-		},
-		"108": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "AccountObjectKeys.name"
-		},
-		"109": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "AccountObjectKeys.balance"
-		},
-		"110": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "AccountObjectKeys.interest"
-		},
-		"111": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "AccountObjectKeys.minPayment"
-		},
-		"112": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "OrderDirection"
-		},
-		"113": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "OrderDirection.ascending"
-		},
-		"114": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "OrderDirection.descending"
-		},
-		"115": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "RepaymentStrategy"
-		},
-		"116": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "RepaymentStrategy.avalanche"
-		},
-		"117": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "RepaymentStrategy.snowball"
-		},
-		"118": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentOptions"
-		},
-		"119": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentOptions.balance"
-		},
-		"120": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentOptions.interest"
-		},
-		"121": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentOptions.payment"
-		},
-		"122": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject"
-		},
-		"123": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.balanceStart"
-		},
-		"124": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.balanceEnd"
-		},
-		"125": {
-			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentObject.accruedInterest"
-		},
-		"126": {
-			"sourceFileName": "src/types.ts",
 			"qualifiedName": "PaymentObject.additionalPayment"
 		},
-		"127": {
+		"100": {
 			"sourceFileName": "src/types.ts",
 			"qualifiedName": "PaymentObject.paymentAmount"
 		},
-		"128": {
+		"101": {
 			"sourceFileName": "src/types.ts",
 			"qualifiedName": "PaymentObject.minPayment"
 		},
-		"129": {
+		"102": {
 			"sourceFileName": "src/types.ts",
 			"qualifiedName": "PaymentObject.name"
 		},
+		"103": {
+			"sourceFileName": "src/Snowball.ts",
+			"qualifiedName": "Snowball.createPaymentPlan"
+		},
+		"104": {
+			"sourceFileName": "src/Snowball.ts",
+			"qualifiedName": "Snowball.createPaymentPlan"
+		},
+		"105": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "AccountObject"
+		},
+		"106": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "AccountObject.name"
+		},
+		"107": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "AccountObject.balance"
+		},
+		"108": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "AccountObject.interest"
+		},
+		"109": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "AccountObject.minPayment"
+		},
+		"110": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "AccountObjectKeys"
+		},
+		"111": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "AccountObjectKeys.name"
+		},
+		"112": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "AccountObjectKeys.balance"
+		},
+		"113": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "AccountObjectKeys.interest"
+		},
+		"114": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "AccountObjectKeys.minPayment"
+		},
+		"115": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "OrderDirection"
+		},
+		"116": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "OrderDirection.ascending"
+		},
+		"117": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "OrderDirection.descending"
+		},
+		"118": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "RepaymentStrategy"
+		},
+		"119": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "RepaymentStrategy.avalanche"
+		},
+		"120": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "RepaymentStrategy.snowball"
+		},
+		"121": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "PaymentOptions"
+		},
+		"122": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "PaymentOptions.balance"
+		},
+		"123": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "PaymentOptions.interest"
+		},
+		"124": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "PaymentOptions.payment"
+		},
+		"125": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "PaymentObject"
+		},
+		"126": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "PaymentObject.balanceStart"
+		},
+		"127": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "PaymentObject.balanceEnd"
+		},
+		"128": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "PaymentObject.accruedInterest"
+		},
+		"129": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "PaymentObject.additionalPayment"
+		},
 		"130": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentPlanObject"
+			"qualifiedName": "PaymentObject.paymentAmount"
 		},
 		"131": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentPlanObject.balance"
+			"qualifiedName": "PaymentObject.minPayment"
 		},
 		"132": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "PaymentPlanObject.accounts"
+			"qualifiedName": "PaymentObject.name"
 		},
 		"133": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "ResultsObject"
+			"qualifiedName": "PaymentPlanObject"
 		},
 		"134": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "ResultsObject.totalInterestPaid"
+			"qualifiedName": "PaymentPlanObject.balance"
 		},
 		"135": {
 			"sourceFileName": "src/types.ts",
-			"qualifiedName": "ResultsObject.totalPayments"
+			"qualifiedName": "PaymentPlanObject.accounts"
 		},
 		"136": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "ResultsObject"
+		},
+		"137": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "ResultsObject.totalInterestPaid"
+		},
+		"138": {
+			"sourceFileName": "src/types.ts",
+			"qualifiedName": "ResultsObject.totalPayments"
+		},
+		"139": {
 			"sourceFileName": "src/types.ts",
 			"qualifiedName": "ResultsObject.payments"
 		}

@@ -13,7 +13,7 @@ for file in $changed_files; do
 done
 if [ $build_docs ]; then
   echo ""
-  echo "Building docs..."
-  npm run docs
-  git add docs
+  echo "Make sure to run 'npm run docs'..."
+  # npm run docs
+  # git add docs
 fi

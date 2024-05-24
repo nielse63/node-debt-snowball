@@ -26,7 +26,7 @@ npm install node-debt-snowball
 ### Basic Usage
 
 ```js
-import snowball from 'node-debt-snowball';
+import { snowball } from 'node-debt-snowball';
 
 const accounts = [
   {
@@ -49,6 +49,15 @@ const repaymentPlan = snowball(accounts, additionalPayment, strategy);
 console.log('repaymentPlan', repaymentPlan);
 ```
 
+### Strategies
+
+There are two options for the `strategy` argument:
+
+1. `avalanche` - This strategy applies additional payments to the account with the highest interest rate. This is the default value
+2. `snowball` - This strategy focuses on paying off the account with the lowest balance first
+
+For additional information on these strategies [read more on Investopedia](https://www.investopedia.com/articles/personal-finance/080716/debt-avalanche-vs-debt-snowball-which-best-you.asp).
+
 ### API
 
 Full API documentation is available can be found at [https://nielse63.github.io/node-debt-snowball](https://nielse63.github.io/node-debt-snowball/)
@@ -59,6 +68,7 @@ Full API documentation is available can be found at [https://nielse63.github.io/
 {
   "totalInterestPaid": "number",
   "totalPayments": "number",
+  "strategy": "string",
   "payments": [
     {
       "balance": "number",

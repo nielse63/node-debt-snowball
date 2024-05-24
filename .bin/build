@@ -3,5 +3,4 @@ set -e
 
 rm -rf ./dist
 tsc -p ./config/tsconfig.build.json
-
-echo 'module.exports = snowball;' >> dist/index.js
+# echo 'module.exports = snowball;' >> dist/index.js
