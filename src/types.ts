@@ -5,6 +5,23 @@ export interface AccountObject {
   minPayment: number;
 }
 
+export enum AccountObjectKeys {
+  name = 'name',
+  balance = 'balance',
+  interest = 'interest',
+  minPayment = 'minPayment',
+}
+
+export enum OrderDirection {
+  ascending = 'ascending',
+  descending = 'descending',
+}
+
+export enum RepaymentStrategy {
+  avalance = 'avalance',
+  snowball = 'snowball',
+}
+
 export type Payment = {
   balance: number;
   accounts: AccountObject[];

@@ -1,7 +1,13 @@
 import Account from './Account';
 import Results from './Results';
+import { REPAYMENT_STRATEGIES } from './constants';
 import { toCurrency } from './helpers';
-import type { AccountObject } from './types';
+import {
+  AccountObject,
+  AccountObjectKeys,
+  OrderDirection,
+  RepaymentStrategy,
+} from './types';
 
 class Snowball {
   accounts: Account[] = [];
@@ -9,8 +15,14 @@ class Snowball {
   balanceStart: number;
   currentBalance: number;
   snowballAmount: number;
+  strategy: string;
 
-  constructor(accounts: AccountObject[], additionalPayment = 0) {
+  constructor(
+    accounts: AccountObject[],
+    additionalPayment = 0,
+    strategy = REPAYMENT_STRATEGIES.AVALANCHE
+  ) {
+    this.strategy = strategy;
     this.accounts = this.setAccounts(accounts);
     this.balanceStart = this.getCurrentBalance();
     this.currentBalance = this.balanceStart;
@@ -42,15 +54,41 @@ class Snowball {
       });
   }
 
+  sortAccounts(
+    accounts: AccountObject[],
+    key: AccountObjectKeys = AccountObjectKeys.interest,
+    order: OrderDirection = OrderDirection.descending
+  ) {
+    const firstValue = order === OrderDirection.ascending ? 1 : -1;
+    const secondValue = order === OrderDirection.ascending ? -1 : 1;
+    return accounts.sort((a, b) => {
+      if (a[key] > b[key]) return firstValue;
+      if (a[key] < b[key]) return secondValue;
+      return 0;
+    });
+  }
+
+  getSortKeyAndOrder() {
+    switch (this.strategy) {
+      case RepaymentStrategy.snowball:
+        return {
+          key: AccountObjectKeys.balance,
+          order: OrderDirection.ascending,
+        };
+      case RepaymentStrategy.avalance:
+      default:
+        return {
+          key: AccountObjectKeys.interest,
+          order: OrderDirection.descending,
+        };
+    }
+  }
+
   setAccounts(accounts: AccountObject[]) {
-    this.accounts = this.parseAccounts(accounts)
-      .sort((a, b) => {
-        if (a.interest > b.interest) return -1;
-        if (a.interest < b.interest) return 1;
-        return 0;
-      })
-      .map((account) => new Account(account));
-    return this.accounts;
+    const parsedAccounts = this.parseAccounts(accounts);
+    const { key, order } = this.getSortKeyAndOrder();
+    const sortedAccounts = this.sortAccounts(parsedAccounts, key, order);
+    return sortedAccounts.map((account) => new Account(account));
   }
 
   getCurrentBalance() {

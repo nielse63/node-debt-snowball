@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-npm run clean
+rm -rf ./dist
 tsc -p ./config/tsconfig.build.json
 
 echo 'module.exports = snowball;' >> dist/index.js

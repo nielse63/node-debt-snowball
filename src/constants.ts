@@ -5,3 +5,8 @@ export const ERROR_MESSAGES = {
   MIN_PAYMENT_NOT_ENOUGH: 'Minimum payment is not enough to cover interest',
   PAYMENT_OPTIONS_ERROR: 'Balance, interest, and payment are required',
 };
+
+export const REPAYMENT_STRATEGIES = {
+  AVALANCHE: 'avalance',
+  SNOWBALL: 'snowball',
+};

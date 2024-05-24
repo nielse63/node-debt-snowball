@@ -68,6 +68,51 @@ describe('Snowball', () => {
     });
   });
 
+  describe('sortAccounts', () => {
+    it('should sort accounts by interest rate descending for avalance strategy', () => {
+      const sorted = snowball.sortAccounts(accounts);
+      expect(sorted[0].name).toEqual('Credit Card');
+    });
+
+    it('should sort accounts by balance ascending for snowball strategy', () => {
+      snowball = new Snowball(
+        [
+          {
+            name: 'Credit Card',
+            interest: 14.99,
+            balance: 1000,
+            minPayment: 75,
+          },
+          {
+            name: 'Student Loan',
+            interest: 4.75,
+            balance: 900,
+            minPayment: 150,
+          },
+        ],
+        additionalPayment,
+        'snowball'
+      );
+      expect(snowball.accounts[0].name).toEqual('Student Loan');
+    });
+  });
+
+  describe('getSortKeyAndOrder', () => {
+    it('should return correct key and order for avalance strategy', () => {
+      snowball.strategy = 'avalance';
+      const { key, order } = snowball.getSortKeyAndOrder();
+      expect(key).toEqual('interest');
+      expect(order).toEqual('descending');
+    });
+
+    it('should return correct key and order for snowball strategy', () => {
+      snowball.strategy = 'snowball';
+      const { key, order } = snowball.getSortKeyAndOrder();
+      expect(key).toEqual('balance');
+      expect(order).toEqual('ascending');
+    });
+  });
+
   describe('setAccounts', () => {
     it('should sort accounts by interest rate descending', () => {
       snowball = new Snowball([
@@ -173,7 +218,30 @@ describe('Snowball', () => {
       expect(payments[5].accounts[0].paymentAmount).toEqual(166.91);
     });
 
-    it('should match snapshot', () => {
+    it('should match snapshot for avalance', () => {
+      const payments = snowball.createPaymentPlan();
+      expect(payments).toMatchSnapshot();
+    });
+
+    it('should match snapshot for snowball', () => {
+      snowball = new Snowball(
+        [
+          {
+            name: 'Credit Card',
+            interest: 14.99,
+            balance: 1000,
+            minPayment: 75,
+          },
+          {
+            name: 'Student Loan',
+            interest: 4.75,
+            balance: 900,
+            minPayment: 50,
+          },
+        ],
+        additionalPayment,
+        'snowball'
+      );
       const payments = snowball.createPaymentPlan();
       expect(payments).toMatchSnapshot();
     });
