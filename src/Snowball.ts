@@ -3,10 +3,10 @@ import Results from './Results';
 import { REPAYMENT_STRATEGIES } from './constants';
 import { toCurrency } from './helpers';
 import {
-  AccountObject,
   AccountObjectKeys,
   OrderDirection,
   RepaymentStrategy,
+  type AccountObject,
 } from './types';
 
 class Snowball {
@@ -135,8 +135,8 @@ class Snowball {
       const payment = this.makePaymentsForMonth();
       paymentPlan.push(payment);
     }
-    return new Results(paymentPlan);
+    return new Results(paymentPlan, this.strategy);
   }
 }
 
-export default Snowball;
+export = Snowball;

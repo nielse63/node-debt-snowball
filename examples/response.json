@@ -1,27 +1,28 @@
 {
   "totalInterestPaid": 523.81,
   "totalPayments": 28,
+  "strategy": "avalanche",
   "payments": [
     {
       "balance": 8217.18,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 1000,
           "balanceEnd": 837.49,
           "accruedInterest": 12.49,
           "minPayment": 75,
           "additionalPayment": 100,
-          "paymentAmount": 175
+          "paymentAmount": 175,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 7500,
           "balanceEnd": 7379.69,
           "accruedInterest": 29.69,
           "minPayment": 150,
           "additionalPayment": 0,
-          "paymentAmount": 150
+          "paymentAmount": 150,
+          "name": "Student Loan"
         }
       ]
     },
@@ -29,22 +30,22 @@
       "balance": 7931.85,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 837.49,
           "balanceEnd": 672.95,
           "accruedInterest": 10.46,
           "minPayment": 75,
           "additionalPayment": 100,
-          "paymentAmount": 175
+          "paymentAmount": 175,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 7379.69,
           "balanceEnd": 7258.9,
           "accruedInterest": 29.21,
           "minPayment": 150,
           "additionalPayment": 0,
-          "paymentAmount": 150
+          "paymentAmount": 150,
+          "name": "Student Loan"
         }
       ]
     },
@@ -52,22 +53,22 @@
       "balance": 7643.99,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 672.95,
           "balanceEnd": 506.36,
           "accruedInterest": 8.41,
           "minPayment": 75,
           "additionalPayment": 100,
-          "paymentAmount": 175
+          "paymentAmount": 175,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 7258.9,
           "balanceEnd": 7137.63,
           "accruedInterest": 28.73,
           "minPayment": 150,
           "additionalPayment": 0,
-          "paymentAmount": 150
+          "paymentAmount": 150,
+          "name": "Student Loan"
         }
       ]
     },
@@ -75,22 +76,22 @@
       "balance": 7353.57,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 506.36,
           "balanceEnd": 337.69,
           "accruedInterest": 6.33,
           "minPayment": 75,
           "additionalPayment": 100,
-          "paymentAmount": 175
+          "paymentAmount": 175,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 7137.63,
           "balanceEnd": 7015.88,
           "accruedInterest": 28.25,
           "minPayment": 150,
           "additionalPayment": 0,
-          "paymentAmount": 150
+          "paymentAmount": 150,
+          "name": "Student Loan"
         }
       ]
     },
@@ -98,22 +99,22 @@
       "balance": 7060.56,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 337.69,
           "balanceEnd": 166.91,
           "accruedInterest": 4.22,
           "minPayment": 75,
           "additionalPayment": 100,
-          "paymentAmount": 175
+          "paymentAmount": 175,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 7015.88,
           "balanceEnd": 6893.65,
           "accruedInterest": 27.77,
           "minPayment": 150,
           "additionalPayment": 0,
-          "paymentAmount": 150
+          "paymentAmount": 150,
+          "name": "Student Loan"
         }
       ]
     },
@@ -121,22 +122,22 @@
       "balance": 6762.85,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 166.91,
           "balanceEnd": 0,
           "accruedInterest": 2.08,
           "minPayment": 75,
           "additionalPayment": 100,
-          "paymentAmount": 166.91
+          "paymentAmount": 166.91,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 6893.65,
           "balanceEnd": 6762.85,
           "accruedInterest": 27.29,
           "minPayment": 150,
           "additionalPayment": 8.09,
-          "paymentAmount": 158.09
+          "paymentAmount": 158.09,
+          "name": "Student Loan"
         }
       ]
     },
@@ -144,22 +145,22 @@
       "balance": 6464.62,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 6762.85,
           "balanceEnd": 6464.62,
           "accruedInterest": 26.77,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -167,22 +168,22 @@
       "balance": 6165.21,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 6464.62,
           "balanceEnd": 6165.21,
           "accruedInterest": 25.59,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -190,22 +191,22 @@
       "balance": 5864.61,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 6165.21,
           "balanceEnd": 5864.61,
           "accruedInterest": 24.4,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -213,22 +214,22 @@
       "balance": 5562.82,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 5864.61,
           "balanceEnd": 5562.82,
           "accruedInterest": 23.21,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -236,22 +237,22 @@
       "balance": 5259.84,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 5562.82,
           "balanceEnd": 5259.84,
           "accruedInterest": 22.02,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -259,22 +260,22 @@
       "balance": 4955.66,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 5259.84,
           "balanceEnd": 4955.66,
           "accruedInterest": 20.82,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -282,22 +283,22 @@
       "balance": 4650.28,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 4955.66,
           "balanceEnd": 4650.28,
           "accruedInterest": 19.62,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -305,22 +306,22 @@
       "balance": 4343.69,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 4650.28,
           "balanceEnd": 4343.69,
           "accruedInterest": 18.41,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -328,22 +329,22 @@
       "balance": 4035.88,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 4343.69,
           "balanceEnd": 4035.88,
           "accruedInterest": 17.19,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -351,22 +352,22 @@
       "balance": 3726.86,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 4035.88,
           "balanceEnd": 3726.86,
           "accruedInterest": 15.98,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -374,22 +375,22 @@
       "balance": 3416.61,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 3726.86,
           "balanceEnd": 3416.61,
           "accruedInterest": 14.75,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -397,22 +398,22 @@
       "balance": 3105.13,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 3416.61,
           "balanceEnd": 3105.13,
           "accruedInterest": 13.52,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -420,22 +421,22 @@
       "balance": 2792.42,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 3105.13,
           "balanceEnd": 2792.42,
           "accruedInterest": 12.29,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -443,22 +444,22 @@
       "balance": 2478.47,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 2792.42,
           "balanceEnd": 2478.47,
           "accruedInterest": 11.05,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -466,22 +467,22 @@
       "balance": 2163.28,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 2478.47,
           "balanceEnd": 2163.28,
           "accruedInterest": 9.81,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -489,22 +490,22 @@
       "balance": 1846.84,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 2163.28,
           "balanceEnd": 1846.84,
           "accruedInterest": 8.56,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -512,22 +513,22 @@
       "balance": 1529.15,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 1846.84,
           "balanceEnd": 1529.15,
           "accruedInterest": 7.31,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -535,22 +536,22 @@
       "balance": 1210.2,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 1529.15,
           "balanceEnd": 1210.2,
           "accruedInterest": 6.05,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -558,22 +559,22 @@
       "balance": 889.99,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 1210.2,
           "balanceEnd": 889.99,
           "accruedInterest": 4.79,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -581,22 +582,22 @@
       "balance": 568.51,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 889.99,
           "balanceEnd": 568.51,
           "accruedInterest": 3.52,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -604,22 +605,22 @@
       "balance": 245.76,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 568.51,
           "balanceEnd": 245.76,
           "accruedInterest": 2.25,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 325
+          "paymentAmount": 325,
+          "name": "Student Loan"
         }
       ]
     },
@@ -627,22 +628,22 @@
       "balance": 0,
       "accounts": [
         {
-          "name": "Credit Card",
           "balanceStart": 0,
           "balanceEnd": 0,
           "accruedInterest": 0,
           "minPayment": 75,
           "additionalPayment": 0,
-          "paymentAmount": 0
+          "paymentAmount": 0,
+          "name": "Credit Card"
         },
         {
-          "name": "Student Loan",
           "balanceStart": 245.76,
           "balanceEnd": 0,
           "accruedInterest": 0.97,
           "minPayment": 150,
           "additionalPayment": 175,
-          "paymentAmount": 245.76
+          "paymentAmount": 245.76,
+          "name": "Student Loan"
         }
       ]
     }

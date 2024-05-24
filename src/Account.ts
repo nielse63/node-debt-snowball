@@ -69,4 +69,4 @@ class Account {
   }
 }
 
-export default Account;
+export = Account;

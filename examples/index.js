@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const snowball = require('../dist/index.js');
+const { snowball } = require('../dist/index.js');
 
 const accounts = [
   {
@@ -18,7 +18,7 @@ const accounts = [
 ];
 const additionalPayment = 100;
 
-const repaymentPlan = snowball(accounts, additionalPayment);
+const repaymentPlan = snowball(accounts, additionalPayment, 'avalanche');
 console.log('repaymentPlan', repaymentPlan);
 
 // update the example values and run `npm run dev` to see the

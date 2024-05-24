@@ -32,4 +32,4 @@ class Payment {
   }
 }
 
-export default Payment;
+export = Payment;

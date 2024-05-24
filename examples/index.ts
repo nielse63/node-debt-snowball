@@ -1,4 +1,4 @@
-import snowball, { AccountObject } from '..';
+import snowball, { type AccountObject } from '..';
 
 const accounts: AccountObject[] = [
   {

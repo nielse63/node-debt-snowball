@@ -1,4 +1,4 @@
-import snowball from '../dist/index.js';
+import { snowball } from '../dist/index.js';
 
 const accounts = [
   {
@@ -16,5 +16,5 @@ const accounts = [
 ];
 const additionalPayment = 100;
 
-const repaymentPlan = snowball(accounts, additionalPayment);
+const repaymentPlan = snowball(accounts, additionalPayment, 'avalanche');
 console.log('repaymentPlan', repaymentPlan);

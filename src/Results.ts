@@ -4,12 +4,14 @@ import type { PaymentPlanObject, ResultsObject } from './types';
 class Results implements ResultsObject {
   totalInterestPaid = 0;
   totalPayments = 0;
+  strategy = '';
   payments: PaymentPlanObject[] = [];
 
-  constructor(data: PaymentPlanObject[]) {
+  constructor(data: PaymentPlanObject[], strategy: string) {
     this.payments = [...data];
     this.totalInterestPaid = this.calculateTotalInterestPaid();
     this.totalPayments = data.length;
+    this.strategy = strategy;
   }
 
   calculateTotalInterestPaid() {
@@ -23,4 +25,4 @@ class Results implements ResultsObject {
   }
 }
 
-export default Results;
+export = Results;

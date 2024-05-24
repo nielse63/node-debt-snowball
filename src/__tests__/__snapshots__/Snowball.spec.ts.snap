@@ -648,6 +648,7 @@ Results {
       "balance": 0,
     },
   ],
+  "strategy": "avalanche",
   "totalInterestPaid": 523.81,
   "totalPayments": 28,
 }
@@ -864,6 +865,7 @@ Results {
       "balance": 0,
     },
   ],
+  "strategy": "snowball",
   "totalInterestPaid": 90.83,
   "totalPayments": 9,
 }
