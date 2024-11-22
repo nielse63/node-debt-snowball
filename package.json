@@ -54,7 +54,7 @@
   },
   "homepage": "https://github.com/nielse63/node-debt-snowball#readme",
   "engines": {
-    "node": ">=20.18.0"
+    "node": ">=20.18.1"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",
