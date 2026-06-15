@@ -57,9 +57,9 @@
     "node": ">=20.20.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.7",
-    "@babel/preset-env": "^7.24.7",
-    "@babel/preset-typescript": "^7.24.7",
+    "@babel/core": "^7.29.7",
+    "@babel/preset-env": "^7.29.7",
+    "@babel/preset-typescript": "^7.29.7",
     "@types/jest": "^29.5.4",
     "@typescript-eslint/eslint-plugin": "^7.13.1",
     "@typescript-eslint/parser": "^7.13.1",
